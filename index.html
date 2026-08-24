@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jagruthi — Computer Science portfolio, presented as an interactive atlas.">
+  <title>Jagruthi — Her Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- WORLD 01: THE THRESHOLD -->
+  <section id="intro" class="intro-world">
+    <div class="grain"></div>
+    <div class="intro-stars"></div>
+    <div class="orbit orbit-a"></div>
+    <div class="orbit orbit-b"></div>
+    <div class="intro-card">
+      <div class="micro">FIELD NOTES / 2026</div>
+      <div class="coordinates">16° 30' N &nbsp; 80° 38' E</div>
+      <div class="intro-title-wrap">
+        <span class="eyebrow">AN UNFINISHED MAP OF</span>
+        <h1>JAGRUTHI</h1>
+        <div class="title-line"></div>
+        <span class="sub">COMPUTER SCIENCE</span>
+      </div>
+      <div class="intro-actions">
+        <button id="enterBtn" class="enter-btn">
+          <span>ENTER THE ATLAS</span><i>↗</i>
+        </button>
+        <span class="move-note">MOVE TO DISCOVER</span>
+      </div>
+    </div>
+    <div class="intro-side left">PERSONAL ATLAS<br>VOL. 01</div>
+    <div class="intro-side right">NOT A RESUME<br>AN EXPEDITION</div>
+    <div class="intro-bottom">
+      <span>PORTFOLIO / 2026</span>
+      <span>SCROLL IS DISABLED UNTIL ENTRY</span>
+      <span>01 — 09</span>
+    </div>
+    <div class="atlas-transition" id="atlasTransition" aria-hidden="true">
+      <div class="transition-slice slice-1"></div>
+      <div class="transition-slice slice-2"></div>
+      <div class="transition-slice slice-3"></div>
+      <div class="transition-slice slice-4"></div>
+      <div class="transition-title"><span>JAGRUTHI</span><small>ENTERING THE ATLAS</small></div>
+    </div>
+  </section>
+
+  <!-- WORLD 02: THE ATLAS -->
+  <main id="atlas" class="atlas-world">
+    <div class="map-lines"></div>
+    <nav class="nav">
+      <a href="#top" class="brand">H<span>↗</span></a>
+      <div class="nav-links">
+        <a href="#journey">Journey</a>
+        <a href="#projects">Discoveries</a>
+        <a href="#skills">Regions</a>
+        <a href="#about">You Are Here</a>
+      </div>
+      <span class="nav-status">LIVE MAP · 2026</span>
+    </nav>
+
+    <section id="top" class="hero section">
+      <div class="compass">
+        <span>N</span><span>E</span><span>S</span><span>W</span><b>✦</b>
+      </div>
+      <div class="hero-route route-1"></div>
+      <div class="hero-copy reveal">
+        <p class="section-kicker">YOU HAVE ARRIVED AT / 01</p>
+        <h2>Hi, I'm<br><em>Jagruthi.</em></h2>
+        <p class="hero-desc">I am a computer science student who is always curious about what is next — whether that means building something, learning something new, or following a completely unexpected idea</p>
+        <a class="map-button magnetic" href="#journey">EXPLORE MY WORLD <span>↗</span></a>
+      </div>
+      <div class="hero-stamp">PERSONAL<br>ATLAS<br><strong>JH-26</strong></div>
+      <div class="hero-note note-a">"still figuring out<br>where the road goes."</div>
+      <div class="hero-note note-b">START HERE →</div>
+      <div class="scroll-cue"><span></span>FOLLOW THE ROUTE</div>
+    </section>
+
+    <section id="journey" class="section journey">
+      <div class="section-head reveal">
+        <p class="section-kicker">THE ROUTE / 02</p>
+        <h2>One road.<br><em>Many chapters.</em></h2>
+        <p>Every destination changed the direction of the next one.</p>
+      </div>
+      <div class="route-map">
+        <svg class="route-svg" viewBox="0 0 1000 430" preserveAspectRatio="none">
+          <path d="M70 330 C170 80, 250 380, 370 170 S560 90, 660 260 S820 380, 930 100"/>
+          <path class="route-progress" d="M70 330 C170 80, 250 380, 370 170 S560 90, 660 260 S820 380, 930 100"/>
+        </svg>
+        <div class="footsteps" aria-hidden="true">
+          <span>◖</span><span>◗</span><span>◖</span><span>◗</span><span>◖</span><span>◗</span><span>◖</span><span>◗</span><span>◖</span><span>◗</span><span>◖</span><span>◗</span>
+        </div>
+        <button class="destination d1 active" data-panel="school"><span>01</span><b>BHASHYAM</b><small>THE BEGINNING</small></button>
+        <button class="destination d2" data-panel="college"><span>02</span><b>GLEC</b><small>THE BEGINNING</small></button>
+        <button class="destination d3" data-panel="dexterity"><span>03</span><b>DEXTERITY</b><small>A MILESTONE</small></button>
+        <button class="destination d4" data-panel="future"><span>04</span><b>NEXT</b><small>THE ROAD AHEAD</small></button>
+      </div>
+      <div class="story-panel" id="storyPanel">
+        <div class="panel-index">01 / 04</div>
+        <h3>School</h3>
+        <p>Bhashyam School is where it all started. I spent my school years making friends, getting curious about random things, and slowly figuring out what I actually liked. It was also where I discovered Dexterity which ended up shaping a big part of the person I became and the direction I wanted to take.
+</p>
+        <span class="panel-tag">CHAPTER OPEN</span>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="section-head reveal">
+        <p class="section-kicker">MARKED DISCOVERIES / 03</p>
+        <h2>Things I built<br><em>along the way.</em></h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card large reveal magnetic-card">
+          <div class="project-art ai-art"><span class="art-grid"></span><span class="orb">◎</span><span class="route-mini">A → B → ?</span></div>
+          <div class="project-meta"><span>01 / AI · DATA SCIENCE · ROUTING</span><span>↗</span></div>
+          <h3>ChronoMind AI</h3>
+          <p>A gamified productivity app that learns when you personally perform best through interactive cognitive challenges. It uses your performance, sleep, and calendar data to suggest an optimized daily schedule around your peak hours.
+  
+         </p>
+          <div class="chips"><i>PYTHON</i><i>ML</i><i>DATA</i></div>
+        </article>
+        <article class="project-card reveal magnetic-card">
+          <div class="project-art hardware-art"><span class="wire">╱╲</span><span class="chip">ESP32</span><span class="pulse"></span></div>
+          <div class="project-meta"><span>02 / HARDWARE · ESP32</span><span>↗</span></div>
+          <h3>Nerf Controller</h3>
+          <p>Hardware meets play: an interactive controller experiment built around an ESP32.</p>
+          <div class="chips"><i>C++</i><i>ESP32</i><i>IoT</i></div>
+        </article>
+        <article class="project-card reveal magnetic-card">
+          <div class="project-art code-art"><span>F1 / ML / DATA</span><strong>R</strong></div>
+          <div class="project-meta"><span>03 / RACE OS · PREDICTION</span><span>↗</span></div>
+          <h3>Race OS</h3>
+          <p>An F1 pit stop prediction system that uses race data and machine learning to predict when a driver is likely to make a pit stop. Built to explore how data can turn the chaos of racing into informed decisions.</p>
+          <div class="chips"><i>PYTHON</i><i>ML</i><i>RACING</i></div>
+        </article>
+        <article class="project-card reveal magnetic-card">
+          <div class="project-art code-art"><span>01 10 01</span><strong>&lt;/&gt;</strong></div>
+          <div class="project-meta"><span>04 / MORE DISCOVERIES</span><span>↗</span></div>
+          <h3>More Discoveries</h3>
+          <p>The map is still growing. More experiments, ideas, and projects are waiting to be marked here — each one another place to learn, build, and explore.</p>
+          <div class="chips"><i>EXPERIMENT</i><i>BUILD</i><i>EXPLORE</i></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section regions">
+      <div class="section-head reveal">
+        <p class="section-kicker">THE REGIONS / 04</p>
+        <h2>Explore by<br><em>territory.</em></h2>
+      </div>
+      <div class="regions-layout">
+        <div class="region-map">
+          <div class="region r1">AI</div><div class="region r2">SOFTWARE</div><div class="region r3">HARDWARE</div><div class="region r4">IOT</div><div class="region r5">CREATIVE</div>
+          <span class="topo t1"></span><span class="topo t2"></span><span class="topo t3"></span>
+        </div>
+        <div class="skill-list">
+          <div class="skill-row"><span>PYTHON</span><b>AI / ML</b></div>
+          <div class="skill-row"><span>C++</span><b>HARDWARE</b></div>
+          <div class="skill-row"><span>HTML / CSS</span><b>SOFTWARE</b></div>
+          <div class="skill-row"><span>MACHINE LEARNING</span><b>AI</b></div>
+          <div class="skill-row"><span>DEEP LEARNING</span><b>AI</b></div>
+          <div class="skill-row"><span>SQL / POSTGRESQL</span><b>DATA</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section community">
+      <div class="community-copy reveal">
+        <p class="section-kicker">PEOPLE & PLACES / 05</p>
+        <h2>The map got<br><em>bigger through people.</em></h2>
+        <p>Some of the biggest parts of my journey came from the people I met along the way. From Dexterity to programs, competitions, and hackathons, each experience introduced me to new ideas, new perspectives, and people who pushed me to think differently.</p>
+      </div>
+      <div class="encounter-list">
+        <button class="encounter active" data-community="dexterity"><span>01</span><b>DEXTERITY GLOBAL</b><i>↗</i></button>
+        <button class="encounter" data-community="precollege"><span>02</span><b>PRE-COLLEGE PROGRAMS</b><i>↗</i></button>
+        <button class="encounter" data-community="hackathons"><span>03</span><b>HACKATHONS</b><i>↗</i></button>
+        <div class="encounter-story" id="encounterStory"><p>DexSchool was a semi-monastic, semi-military academy that trained young leaders to solve 21st-century problems.</p></div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+<div class="you-are-here">YOU<br>ARE<br>HERE</div>
+      <div class="portrait-frame">
+        <img src="images/jagruthi-portrait.png" alt="Jagruthi portrait">
+        <span>FIELD PHOTO / JAGRUTHI</span>
+      </div>
+      <div class="about-copy reveal">
+        <p class="section-kicker">A NOTE FROM THE TRAVELLER / 06</p>
+        <h2>Not everything<br>fits on a <em>CV.</em></h2>
+        <p>I'm curious about a lot of things, and not all of them make it onto a résumé. I like trying new things, building random ideas, meeting interesting people, and figuring things out along the way. Some of my best learning has happened outside a classroom — simply because I wanted to see what I could do.</p>
+        <p class="hand-note">keep exploring →</p>
+      </div>
+    </section>
+
+    <section id="beyond" class="section beyond">
+      <div class="section-head reveal">
+        <p class="section-kicker">BEYOND THE MAP / 07</p>
+        <h2>Side<br><em>Quests.</em></h2>
+      </div>
+      <div class="beyond-grid">
+        <div class="hobbies">
+          <p class="mini-label">HOBBIES</p>
+          <div class="hobby">DANCE <span>01</span></div>
+          <div class="hobby">BADMINTON <span>02</span></div>
+          <div class="hobby">COOKING <span>03</span></div>
+          <div class="hobby">LEARNING NEW LANGUAGES <span>04</span></div>
+        </div>
+        <div class="honors">
+          <p class="mini-label">HONORS & MILESTONES</p>
+          <article><b>Junior Fellow — RoundPier Summer Immersion</b><p>Selected through a 7% acceptance rate; received the Best Presentation Award for Social Impact.</p></article>
+          <article><b>NGFP Young Voices Award</b><p>Global Rank #30 for innovation and impact among next-generation leaders.</p></article>
+          <article><b>Conrad Challenge — Innovator</b><p>Explored ideas and solutions to real-world challenges through entrepreneurship and innovation.</p></article>
+          <article><b>ESSEC Case Competition for High School Future Leaders — Participant</b><p>Worked on a real-life case challenge and participated in 7 entrepreneurial and sustainability workshops taught by professors and entrepreneurs.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <div class="contact-top reveal">
+        <p class="section-kicker">NEXT DESTINATIONS / 07</p>
+        <h2>Where to <em>next?</em></h2>
+        <p>The atlas doesn't end here. These are the routes that continue outside the portfolio.</p>
+      </div>
+      <div class="link-map">
+        <a class="internet-link youtube" href="https://www.youtube.com/@DearDiaryWereCool" target="_blank" rel="noopener"><span>01</span><strong>YouTube</strong><small>WATCH THE JOURNEY</small><i>↗</i></a>
+        <a class="internet-link github" href="https://github.com/jagruthig2020-ship-it" target="_blank" rel="noopener"><span>02</span><strong>GitHub</strong><small>PROJECTS + CODE</small><i>↗</i></a>
+        <a class="internet-link linkedin" href="https://www.linkedin.com/in/jagruthi-guttula-a20811277?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener"><span>03</span><strong>LinkedIn</strong><small>PROFESSIONAL PROFILE</small><i>↗</i></a>
+        <a class="internet-link email" href="mailto:jagruthig2020@gmail.com"><span>04</span><strong>Email</strong><small>SAY HELLO</small><i>↗</i></a>
+      </div>
+      
+    <a id="shared-route-highlight" class="shared-route-highlight" href="https://desharajudevihasini.github.io/portfolio/" target="_blank" rel="noopener">
+      <div class="shared-route-kicker">SHARED ROUTE / 05</div>
+      <div class="shared-route-main">
+        <div>
+          <span class="shared-route-label">THIS MAP HAS A FEW SHARED ROUTES.</span>
+          <h3>Jagruthi <span>→</span> Hasini</h3>
+          <p>A fellow traveller's portfolio. Explore her map.</p>
+        </div>
+        <div class="shared-route-arrow">↗</div>
+      </div>
+      <div class="shared-route-cta">EXPLORE HER PORTFOLIO</div>
+    </a>
+
+<footer>
+        <a class="footer-route" href="https://desharajudevihasini.github.io/portfolio/" target="_blank" rel="noopener">This map has a few shared routes. Jagruthi → Hasini ↗</a>
+        <span>© 2026 / PERSONAL ATLAS</span>
+        <span>END OF CURRENT MAP ✦</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
