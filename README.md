@@ -31,7 +31,7 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-The soundtrack is an original, instrumental psychedelic groove in `assets/portfolio_psychedelic_original.mp3`. Click **PLAY MUSIC** to hear it: browsers block automatic audio playback. **MY TRACK** lets you choose an audio file from your own computer; it plays locally and is never uploaded. The contact form prepares an email draft; it does not silently send or store messages.
+The soundtrack is an original, instrumental psychedelic groove in `assets/portfolio_soundtrack_v3.mp3`. Click **PLAY MUSIC** in the header or **PLAY** in the bottom-right music player. The volume slider starts at 100%, and **TEST AUDIO** opens the MP3 directly if your browser does not play it. Browsers block automatic audio playback. **MY TRACK** lets you choose an audio file from your own computer; it plays locally and is never uploaded. The contact form prepares an email draft; it does not silently send or store messages.
 
 ## A note on the visuals
 

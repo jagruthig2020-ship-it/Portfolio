@@ -495,7 +495,26 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
 @media(max-width:900px){.offclock-section .scrapbook{height:1250px!important}.offclock-section .scrap{width:43vw!important;max-width:330px;min-width:145px}.offclock-section .scrap-dance{left:2%!important;top:5%!important}.offclock-section .scrap-sky{left:51%!important;top:19%!important}.offclock-section .scrap-music{left:2%!important;top:38%!important}.offclock-section .scrap-night{left:51%!important;top:55%!important}.offclock-section .scrap-sunset{left:7%!important;top:75%!important}.offclock-section .sticker-scribble{display:none}.sunset-reel{grid-template-columns:repeat(2,minmax(0,1fr))}.sunset-reel figure{height:clamp(250px,55vw,420px)}.roadster-content{grid-template-columns:1fr!important}.roadster-image img{height:clamp(250px,56vw,430px)!important}}
 @media(max-width:500px){.off-main{display:block!important}.offclock-section .scrapbook{height:1470px!important;margin-top:30px}.offclock-section .scrap{min-width:0;width:64vw!important;max-width:290px}.offclock-section .scrap-art{height:250px!important}.offclock-section .scrap-dance{left:4%!important;top:2%!important}.offclock-section .scrap-sky{left:33%!important;top:19%!important}.offclock-section .scrap-music{left:4%!important;top:38%!important}.offclock-section .scrap-night{left:33%!important;top:57%!important}.offclock-section .scrap-sunset{left:4%!important;top:76%!important}.sunset-gallery-heading{display:block}.sunset-gallery-heading strong{display:block;text-align:left;margin-top:8px}.sunset-reel{gap:8px}.sunset-reel figure{height:260px}.sunset-reel figcaption{font-size:8px;padding:40px 8px 10px}.roadster-image img{height:265px!important}}
 @media(prefers-reduced-motion:reduce){.roadster-image{animation:none!important}.sunset-reel img,.scrap-art img{transition:none!important}}
-</style></head>
+</style><style>
+
+/* Small persistent player: explicit playback controls and readable error state. */
+.music-dock{position:fixed;right:18px;bottom:18px;z-index:895;width:min(325px,calc(100vw - 32px));padding:13px 15px 11px;border:1px solid rgba(255,83,94,.34);border-radius:12px;background:rgba(11,11,15,.94);color:#f7f5f4;box-shadow:0 18px 70px rgba(0,0,0,.4);backdrop-filter:blur(18px);font-family:var(--mono,monospace)}
+.music-dock-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.music-dock-name{font-size:10px;font-weight:600;letter-spacing:.15em;color:#edc9cb;line-height:1.3}
+.music-dock-play{flex-shrink:0;background:#e32435;color:#fff;font:600 11px var(--mono,monospace);padding:9px 13px;border:0;border-radius:5px;min-width:93px;transition:background .2s}
+.music-dock-play:hover{background:#ff3245}
+.music-dock-bottom{display:flex;align-items:center;gap:9px;margin-top:11px}
+.music-dock-bottom label{font-size:10px;letter-spacing:.07em;color:#edc9cb}
+.music-dock-volume{min-width:50px;width:100%;flex:1;accent-color:#ed2839;cursor:pointer}
+.music-volume-number{min-width:35px;font:10px var(--mono,monospace);color:#efefef;text-align:right}
+.music-audio-test{font-size:10px;white-space:nowrap;color:#ff7d85;text-decoration:underline;text-underline-offset:3px}
+.music-audio-status{font-size:10px;line-height:1.45;color:#c1b9bd;margin:9px 0 0;min-height:14px}
+.music-audio-status.is-error{color:#ff8a91}
+.music-dock.is-playing .music-dock-name::before{content:'●';color:#ff4257;margin-right:8px;animation:music-indicator 1s ease-in-out infinite alternate}
+@keyframes music-indicator{from{opacity:.35}to{opacity:1}}
+@media(max-width:520px){.music-dock{right:10px;bottom:10px;width:min(300px,calc(100vw - 20px));padding:10px 12px}.music-dock-name{font-size:9px}}
+</style>
+</head>
 <body>
 <div id="loader" class="loader loader-v3" aria-label="Jagruthi portfolio loading">
   <canvas id="loader-threads" class="loader-canvas" aria-hidden="true"></canvas>
@@ -515,7 +534,7 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
  <div class="header-actions"><button id="game-toggle" class="control game-toggle" type="button" title="Enter the interactive side quest">↗ GAME MODE <i aria-hidden="true"></i></button><button id="music-toggle" class="control" type="button" title="Play/pause original psychedelic instrumental" aria-label="Play background instrumental" aria-pressed="false">♫ <span id="music-label">PLAY MUSIC</span></button><button id="music-custom" class="control" type="button" title="Choose an audio file from your device (not uploaded)" aria-label="Choose your own audio file">MY TRACK</button><button id="theme-toggle" class="control" aria-label="Toggle theme" type="button">☼ <span>LIGHT</span></button><button id="menu-toggle" class="control mobile-menu" type="button" aria-label="Open navigation">☰</button></div>
 </header>
 <div id="mobile-panel" class="mobile-panel" hidden><a href="#home">HOME</a><a href="#journey">JOURNEY</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#offclock">OFF THE CLOCK</a><a href="#contact">HELLO</a></div>
-<input type="file" id="music-file" accept="audio/*" hidden /><audio id="soundtrack" src="assets/portfolio_psychedelic_original.mp3" loop preload="metadata"></audio>
+<input type="file" id="music-file" accept="audio/*" hidden /><audio id="soundtrack" src="assets/portfolio_soundtrack_v3.mp3" loop preload="auto" playsinline></audio>
 <main>
  <!-- 01: a motion-led editorial introduction, not a generic 3D-orb hero -->
  <section id="home" class="hero-section hero-v3">
@@ -746,27 +765,8 @@ const webCanvas=$('#web-fx'),webCtx=webCanvas.getContext('2d');let webTrail=[],l
 function fitWeb(){let d=Math.min(devicePixelRatio||1,2);webW=innerWidth;webH=innerHeight;webCanvas.width=Math.floor(webW*d);webCanvas.height=Math.floor(webH*d);webCtx.setTransform(d,0,0,d,0,0)}fitWeb();window.addEventListener('resize',fitWeb);
 if(!reduceMotion){window.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;webTrail.unshift({x:e.clientX,y:e.clientY});webTrail=webTrail.slice(0,18);lastWebMove=performance.now()},{passive:true});function drawWeb(t){webCtx.clearRect(0,0,webW,webH);let fade=clamp(1-(t-lastWebMove)/850,0,1);if(fade>.01&&webTrail.length>2){for(let strand=0;strand<3;strand++){webCtx.beginPath();webTrail.forEach((pt,i)=>{const shift=Math.sin(i*.65+strand*2.1)*i*1.25;let x=pt.x+shift,y=pt.y+strand*i*.34;if(!i)webCtx.moveTo(x,y);else webCtx.lineTo(x,y)});webCtx.lineWidth=strand===0?1.25:.55;webCtx.strokeStyle=strand===0?`rgba(213,12,26,${fade*.6})`:`rgba(240,240,240,${fade*.27})`;webCtx.stroke()}for(let i=2;i<webTrail.length-2;i+=3){const pt=webTrail[i],prev=webTrail[i-1],dx=pt.x-prev.x,dy=pt.y-prev.y,mag=Math.hypot(dx,dy)||1,nx=-dy/mag,ny=dx/mag,d=(5+i*.7)*fade;webCtx.strokeStyle=`rgba(243,243,243,${fade*.24})`;webCtx.lineWidth=.75;webCtx.beginPath();webCtx.moveTo(pt.x+nx*d,pt.y+ny*d);webCtx.lineTo(pt.x-nx*d,pt.y-ny*d);webCtx.stroke()}}requestAnimationFrame(drawWeb)}requestAnimationFrame(drawWeb)}
 const art=$('#hero-art');art.addEventListener('pointermove',e=>{if(reduceMotion)return;let r=art.getBoundingClientRect();let dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;art.style.transform=`rotateY(${dx*13}deg) rotateX(${-dy*10}deg) translate3d(${dx*8}px,${dy*8}px,0)`});art.addEventListener('pointerleave',()=>art.style.transform='');
-// Original background music: browsers require a real user click to start audio.
-// Visitors can optionally play a file from their own device; it is never uploaded.
-const audio=$('#soundtrack'),musicToggle=$('#music-toggle'),musicFile=$('#music-file'),musicCustom=$('#music-custom');
-let musicUrl=null;
-audio.volume=.65;
-const syncMusic=()=>{const isPlaying=!audio.paused;$('#music-label').textContent=isPlaying?'PAUSE':'PLAY MUSIC';musicToggle.setAttribute('aria-pressed',String(isPlaying));musicToggle.setAttribute('aria-label',isPlaying?'Pause background music':'Play background music')};
-musicToggle.addEventListener('click',async()=>{
- if(audio.paused){try{await audio.play()}catch(e){console.warn('Music playback failed:',e);$('#music-label').textContent='TRY AGAIN'}}else{audio.pause()}
- syncMusic();
-});
-audio.addEventListener('play',syncMusic);audio.addEventListener('pause',syncMusic);
-audio.addEventListener('error',()=>{console.warn('Audio file could not load:',audio.currentSrc);$('#music-label').textContent='MUSIC ERROR'});
-musicCustom.addEventListener('click',()=>musicFile.click());
-musicFile.addEventListener('change',async()=>{
- if(!musicFile.files?.length)return;
- if(musicUrl)URL.revokeObjectURL(musicUrl);
- musicUrl=URL.createObjectURL(musicFile.files[0]);
- audio.pause();audio.src=musicUrl;audio.load();
- try{await audio.play()}catch(e){console.warn('Chosen audio file could not play:',e);$('#music-label').textContent='PLAY MUSIC'}
- syncMusic();
-});
+// Music player is initialized independently at the end of the page,
+// so a failure elsewhere in the animated site cannot disable playback.
 // A true scroll-following route: marker travels an SVG path and map pans under it.
 const journey=$('#journey'),world=$('#journey-world'),svgPath=$('#map-path-base'),progressPath=$('#map-path-progress'),marker=$('#moving-marker'),stopCard=$('.journey-stop');
 const swingLine=$('#web-swing-line'),swingGhost=$('#web-swing-ghost');const pathLen=svgPath.getTotalLength();progressPath.style.strokeDasharray=pathLen+' '+pathLen;progressPath.style.strokeDashoffset=pathLen;
@@ -1310,5 +1310,104 @@ syncHud();burstBtn.disabled=true;
 })();
 </script>
 <script>(function(){const e=document.getElementById('field-notes');if(!e)return;const obs=new IntersectionObserver(([x])=>{if(x.isIntersecting)e.classList.add('in');},{threshold:.13});obs.observe(e);})();</script>
+
+<!-- Separate from the animation engine, so background music works even if an animation errors. -->
+<aside class="music-dock" id="music-dock" aria-label="Original soundtrack player">
+  <div class="music-dock-top">
+    <span class="music-dock-name">ORIGINAL SOUNDTRACK</span>
+    <button class="music-dock-play" id="music-dock-play" type="button" aria-label="Play original portfolio soundtrack">▶ PLAY</button>
+  </div>
+  <div class="music-dock-bottom">
+    <label for="music-dock-volume">VOL</label>
+    <input class="music-dock-volume" id="music-dock-volume" type="range" min="0" max="100" step="5" value="100" aria-label="Music volume" />
+    <span class="music-volume-number" id="music-dock-percent">100%</span>
+    <a class="music-audio-test" href="assets/portfolio_soundtrack_v3.mp3" target="_blank" rel="noopener noreferrer" title="Open the music file to test audio in this browser">TEST AUDIO</a>
+  </div>
+  <p class="music-audio-status" id="music-dock-status" role="status" aria-live="polite">Click PLAY to hear music. Browsers block autoplay.</p>
+</aside>
+
+
+<script id="standalone-music-player">
+/* Independent player: no reliance on effects, carousels, game scripts, or autoplay. */
+(()=>{
+  'use strict';
+  function init(){
+    const audio=document.getElementById('soundtrack');
+    const header=document.getElementById('music-toggle');
+    const headerLabel=document.getElementById('music-label');
+    const dock=document.getElementById('music-dock');
+    const playButton=document.getElementById('music-dock-play');
+    const volume=document.getElementById('music-dock-volume');
+    const volumeText=document.getElementById('music-dock-percent');
+    const status=document.getElementById('music-dock-status');
+    const custom=document.getElementById('music-custom');
+    const file=document.getElementById('music-file');
+    if(!audio||!playButton||!header||!status)return;
+    let fileUrl=null,playingLabel='ORIGINAL SOUNDTRACK';
+    audio.muted=false;
+    audio.volume=1;
+
+    function say(message,failed=false){status.textContent=message;status.classList.toggle('is-error',!!failed)}
+    function sync(){
+      const playing=!audio.paused&&!audio.ended;
+      dock.classList.toggle('is-playing',playing);
+      playButton.textContent=playing?'Ⅱ PAUSE':'▶ PLAY';
+      headerLabel.textContent=playing?'PAUSE MUSIC':'PLAY MUSIC';
+      header.setAttribute('aria-pressed',String(playing));
+      playButton.setAttribute('aria-pressed',String(playing));
+      if(playing){say('Playing '+playingLabel.toLowerCase()+' • volume '+Math.round(audio.volume*100)+'%');}
+    }
+    function toggle(){
+      if(!audio.paused&&!audio.ended){audio.pause();say('Paused. Click PLAY to continue.');sync();return;}
+      audio.muted=false;
+      if(audio.volume===0){audio.volume=1;volume.value=100;volumeText.textContent='100%';}
+      say('Loading audio…');
+      // Call play() directly within the user click (not after an await).
+      try{
+        const result=audio.play();
+        if(result&&typeof result.catch==='function'){
+          result.then(()=>sync()).catch(e=>{
+            sync();
+            say('Audio blocked ('+(e&&e.name?e.name:'playback error')+'). Try TEST AUDIO or unmute this tab.',true);
+          });
+        } else {sync();}
+      } catch(e){sync();say('Could not start audio. Try TEST AUDIO or unmute this tab.',true);}
+    }
+    header.addEventListener('click',toggle);
+    playButton.addEventListener('click',toggle);
+    volume.addEventListener('input',()=>{
+      audio.volume=Number(volume.value)/100;
+      audio.muted=false;
+      volumeText.textContent=volume.value+'%';
+      if(!audio.paused)say('Playing '+playingLabel.toLowerCase()+' • volume '+volume.value+'%');
+    });
+    audio.addEventListener('play',sync);
+    audio.addEventListener('playing',sync);
+    audio.addEventListener('pause',sync);
+    audio.addEventListener('volumechange',()=>{volume.value=Math.round(audio.volume*100);volumeText.textContent=volume.value+'%';});
+    audio.addEventListener('waiting',()=>say('Loading audio…'));
+    audio.addEventListener('stalled',()=>say('Audio stalled. Check connection, or try TEST AUDIO.',true));
+    audio.addEventListener('error',()=>{
+      const code=audio.error?.code||'?';
+      say('The soundtrack could not load (error '+code+'). Try TEST AUDIO.',true);
+    });
+    if(custom&&file){
+      custom.addEventListener('click',()=>file.click());
+      file.addEventListener('change',()=>{
+        if(!file.files||!file.files[0])return;
+        if(fileUrl)URL.revokeObjectURL(fileUrl);
+        fileUrl=URL.createObjectURL(file.files[0]);
+        playingLabel='YOUR TRACK';
+        audio.pause();audio.src=fileUrl;audio.load();toggle();
+      });
+    }
+    sync();
+    say('Click PLAY to hear music. Browsers block autoplay.');
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+})();
+</script>
+
 </body>
 </html>
