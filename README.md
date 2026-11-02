@@ -4,7 +4,7 @@ I wasn't particularly interested in computer science when I first started. That 
 
 This is my personal corner of the internet. It's part portfolio, part collection of experiments, and a little bit of an excuse to try interesting web interactions. I wanted the projects to feel like things you can explore, rather than a list of screenshots.
 
-**[Visit the portfolio](https://jagruthig2020-ship-it.github.io/Portfolio/)** · [GitHub](https://github.com/jagruthig2020-ship-it) · [LinkedIn](https://www.linkedin.com/in/jagruthi-guttula-a20811277) · [Résumé](Jagruthi_Guttula_Resume_Nov2026.pdf)
+**[Visit the portfolio](https://jagruthig2020-ship-it.github.io/Portfolio/)** · [GitHub](https://github.com/jagruthig2020-ship-it) · [LinkedIn](https://www.linkedin.com/in/jagruthi-guttula-a20811277) · [Résumé](Jagruthi_Guttula_Resume_2026-11-02.pdf)
 
 ## What's here
 
@@ -31,7 +31,7 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-The soundtrack is a short original ambient loop in `assets/original_ambient.ogg`. Browsers require you to click the sound control before it plays. The contact form prepares an email draft; it does not silently send or store messages.
+The soundtrack is an original, instrumental psychedelic groove in `assets/portfolio_psychedelic_original.mp3`. Click **PLAY MUSIC** to hear it: browsers block automatic audio playback. **MY TRACK** lets you choose an audio file from your own computer; it plays locally and is never uploaded. The contact form prepares an email draft; it does not silently send or store messages.
 
 ## A note on the visuals
 

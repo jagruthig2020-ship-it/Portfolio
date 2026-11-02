@@ -461,6 +461,8 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
   .header-actions .control{padding:8px 6px}
 }
 
+#music-custom{font:500 9px var(--mono);letter-spacing:.05em;white-space:nowrap;padding:10px 9px}
+@media(max-width:780px){#music-custom{font-size:0!important;min-width:32px}#music-custom:before{content:'♫+';font-size:13px;line-height:1}}
 </style>
 <style id="final-photo-update">
 :root{--webred:#d91f27}
@@ -510,10 +512,10 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
 <header class="site-head" id="site-head">
  <a href="#home" class="logo" aria-label="Return to homepage"><span class="logo-asterisk">✳</span> JAGRUTHI<span class="logo-period">.</span></a>
  <nav class="nav-links" aria-label="Sections"><a href="#journey">JOURNEY</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#offclock">OFF THE CLOCK</a><a href="#contact">HELLO</a></nav>
- <div class="header-actions"><button id="game-toggle" class="control game-toggle" type="button" title="Enter the interactive side quest">↗ GAME MODE <i aria-hidden="true"></i></button><button id="music-toggle" class="control" type="button" title="Play or pause an original ambient soundtrack">♫ <span id="music-label">SOUND</span></button><button id="theme-toggle" class="control" aria-label="Toggle theme" type="button">☼ <span>LIGHT</span></button><button id="menu-toggle" class="control mobile-menu" type="button" aria-label="Open navigation">☰</button></div>
+ <div class="header-actions"><button id="game-toggle" class="control game-toggle" type="button" title="Enter the interactive side quest">↗ GAME MODE <i aria-hidden="true"></i></button><button id="music-toggle" class="control" type="button" title="Play/pause original psychedelic instrumental" aria-label="Play background instrumental" aria-pressed="false">♫ <span id="music-label">PLAY MUSIC</span></button><button id="music-custom" class="control" type="button" title="Choose an audio file from your device (not uploaded)" aria-label="Choose your own audio file">MY TRACK</button><button id="theme-toggle" class="control" aria-label="Toggle theme" type="button">☼ <span>LIGHT</span></button><button id="menu-toggle" class="control mobile-menu" type="button" aria-label="Open navigation">☰</button></div>
 </header>
 <div id="mobile-panel" class="mobile-panel" hidden><a href="#home">HOME</a><a href="#journey">JOURNEY</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#offclock">OFF THE CLOCK</a><a href="#contact">HELLO</a></div>
-<input type="file" id="music-file" accept="audio/*" hidden /><audio id="soundtrack" src="assets/original_ambient.ogg" loop preload="none"></audio>
+<input type="file" id="music-file" accept="audio/*" hidden /><audio id="soundtrack" src="assets/portfolio_psychedelic_original.mp3" loop preload="metadata"></audio>
 <main>
  <!-- 01: a motion-led editorial introduction, not a generic 3D-orb hero -->
  <section id="home" class="hero-section hero-v3">
@@ -547,7 +549,7 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
         <a href="https://github.com/jagruthig2020-ship-it" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
         <a href="https://www.linkedin.com/in/jagruthi-guttula-a20811277" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
         <a href="mailto:jagruthig2020@gmail.com" aria-label="Email Jagruthi at jagruthig2020@gmail.com">Email <span>↗</span></a>
-        <a href="Jagruthi_Guttula_Resume_Nov2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Jagruthi Guttula resume PDF">Resume <span>↗</span></a>
+        <a href="Jagruthi_Guttula_Resume_2026-11-02.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Jagruthi Guttula resume PDF">Resume <span>↗</span></a>
       </div></div>
       <div class="current-focus-chip"><span class="focus-chip-live"></span><span><b>BUILDING NOW</b> — TESLA ROADSTER DEMO</span><a href="#current-focus">SEE THE PLAN ↗</a></div><div class="game-invite"><span class="game-invite-id">OPTIONAL SIDE QUEST / 01</span><button type="button" id="game-hero">ENTER GAME MODE <span>↗</span></button></div>
     </div>
@@ -744,7 +746,27 @@ const webCanvas=$('#web-fx'),webCtx=webCanvas.getContext('2d');let webTrail=[],l
 function fitWeb(){let d=Math.min(devicePixelRatio||1,2);webW=innerWidth;webH=innerHeight;webCanvas.width=Math.floor(webW*d);webCanvas.height=Math.floor(webH*d);webCtx.setTransform(d,0,0,d,0,0)}fitWeb();window.addEventListener('resize',fitWeb);
 if(!reduceMotion){window.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;webTrail.unshift({x:e.clientX,y:e.clientY});webTrail=webTrail.slice(0,18);lastWebMove=performance.now()},{passive:true});function drawWeb(t){webCtx.clearRect(0,0,webW,webH);let fade=clamp(1-(t-lastWebMove)/850,0,1);if(fade>.01&&webTrail.length>2){for(let strand=0;strand<3;strand++){webCtx.beginPath();webTrail.forEach((pt,i)=>{const shift=Math.sin(i*.65+strand*2.1)*i*1.25;let x=pt.x+shift,y=pt.y+strand*i*.34;if(!i)webCtx.moveTo(x,y);else webCtx.lineTo(x,y)});webCtx.lineWidth=strand===0?1.25:.55;webCtx.strokeStyle=strand===0?`rgba(213,12,26,${fade*.6})`:`rgba(240,240,240,${fade*.27})`;webCtx.stroke()}for(let i=2;i<webTrail.length-2;i+=3){const pt=webTrail[i],prev=webTrail[i-1],dx=pt.x-prev.x,dy=pt.y-prev.y,mag=Math.hypot(dx,dy)||1,nx=-dy/mag,ny=dx/mag,d=(5+i*.7)*fade;webCtx.strokeStyle=`rgba(243,243,243,${fade*.24})`;webCtx.lineWidth=.75;webCtx.beginPath();webCtx.moveTo(pt.x+nx*d,pt.y+ny*d);webCtx.lineTo(pt.x-nx*d,pt.y-ny*d);webCtx.stroke()}}requestAnimationFrame(drawWeb)}requestAnimationFrame(drawWeb)}
 const art=$('#hero-art');art.addEventListener('pointermove',e=>{if(reduceMotion)return;let r=art.getBoundingClientRect();let dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;art.style.transform=`rotateY(${dx*13}deg) rotateX(${-dy*10}deg) translate3d(${dx*8}px,${dy*8}px,0)`});art.addEventListener('pointerleave',()=>art.style.transform='');
-const audio=$('#soundtrack'),musicToggle=$('#music-toggle'),musicFile=$('#music-file');let musicUrl=null;musicToggle.addEventListener('click',async()=>{if(!audio.src){musicFile.click();return}if(audio.paused){try{await audio.play();$('#music-label').textContent='PAUSE'}catch(e){$('#music-label').textContent='PLAY'}}else{audio.pause();$('#music-label').textContent='PLAY'}});musicFile.addEventListener('change',async()=>{if(!musicFile.files?.length)return;if(musicUrl)URL.revokeObjectURL(musicUrl);musicUrl=URL.createObjectURL(musicFile.files[0]);audio.src=musicUrl;try{await audio.play();$('#music-label').textContent='PAUSE'}catch(e){$('#music-label').textContent='PLAY'}});
+// Original background music: browsers require a real user click to start audio.
+// Visitors can optionally play a file from their own device; it is never uploaded.
+const audio=$('#soundtrack'),musicToggle=$('#music-toggle'),musicFile=$('#music-file'),musicCustom=$('#music-custom');
+let musicUrl=null;
+audio.volume=.65;
+const syncMusic=()=>{const isPlaying=!audio.paused;$('#music-label').textContent=isPlaying?'PAUSE':'PLAY MUSIC';musicToggle.setAttribute('aria-pressed',String(isPlaying));musicToggle.setAttribute('aria-label',isPlaying?'Pause background music':'Play background music')};
+musicToggle.addEventListener('click',async()=>{
+ if(audio.paused){try{await audio.play()}catch(e){console.warn('Music playback failed:',e);$('#music-label').textContent='TRY AGAIN'}}else{audio.pause()}
+ syncMusic();
+});
+audio.addEventListener('play',syncMusic);audio.addEventListener('pause',syncMusic);
+audio.addEventListener('error',()=>{console.warn('Audio file could not load:',audio.currentSrc);$('#music-label').textContent='MUSIC ERROR'});
+musicCustom.addEventListener('click',()=>musicFile.click());
+musicFile.addEventListener('change',async()=>{
+ if(!musicFile.files?.length)return;
+ if(musicUrl)URL.revokeObjectURL(musicUrl);
+ musicUrl=URL.createObjectURL(musicFile.files[0]);
+ audio.pause();audio.src=musicUrl;audio.load();
+ try{await audio.play()}catch(e){console.warn('Chosen audio file could not play:',e);$('#music-label').textContent='PLAY MUSIC'}
+ syncMusic();
+});
 // A true scroll-following route: marker travels an SVG path and map pans under it.
 const journey=$('#journey'),world=$('#journey-world'),svgPath=$('#map-path-base'),progressPath=$('#map-path-progress'),marker=$('#moving-marker'),stopCard=$('.journey-stop');
 const swingLine=$('#web-swing-line'),swingGhost=$('#web-swing-ghost');const pathLen=svgPath.getTotalLength();progressPath.style.strokeDasharray=pathLen+' '+pathLen;progressPath.style.strokeDashoffset=pathLen;
