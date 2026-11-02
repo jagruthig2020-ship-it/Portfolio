@@ -4,7 +4,7 @@ I wasn't particularly interested in computer science when I first started. That 
 
 This is my personal corner of the internet. It's part portfolio, part collection of experiments, and a little bit of an excuse to try interesting web interactions. I wanted the projects to feel like things you can explore, rather than a list of screenshots.
 
-**[Visit the portfolio](https://jagruthig2020-ship-it.github.io/Portfolio/)** · [GitHub](https://github.com/jagruthig2020-ship-it) · [LinkedIn](https://www.linkedin.com/in/jagruthi-guttula-a20811277) · [Résumé](Jagruthi_Guttula_Resume.pdf)
+**[Visit the portfolio](https://jagruthig2020-ship-it.github.io/Portfolio/)** · [GitHub](https://github.com/jagruthig2020-ship-it) · [LinkedIn](https://www.linkedin.com/in/jagruthi-guttula-a20811277) · [Résumé](Jagruthi_Guttula_Resume_Nov2026.pdf)
 
 ## What's here
 
