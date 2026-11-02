@@ -496,24 +496,20 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
 @media(max-width:500px){.off-main{display:block!important}.offclock-section .scrapbook{height:1470px!important;margin-top:30px}.offclock-section .scrap{min-width:0;width:64vw!important;max-width:290px}.offclock-section .scrap-art{height:250px!important}.offclock-section .scrap-dance{left:4%!important;top:2%!important}.offclock-section .scrap-sky{left:33%!important;top:19%!important}.offclock-section .scrap-music{left:4%!important;top:38%!important}.offclock-section .scrap-night{left:33%!important;top:57%!important}.offclock-section .scrap-sunset{left:4%!important;top:76%!important}.sunset-gallery-heading{display:block}.sunset-gallery-heading strong{display:block;text-align:left;margin-top:8px}.sunset-reel{gap:8px}.sunset-reel figure{height:260px}.sunset-reel figcaption{font-size:8px;padding:40px 8px 10px}.roadster-image img{height:265px!important}}
 @media(prefers-reduced-motion:reduce){.roadster-image{animation:none!important}.sunset-reel img,.scrap-art img{transition:none!important}}
 </style><style>
-
-/* Small persistent player: explicit playback controls and readable error state. */
-.music-dock{position:fixed;right:18px;bottom:18px;z-index:895;width:min(325px,calc(100vw - 32px));padding:13px 15px 11px;border:1px solid rgba(255,83,94,.34);border-radius:12px;background:rgba(11,11,15,.94);color:#f7f5f4;box-shadow:0 18px 70px rgba(0,0,0,.4);backdrop-filter:blur(18px);font-family:var(--mono,monospace)}
-.music-dock-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.music-dock-name{font-size:10px;font-weight:600;letter-spacing:.15em;color:#edc9cb;line-height:1.3}
-.music-dock-play{flex-shrink:0;background:#e32435;color:#fff;font:600 11px var(--mono,monospace);padding:9px 13px;border:0;border-radius:5px;min-width:93px;transition:background .2s}
-.music-dock-play:hover{background:#ff3245}
-.music-dock-bottom{display:flex;align-items:center;gap:9px;margin-top:11px}
-.music-dock-bottom label{font-size:10px;letter-spacing:.07em;color:#edc9cb}
-.music-dock-volume{min-width:50px;width:100%;flex:1;accent-color:#ed2839;cursor:pointer}
-.music-volume-number{min-width:35px;font:10px var(--mono,monospace);color:#efefef;text-align:right}
-.music-audio-test{font-size:10px;white-space:nowrap;color:#ff7d85;text-decoration:underline;text-underline-offset:3px}
-.music-audio-status{font-size:10px;line-height:1.45;color:#c1b9bd;margin:9px 0 0;min-height:14px}
-.music-audio-status.is-error{color:#ff8a91}
-.music-dock.is-playing .music-dock-name::before{content:'●';color:#ff4257;margin-right:8px;animation:music-indicator 1s ease-in-out infinite alternate}
-@keyframes music-indicator{from{opacity:.35}to{opacity:1}}
-@media(max-width:520px){.music-dock{right:10px;bottom:10px;width:min(300px,calc(100vw - 20px));padding:10px 12px}.music-dock-name{font-size:9px}}
+/* Audio only: no video and no oversized player. The visitor controls playback. */
+.audio-only-dock{position:fixed;right:18px;bottom:18px;z-index:895;max-width:min(300px,calc(100vw - 28px));font:500 11px var(--mono,monospace);color:#f6f4f4}
+.audio-only-btn{display:flex;align-items:center;justify-content:center;gap:9px;padding:12px 16px;border:1px solid rgba(247,83,99,.55);border-radius:100px;background:#151315;color:#f7eeee;box-shadow:0 6px 28px rgba(0,0,0,.35);letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(12px)}
+.audio-only-btn:hover,.audio-only-btn:focus-visible{border-color:#ff5c66;background:#301316}
+.audio-only-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.audio-only-btn .audio-pulse{height:7px;width:7px;border-radius:50%;background:#9b8585;display:inline-block}
+.audio-only-dock.is-playing .audio-pulse{background:#f83149;box-shadow:0 0 10px #fa203a;animation:audio-pulse 1s ease-in-out infinite alternate}
+@keyframes audio-pulse{from{opacity:.35}to{opacity:1}}
+.audio-only-status{position:absolute;right:0;bottom:calc(100% + 9px);width:295px;max-width:calc(100vw - 35px);padding:9px 12px;border-radius:8px;background:#21181b;border:1px solid #a53c47;color:#fff;font:500 11px/1.5 var(--mono,monospace);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.audio-only-status[hidden]{display:none!important}
+@media(max-width:600px){.audio-only-dock{bottom:12px;right:12px}.audio-only-btn{padding:11px 13px}}
+@media(prefers-reduced-motion:reduce){.audio-only-dock.is-playing .audio-pulse{animation:none}}
 </style>
+
 </head>
 <body>
 <div id="loader" class="loader loader-v3" aria-label="Jagruthi portfolio loading">
@@ -531,10 +527,10 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
 <header class="site-head" id="site-head">
  <a href="#home" class="logo" aria-label="Return to homepage"><span class="logo-asterisk">✳</span> JAGRUTHI<span class="logo-period">.</span></a>
  <nav class="nav-links" aria-label="Sections"><a href="#journey">JOURNEY</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#offclock">OFF THE CLOCK</a><a href="#contact">HELLO</a></nav>
- <div class="header-actions"><button id="game-toggle" class="control game-toggle" type="button" title="Enter the interactive side quest">↗ GAME MODE <i aria-hidden="true"></i></button><button id="music-toggle" class="control" type="button" title="Play/pause original psychedelic instrumental" aria-label="Play background instrumental" aria-pressed="false">♫ <span id="music-label">PLAY MUSIC</span></button><button id="music-custom" class="control" type="button" title="Choose an audio file from your device (not uploaded)" aria-label="Choose your own audio file">MY TRACK</button><button id="theme-toggle" class="control" aria-label="Toggle theme" type="button">☼ <span>LIGHT</span></button><button id="menu-toggle" class="control mobile-menu" type="button" aria-label="Open navigation">☰</button></div>
+ <div class="header-actions"><button id="game-toggle" class="control game-toggle" type="button" title="Enter the interactive side quest">↗ GAME MODE <i aria-hidden="true"></i></button><button id="music-toggle" class="control" type="button" title="Play/pause selected instrumental" aria-label="Play selected instrumental" aria-pressed="false">♫ <span id="music-label">PLAY MUSIC</span></button><button id="music-custom" class="control" type="button" title="Choose an audio file from your device (not uploaded)" aria-label="Choose your own audio file">MY TRACK</button><button id="theme-toggle" class="control" aria-label="Toggle theme" type="button">☼ <span>LIGHT</span></button><button id="menu-toggle" class="control mobile-menu" type="button" aria-label="Open navigation">☰</button></div>
 </header>
 <div id="mobile-panel" class="mobile-panel" hidden><a href="#home">HOME</a><a href="#journey">JOURNEY</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#offclock">OFF THE CLOCK</a><a href="#contact">HELLO</a></div>
-<input type="file" id="music-file" accept="audio/*" hidden /><audio id="soundtrack" src="assets/portfolio_soundtrack_v3.mp3" loop preload="auto" playsinline></audio>
+<input type="file" id="music-file" accept="audio/*" hidden /><audio id="soundtrack" src="assets/portfolio_instrumental_selected_2026-11-02.mp3" loop preload="auto" playsinline></audio>
 <main>
  <!-- 01: a motion-led editorial introduction, not a generic 3D-orb hero -->
  <section id="home" class="hero-section hero-v3">
@@ -1312,102 +1308,86 @@ syncHud();burstBtn.disabled=true;
 <script>(function(){const e=document.getElementById('field-notes');if(!e)return;const obs=new IntersectionObserver(([x])=>{if(x.isIntersecting)e.classList.add('in');},{threshold:.13});obs.observe(e);})();</script>
 
 <!-- Separate from the animation engine, so background music works even if an animation errors. -->
-<aside class="music-dock" id="music-dock" aria-label="Original soundtrack player">
-  <div class="music-dock-top">
-    <span class="music-dock-name">ORIGINAL SOUNDTRACK</span>
-    <button class="music-dock-play" id="music-dock-play" type="button" aria-label="Play original portfolio soundtrack">▶ PLAY</button>
-  </div>
-  <div class="music-dock-bottom">
-    <label for="music-dock-volume">VOL</label>
-    <input class="music-dock-volume" id="music-dock-volume" type="range" min="0" max="100" step="5" value="100" aria-label="Music volume" />
-    <span class="music-volume-number" id="music-dock-percent">100%</span>
-    <a class="music-audio-test" href="assets/portfolio_soundtrack_v3.mp3" target="_blank" rel="noopener noreferrer" title="Open the music file to test audio in this browser">TEST AUDIO</a>
-  </div>
-  <p class="music-audio-status" id="music-dock-status" role="status" aria-live="polite">Click PLAY to hear music. Browsers block autoplay.</p>
+<aside class="audio-only-dock" id="music-dock" aria-label="Background audio controls">
+ <button class="audio-only-btn" id="music-dock-play" type="button" aria-pressed="false" title="Play or pause the selected instrumental">
+  <span class="audio-pulse" aria-hidden="true"></span><span id="mini-audio-label">♫ PLAY MUSIC</span>
+ </button>
+ <p id="music-dock-status" class="audio-only-status" role="status" aria-live="polite" hidden></p>
 </aside>
 
 
 <script id="standalone-music-player">
-/* Independent player: no reliance on effects, carousels, game scripts, or autoplay. */
+/* One native audio element, two small buttons; no video or YouTube player. */
 (()=>{
-  'use strict';
-  function init(){
-    const audio=document.getElementById('soundtrack');
-    const header=document.getElementById('music-toggle');
-    const headerLabel=document.getElementById('music-label');
-    const dock=document.getElementById('music-dock');
-    const playButton=document.getElementById('music-dock-play');
-    const volume=document.getElementById('music-dock-volume');
-    const volumeText=document.getElementById('music-dock-percent');
-    const status=document.getElementById('music-dock-status');
-    const custom=document.getElementById('music-custom');
-    const file=document.getElementById('music-file');
-    if(!audio||!playButton||!header||!status)return;
-    let fileUrl=null,playingLabel='ORIGINAL SOUNDTRACK';
-    audio.muted=false;
-    audio.volume=1;
-
-    function say(message,failed=false){status.textContent=message;status.classList.toggle('is-error',!!failed)}
-    function sync(){
-      const playing=!audio.paused&&!audio.ended;
-      dock.classList.toggle('is-playing',playing);
-      playButton.textContent=playing?'Ⅱ PAUSE':'▶ PLAY';
-      headerLabel.textContent=playing?'PAUSE MUSIC':'PLAY MUSIC';
-      header.setAttribute('aria-pressed',String(playing));
-      playButton.setAttribute('aria-pressed',String(playing));
-      if(playing){say('Playing '+playingLabel.toLowerCase()+' • volume '+Math.round(audio.volume*100)+'%');}
-    }
-    function toggle(){
-      if(!audio.paused&&!audio.ended){audio.pause();say('Paused. Click PLAY to continue.');sync();return;}
-      audio.muted=false;
-      if(audio.volume===0){audio.volume=1;volume.value=100;volumeText.textContent='100%';}
-      say('Loading audio…');
-      // Call play() directly within the user click (not after an await).
-      try{
-        const result=audio.play();
-        if(result&&typeof result.catch==='function'){
-          result.then(()=>sync()).catch(e=>{
-            sync();
-            say('Audio blocked ('+(e&&e.name?e.name:'playback error')+'). Try TEST AUDIO or unmute this tab.',true);
-          });
-        } else {sync();}
-      } catch(e){sync();say('Could not start audio. Try TEST AUDIO or unmute this tab.',true);}
-    }
-    header.addEventListener('click',toggle);
-    playButton.addEventListener('click',toggle);
-    volume.addEventListener('input',()=>{
-      audio.volume=Number(volume.value)/100;
-      audio.muted=false;
-      volumeText.textContent=volume.value+'%';
-      if(!audio.paused)say('Playing '+playingLabel.toLowerCase()+' • volume '+volume.value+'%');
-    });
-    audio.addEventListener('play',sync);
-    audio.addEventListener('playing',sync);
-    audio.addEventListener('pause',sync);
-    audio.addEventListener('volumechange',()=>{volume.value=Math.round(audio.volume*100);volumeText.textContent=volume.value+'%';});
-    audio.addEventListener('waiting',()=>say('Loading audio…'));
-    audio.addEventListener('stalled',()=>say('Audio stalled. Check connection, or try TEST AUDIO.',true));
-    audio.addEventListener('error',()=>{
-      const code=audio.error?.code||'?';
-      say('The soundtrack could not load (error '+code+'). Try TEST AUDIO.',true);
-    });
-    if(custom&&file){
-      custom.addEventListener('click',()=>file.click());
-      file.addEventListener('change',()=>{
-        if(!file.files||!file.files[0])return;
-        if(fileUrl)URL.revokeObjectURL(fileUrl);
-        fileUrl=URL.createObjectURL(file.files[0]);
-        playingLabel='YOUR TRACK';
-        audio.pause();audio.src=fileUrl;audio.load();toggle();
-      });
-    }
-    sync();
-    say('Click PLAY to hear music. Browsers block autoplay.');
+ 'use strict';
+ function init(){
+  const audio=document.getElementById('soundtrack');
+  const header=document.getElementById('music-toggle');
+  const headerLabel=document.getElementById('music-label');
+  const dock=document.getElementById('music-dock');
+  const playButton=document.getElementById('music-dock-play');
+  const miniLabel=document.getElementById('mini-audio-label');
+  const status=document.getElementById('music-dock-status');
+  const custom=document.getElementById('music-custom');
+  const file=document.getElementById('music-file');
+  if(!audio||!header||!playButton||!status||!dock||!miniLabel)return;
+  let fileUrl=null;
+  audio.loop=true;
+  audio.preload='auto';
+  audio.volume=0.85;
+  audio.muted=false;
+  function notify(message){status.textContent=message;status.hidden=false;}
+  function clearNotice(){status.hidden=true;}
+  function sync(){
+   const isPlaying=!audio.paused&&!audio.ended;
+   dock.classList.toggle('is-playing',isPlaying);
+   playButton.setAttribute('aria-pressed',String(isPlaying));
+   header.setAttribute('aria-pressed',String(isPlaying));
+   miniLabel.textContent=isPlaying?'♫ PAUSE MUSIC':'♫ PLAY MUSIC';
+   if(headerLabel)headerLabel.textContent=isPlaying?'PAUSE MUSIC':'PLAY MUSIC';
+   if(isPlaying)clearNotice();
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
-  else init();
+  function toggle(){
+   // Start within the click handler so that normal browser autoplay rules are respected.
+   if(!audio.paused){audio.pause();sync();return;}
+   audio.muted=false;
+   if(audio.volume===0)audio.volume=0.85;
+   clearNotice();
+   try{
+    const started=audio.play();
+    if(started&&typeof started.catch==='function')started.catch(err=>{
+     sync();
+     notify('Could not play the soundtrack ('+(err?.name||'browser error')+'). Check site sound permissions.');
+    });
+   }catch(err){sync();notify('Audio could not start. Check your browser sound settings.');}
+  }
+  header.addEventListener('click',toggle);
+  playButton.addEventListener('click',toggle);
+  audio.addEventListener('play',sync);
+  audio.addEventListener('pause',sync);
+  audio.addEventListener('playing',sync);
+  audio.addEventListener('error',()=>notify('Audio file could not load. Reload the page and try again.'));
+  if(custom&&file){
+   custom.addEventListener('click',()=>file.click());
+   file.addEventListener('change',()=>{
+    if(!file.files||!file.files[0])return;
+    const newUrl=URL.createObjectURL(file.files[0]);
+    audio.pause();
+    if(fileUrl)URL.revokeObjectURL(fileUrl);
+    fileUrl=newUrl;
+    audio.src=fileUrl;
+    audio.load();
+    toggle();
+   });
+  }
+  sync();
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
+ else init();
 })();
 </script>
+
+
 
 </body>
 </html>

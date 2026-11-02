@@ -31,7 +31,7 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-The soundtrack is an original, instrumental psychedelic groove in `assets/portfolio_soundtrack_v3.mp3`. Click **PLAY MUSIC** in the header or **PLAY** in the bottom-right music player. The volume slider starts at 100%, and **TEST AUDIO** opens the MP3 directly if your browser does not play it. Browsers block automatic audio playback. **MY TRACK** lets you choose an audio file from your own computer; it plays locally and is never uploaded. The contact form prepares an email draft; it does not silently send or store messages.
+The background music player uses `assets/portfolio_instrumental_selected_2026-11-02.mp3` (a user-supplied instrumental recording). Visitors can click **PLAY MUSIC** in the header or the small floating music toggle to start or pause it. There is no embedded video. Browsers generally require a click before playing audio. **MY TRACK** lets visitors choose a local audio file they are authorized to use, without uploading it. The contact form prepares an email draft; it does not silently send or store messages.
 
 ## A note on the visuals
 
@@ -40,3 +40,6 @@ The photos of my work, events, and sunsets are from my own collection. Some proj
 The animated sections took inspiration from the wider creative-web world, but I wanted the result to feel tied to my own interests: hardware, software, a little Spider-Man influence, and the fun of trying something unfamiliar.
 
 If you're exploring the projects or want to say hi, you can reach me at **[jagruthig2020@gmail.com](mailto:jagruthig2020@gmail.com)**.
+
+
+The portfolio uses HTML audio, not a hidden YouTube player. For public deployment, only include tracks that you have permission to host and share.
