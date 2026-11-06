@@ -1,0 +1,19 @@
+/* The intricate comic emblem is the single focal point, as in the supplied reference. */
+#home .cover-title{width:min(66vw,780px)!important;max-width:780px!important;margin:-5px auto 0!important}
+#home .cover-mark{width:100%!important;height:auto!important;aspect-ratio:3/2;object-fit:contain;filter:drop-shadow(0 0 28px #6e22b52b)!important}
+#home .comic-sun{display:none!important}
+#home .comic-enter{margin-top:-8px!important}
+.dexterity-link{display:inline-block;margin-top:17px;font:9px/1.5 var(--mono);letter-spacing:.06em;border-bottom:1px solid #a95064;padding:8px 0;color:#e9ccd8;pointer-events:auto}
+.story-project-link{color:#d8bdc8;text-decoration:underline;text-decoration-color:#9b4f65;text-underline-offset:4px;pointer-events:auto}
+.route-copy{pointer-events:auto}.route-copy a:hover{color:#fff}
+.intro-audio-start{position:absolute;z-index:100;left:28px;bottom:25px;background:#120b0bd9;border:1px solid #e2c3bf66;color:#f6e3d4;font:10px monospace;padding:13px 18px;letter-spacing:.08em;cursor:pointer}
+.case-reader{position:fixed;inset:0;width:100%;max-width:none;height:100dvh;max-height:none;margin:0;padding:0;border:0;background:#0c0b0d;color:#f3e9df;overflow:hidden;z-index:4000}
+.case-reader[open]{display:flex;flex-direction:column;animation:reader-in .55s cubic-bezier(.16,1,.3,1)}
+.case-reader::backdrop{background:#070609}
+.reader-bar{height:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 25px;border-bottom:1px solid #65424e;background:#0d0a0e}
+.reader-bar button{background:none;border:0;color:#e5cbd4;font:10px monospace;letter-spacing:.05em;padding:15px 0;cursor:pointer}.reader-bar button:focus-visible{outline:2px solid #e5bc66;outline-offset:3px}.reader-title{font:9px monospace;letter-spacing:.15em;color:#9a818d}
+.reader-frame{flex:1;min-height:0;border:0;width:100%;background:#0c0b0d;transition:opacity .2s}.is-loading .reader-frame{opacity:.2}
+body.case-is-open{overflow:hidden}body.case-is-open .audio-only-dock{visibility:hidden}
+@keyframes reader-in{from{clip-path:polygon(0 0,100% 0,100% 0,0 16%);opacity:.4}to{clip-path:polygon(0 0,100% 0,100% 100%,0 100%);opacity:1}}
+@media(max-width:640px){#home .cover-title{width:91vw!important;max-width:440px!important}#home .comic-enter{margin-top:5px!important}.dexterity-link{font-size:8px;margin-top:7px;padding:5px 0}.reader-bar{padding:0 15px;gap:12px;height:54px;flex-basis:54px}.reader-title{display:none}.reader-bar button{font-size:9px}.route-copy p{font-size:11px!important;line-height:1.6!important}}
+@media(prefers-reduced-motion:reduce){.case-reader[open]{animation:none}.reader-frame{transition:none}}

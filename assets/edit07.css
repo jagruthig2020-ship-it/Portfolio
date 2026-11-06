@@ -1,0 +1,6 @@
+/* Reduce the complete emblem, preserving its printed proportions. */
+#home .cover-title{width:48vw!important;max-width:560px!important;margin:0 auto!important}
+#home .cover-mark{aspect-ratio:1572/1001!important}
+#home .comic-enter{margin-top:12px!important}
+@media(max-width:900px){#home .cover-title{width:59vw!important;max-width:500px!important}}
+@media(max-width:640px){#home .cover-title{width:79vw!important;max-width:340px!important}}

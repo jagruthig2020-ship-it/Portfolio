@@ -1,0 +1,33 @@
+/* Scoped to the restored Red Thread game. */
+#game-overlay{background:#09090e;--game-red:#ed214b;--game-line:#51323f}
+#game-overlay .gm-header{background:linear-gradient(90deg,#1e1019,#0c0d14);border-bottom-color:#664052}
+#game-overlay .gm-copy{background:radial-gradient(ellipse at 0 45%,#5e152343,transparent 70%),#0e0b12;border-right-color:#5b3243}
+#game-overlay .gm-copy h2{font-family:ComicDisplay,Impact,sans-serif;font-size:clamp(68px,7.8vw,128px);letter-spacing:.01em;line-height:.9;text-shadow:4px 5px 0 #0008}
+#game-overlay .gm-copy h2 em{color:#e7294f}
+#game-overlay .gm-kicker{color:#de839b;letter-spacing:.12em}
+#game-overlay .gm-stat{border-color:#6a3a50;background:linear-gradient(145deg,#35152566,#101019)}
+#game-overlay .gm-stat strong{font-family:ComicDisplay,Impact,sans-serif;font-size:36px}
+#game-overlay .gm-reveals-list span{white-space:normal;font-size:9px;border-color:#483341;transition:background .35s,border-color .35s,color .35s}
+#game-overlay .gm-reveals-list span.unlocked{background:#6e1c3738;border-color:#d54670;color:#f8dce5;box-shadow:inset 3px 0 #d54670;animation:gm-signal-return .55s ease-out}
+#game-overlay .gm-dialog{background:linear-gradient(140deg,#21121dee,#0a0d15f5);border-color:#875769;box-shadow:12px 14px 0 #02020688,0 25px 100px #000b}
+#game-overlay .gm-dialog h3{font-family:ComicDisplay,Impact,sans-serif;letter-spacing:.025em;line-height:.95;font-size:clamp(50px,5vw,77px);color:#f3e4dc}
+#game-overlay .gm-dialog:before,#game-overlay .gm-dialog:after{border-color:#e32956;width:38px;height:38px}
+#game-overlay .gm-primary{background:#ce2147;box-shadow:5px 6px 0 #100b14,0 0 0 1px #f36e91;transition:translate .2s,background .2s}
+#game-overlay .gm-primary:hover{background:#ec2b57;translate:0 -2px}
+#game-overlay .gm-stage-top,#game-overlay .gm-stage-bottom{background:#110d16;border-color:#533144}
+#game-overlay .gm-stage-bottom{flex-wrap:wrap;gap:12px}
+#game-overlay .gm-play-controls{flex-wrap:wrap;gap:7px}
+#game-overlay .gm-play-controls button{border-color:#694354;background:#20141f;color:#e1c3d1;min-height:39px}
+#game-overlay #gm-burst{background:#8f1a3a;border-color:#c6375f;color:#fff1e5}
+#game-overlay #gm-pause[aria-pressed=true]{background:#b49243;color:#0e0c12}
+#game-overlay button:focus-visible{outline:2px solid #edc777;outline-offset:4px}
+@keyframes gm-signal-return{from{box-shadow:inset 3px 0 #d54670,0 0 20px #ed476f77;translate:0 -3px}to{box-shadow:inset 3px 0 #d54670;translate:0 0}}
+@media(max-width:950px){#game-overlay .gm-copy h2{font-size:66px}#game-overlay .gm-reveals-list span{white-space:nowrap}}
+@media(max-width:640px){#game-overlay .gm-copy h2{font-size:51px}#game-overlay .gm-header{position:sticky;top:0;background:#160e17;z-index:20}#game-overlay .gm-play-controls{width:100%;justify-content:flex-start}#game-overlay .gm-play-controls button{font-size:8px;padding:9px 10px}#game-overlay .gm-stage-top{letter-spacing:.04em}#game-overlay .gm-dialog h3{font-size:48px}}
+@media(prefers-reduced-motion:reduce){#game-overlay .gm-reveals-list span{animation:none;transition:none}#game-overlay .gm-primary{transition:none}#game-overlay .gm-header-status i{animation:none}}
+#game-overlay,#game-overlay .gm-copy{scrollbar-width:thin;scrollbar-color:#744457 #100d16;overflow-x:hidden}
+#game-overlay .gm-copy,#game-overlay .gm-stage{min-width:0}
+#game-overlay .gm-reveals-list{min-width:0}
+#game-overlay .gm-reveals-list span{min-width:0;overflow-wrap:anywhere}
+#game-overlay::-webkit-scrollbar,#game-overlay .gm-copy::-webkit-scrollbar{width:6px;height:6px}
+#game-overlay::-webkit-scrollbar-thumb,#game-overlay .gm-copy::-webkit-scrollbar-thumb{background:#744457}

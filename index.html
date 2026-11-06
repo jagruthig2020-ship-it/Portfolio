@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="portfolio-version" content="Scroll-Web-Edit-04">
 <meta name="theme-color" content="#0a0a0c" />
 <title>Jagruthi Guttula — A Web of Experiences | Interactive Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -510,74 +511,89 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
 @media(prefers-reduced-motion:reduce){.audio-only-dock.is-playing .audio-pulse{animation:none}}
 </style>
 
+<style>
+/* Isolated opening: reference panel order and 200 ms cadence; portfolio styles untouched. */
+@font-face{font-family:IntroBangers;src:url('assets/intro/bangers.woff2') format('woff2');font-style:normal;font-weight:400;font-display:block}
+#loader.inf-opening{position:fixed;inset:0;width:100%;height:100dvh;z-index:999999;overflow:hidden;background:#b80f0f;isolation:isolate;opacity:1;transition:opacity .6s cubic-bezier(.65,0,.35,1);padding:0;color:white;clip-path:none;display:block}
+#loader.inf-opening.out{opacity:0;pointer-events:none;clip-path:none}
+.inf-paper{position:absolute;inset:0;background:#b80f0f url('assets/intro/paper-1.webp') repeat top left;z-index:0}
+.inf-frame{position:absolute;inset:0;overflow:hidden;visibility:hidden;z-index:1}
+.inf-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;transform-origin:center;background:#b80f0f}
+.inf-shade{position:absolute;inset:0;background:#000;opacity:0;z-index:50;pointer-events:none}
+.inf-title-position{position:absolute;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;pointer-events:none;transform:translateY(1.5vh)}
+.inf-halo{position:absolute;width:min(100vw,1200px);aspect-ratio:1;background:radial-gradient(circle closest-side,rgba(0,0,0,.92),transparent);opacity:0}
+#loader .inf-title{position:relative;opacity:0;clip-path:inset(0 100% 0 0);width:min(650px,60vw);text-align:center;filter:drop-shadow(0 2px 2px #0002)}
+#loader .inf-title span{display:block;font:400 clamp(60px,11.5vw,158px)/1.08 IntroBangers,Impact,sans-serif;letter-spacing:-.035em;transform:skewY(-8deg) skewX(-7deg) scaleY(1.15);padding:25px 12px 32px;color:#fff;text-shadow:none}
+.inf-skip{position:absolute;right:25px;bottom:25px;z-index:110;padding:12px 15px;border:1px solid #ffffff48;border-radius:2px;background:#0006;color:#fff;font:500 10px/1.2 Arial,sans-serif;letter-spacing:.13em;cursor:pointer;opacity:.7}
+.inf-skip:hover,.inf-skip:focus-visible{opacity:1;background:#000a;outline:1px solid white;outline-offset:4px}
+body:has(#loader.inf-opening:not(.out)){overflow:hidden}
+@media(max-width:767px){#loader .inf-title{width:min(300px,82vw)}#loader .inf-title span{font-size:clamp(58px,18vw,84px)}.inf-title-position{transform:translateY(1vh)}.inf-skip{right:16px;bottom:20px}}
+@media(prefers-reduced-motion:reduce){#loader.inf-opening{display:none}}
+</style>
+<link rel="stylesheet" href="assets/portfolio-update.css?v=edit09">
+<link rel="stylesheet" href="assets/refinements.css?v=edit09">
+<link rel="stylesheet" href="assets/edit04.css?v=edit09">
+<link rel="stylesheet" href="assets/edit05.css?v=edit09">
+<link rel="stylesheet" href="assets/edit06.css?v=edit09">
+<link rel="stylesheet" href="assets/edit07.css?v=edit09">
+<link rel="stylesheet" href="assets/spider-interactions.css?v=edit09">
+<link rel="stylesheet" href="assets/game-polish.css?v=game10">
 </head>
 <body>
-<div id="loader" class="loader loader-v3" aria-label="Jagruthi portfolio loading">
-  <canvas id="loader-threads" class="loader-canvas" aria-hidden="true"></canvas>
-  <div class="loader-orbit" aria-hidden="true"></div><div class="loader-orbit" aria-hidden="true"></div>
-  <div class="loader-name" aria-label="Jagruthi Guttula"><span class="loader-letter">J</span><span class="loader-letter">a</span><span class="loader-letter">g</span><span class="loader-letter">r</span><span class="loader-letter">u</span><span class="loader-letter">t</span><span class="loader-letter">h</span><span class="loader-letter">i</span><span class="loader-dot">.</span></div>
-  <div class="loader-accent" aria-hidden="true"></div>
-  <span class="loader-v7-caption">NOT QUITE THE PLAN. <b>THAT’S THE FUN PART.</b></span>
-  <span class="loader-id">JAGRUTHI GUTTULA / PORTFOLIO</span>
-  <button class="loader-skip" id="loader-skip" type="button" aria-label="Skip introduction">SKIP ↗</button>
+<div id="loader" class="inf-opening" role="region" aria-label="Jagruthi cinematic introduction">
+<div class="inf-paper" aria-hidden="true"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture1.webp" alt="" fetchpriority="high"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture2.webp" alt="" fetchpriority="high"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture3.webp" alt="" fetchpriority="high"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture5.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture7.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture10.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture12.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture13.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture15.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture16.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture18.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture19.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture21.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture22.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-frame" aria-hidden="true"><img src="assets/intro/Picture23.webp" alt="" fetchpriority="auto"></div>
+<div class="inf-shade" aria-hidden="true"></div>
+<div class="inf-title-position"><div class="inf-halo" aria-hidden="true"></div><div class="inf-title" aria-label="Jagruthi"><span aria-hidden="true">JAGRUTHI</span></div></div>
+<button id="loader-skip" class="inf-skip" type="button">SKIP INTRO ↗</button>
 </div>
 <div id="progress" aria-hidden="true"></div><div class="web-section-crosshair" aria-hidden="true"></div>
 <div class="paper-noise" aria-hidden="true"></div>
 <canvas id="web-fx" aria-hidden="true"></canvas><div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 <header class="site-head" id="site-head">
  <a href="#home" class="logo" aria-label="Return to homepage"><span class="logo-asterisk">✳</span> JAGRUTHI<span class="logo-period">.</span></a>
- <nav class="nav-links" aria-label="Sections"><a href="#journey">JOURNEY</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#offclock">OFF THE CLOCK</a><a href="#contact">HELLO</a></nav>
- <div class="header-actions"><button id="game-toggle" class="control game-toggle" type="button" title="Enter the interactive side quest">↗ GAME MODE <i aria-hidden="true"></i></button><button id="music-toggle" class="control" type="button" title="Play/pause selected instrumental" aria-label="Play selected instrumental" aria-pressed="false">♫ <span id="music-label">PLAY MUSIC</span></button><button id="music-custom" class="control" type="button" title="Choose an audio file from your device (not uploaded)" aria-label="Choose your own audio file">MY TRACK</button><button id="theme-toggle" class="control" aria-label="Toggle theme" type="button">☼ <span>LIGHT</span></button><button id="menu-toggle" class="control mobile-menu" type="button" aria-label="Open navigation">☰</button></div>
+ <nav class="nav-links" aria-label="Sections"><a href="#about">ABOUT</a><a href="#journey">THE WEB</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#contact">HELLO</a></nav>
+ <div class="header-actions"><button id="game-toggle" class="control game-toggle" type="button" title="Enter the interactive side quest">↗ GAME MODE <i aria-hidden="true"></i></button><button id="music-toggle" class="control" type="button" title="Play/pause selected instrumental" aria-label="Play selected instrumental" aria-pressed="false">♫ <span id="music-label">PLAY MUSIC</span></button><button id="theme-toggle" class="control" aria-label="Toggle theme" type="button">☼ <span>LIGHT</span></button><button id="menu-toggle" class="control mobile-menu" type="button" aria-label="Open navigation">☰</button></div>
 </header>
-<div id="mobile-panel" class="mobile-panel" hidden><a href="#home">HOME</a><a href="#journey">JOURNEY</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#offclock">OFF THE CLOCK</a><a href="#contact">HELLO</a></div>
+<div id="mobile-panel" class="mobile-panel" hidden><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#journey">THE WEB</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#contact">HELLO</a></div>
 <input type="file" id="music-file" accept="audio/*" hidden /><audio id="soundtrack" src="assets/portfolio_instrumental_selected_2026-11-02.mp3" loop preload="auto" playsinline></audio>
 <main>
  <!-- 01: a motion-led editorial introduction, not a generic 3D-orb hero -->
- <section id="home" class="hero-section hero-v3">
-  <div class="hero-decor-grid" aria-hidden="true"></div>
-  <div class="hero-v3-wrap">
-    <div class="hero-photo-col" id="hero-art">
-      <div class="portrait-outer">
-        <div class="portrait-scan" aria-hidden="true"></div>
-        <div class="portrait-stage">
-          <div class="portrait-empty" id="portrait-empty">
-            <svg viewBox="0 0 460 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="portrait-tone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#36373b"/><stop offset="1" stop-color="#0b0b0d"/></linearGradient><radialGradient id="portrait-light"><stop stop-color="#8e8f94" stop-opacity=".4"/><stop offset="1" stop-color="#161618" stop-opacity="0"/></radialGradient></defs><rect width="460" height="560" fill="url(#portrait-tone)"/><rect width="460" height="560" fill="url(#portrait-light)"/><circle cx="270" cy="180" r="89" fill="#66676d"/><path d="M75 580V465C75 340 155 306 270 306S456 364 470 455V580" fill="#55565d"/><path d="M30 560L465 125" stroke="#dc1520" stroke-width="2" opacity=".5"/><path d="M-40 470L300 130M140 610L480 270" stroke="#fff" stroke-width="1" opacity=".15"/></svg>
-          </div>
-          <img id="portrait-photo" src="assets/portrait.webp" alt="Jagruthi Guttula in a blue denim shirt against a dark background" />
-          <div class="portrait-image-grade" aria-hidden="true"></div>
-        </div>
-        <div class="portrait-outline" aria-hidden="true"></div>
-        <div class="portrait-side-index" aria-hidden="true">01 — AN INTRODUCTION</div>
-        <div class="portrait-photo-note"><span class="red-pip"></span> JAGRUTHI <small>FIELD PHOTO / 2026</small></div>
-      </div>
-      <button class="portrait-upload" type="button" id="portrait-upload">CHANGE PHOTO <span>↗</span></button>
-      <input type="file" id="portrait-file" accept="image/*" hidden />
-      <div class="portrait-corner-web" aria-hidden="true"><svg viewBox="0 0 250 240" fill="none"><g stroke="currentColor" stroke-width="1.25" opacity=".7"><path d="M0 0L245 240M0 0L155 240M0 0L70 240M0 0L245 155M0 0L245 65"/><path d="M0 55Q95 30 180 155M0 105Q55 65 145 210M30 0Q50 105 195 195M75 0Q95 80 245 165M135 0Q155 70 245 95"/></g></svg></div>
-    </div>
-    <div class="hero-intro">
-      <div class="hero-v3-eyebrow"><span></span> HELLO, I'M</div>
-      <h1>Jagruthi <br/><em>Guttula<span class="hero-title-dot">.</span></em></h1>
-      <p class="hero-v3-role">Computer Science <span>·</span> Learning by making</p>
-      <p class="hero-v3-description">I wasn’t always interested in computer science. Somewhere between writing code, wiring sensors and trying things I hadn’t done before, that changed.</p>
-      <div class="hero-v3-divider"></div>
-      <div class="hero-v3-connect"><span>FIND ME ON</span><div class="hero-v3-links">
-        <a href="https://github.com/jagruthig2020-ship-it" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
-        <a href="https://www.linkedin.com/in/jagruthi-guttula-a20811277" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
-        <a href="mailto:jagruthig2020@gmail.com" aria-label="Email Jagruthi at jagruthig2020@gmail.com">Email <span>↗</span></a>
-        <a href="Jagruthi_Guttula_Resume_2026-11-02.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Jagruthi Guttula resume PDF">Resume <span>↗</span></a>
-      </div></div>
-      <div class="current-focus-chip"><span class="focus-chip-live"></span><span><b>BUILDING NOW</b> — TESLA ROADSTER DEMO</span><a href="#current-focus">SEE THE PLAN ↗</a></div><div class="game-invite"><span class="game-invite-id">OPTIONAL SIDE QUEST / 01</span><button type="button" id="game-hero">ENTER GAME MODE <span>↗</span></button></div>
-    </div>
-  </div>
-  <div class="hero-v3-footer"><span>HYDERABAD, INDIA · EST. 2026</span><a href="#lab">SCROLL TO EXPLORE <b>↓</b></a><span>01 / 06</span></div>
+ <section id="home" class="comic-home" aria-label="Jagruthi's portfolio">
+<div class="comic-sun" aria-hidden="true"></div><div class="comic-halftone" aria-hidden="true"></div>
+<svg class="comic-speed" viewBox="0 0 1400 900" preserveAspectRatio="none" aria-hidden="true"><g stroke="#0d0b0b" fill="none"><path d="M700 440L-200 -50M700 440L80 -80M700 440L550 -100M700 440L1100 -60M700 440L1600 80M700 440L1600 590M700 440L1400 1000M700 440L850 1050M700 440L160 1050M700 440L-200 740M700 440L-200 380"/></g></svg>
+<div class="comic-orbit comic-orbit-a" aria-hidden="true"><span>✳</span></div><div class="comic-orbit comic-orbit-b" aria-hidden="true"><span>✦</span></div>
+<div class="comic-issue"><span>JAGRUTHI GUTTULA</span><span>HYDERABAD, INDIA</span></div>
+<div class="comic-title cover-title"><h1 class="sr-only">Jagruthi’s portfolio</h1><img class="cover-mark" src="assets/jagruthi-comic-emblem.png" alt="Jagruthi’s Portfolio" width="1536" height="1024" fetchpriority="high"><a class="comic-enter" href="#projects">SEE WHAT I’M BUILDING <b>↘</b></a></div>
+<a class="comic-sticker" href="#projects">MADE<br>WITH<br><b>CURIOSITY.</b><span>↗</span></a>
+<div class="comic-foot"><a href="https://github.com/jagruthig2020-ship-it" target="_blank" rel="noopener">GITHUB ↗</a><a href="https://www.linkedin.com/in/jagruthi-guttula-a20811277" target="_blank" rel="noopener">LINKEDIN ↗</a><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jagruthig2020%40gmail.com" target="_blank" rel="noopener" title="Write to jagruthig2020@gmail.com">EMAIL ↗</a><a href="Jagruthi%20Guttula%20Resume.pdf" target="_blank" title="Jagruthi Guttula Resume">RESUME ↗</a><a href="#about">SCROLL TO EXPLORE ↓</a></div>
+<div class="comic-tear" aria-hidden="true"></div>
+</section>
+<section id="about" class="about-person" aria-label="About Jagruthi">
+<div class="about-photo"><img id="portrait-photo" src="assets/portrait.webp" alt="Jagruthi Guttula" width="900" height="1100"><span class="photo-signature">Jagruthi.</span></div>
+<div class="about-copy"><span class="about-number">01 / A LITTLE ABOUT ME</span><h2>Hi, I’m<br><em>Jagruthi.</em></h2><p class="about-lead">I’m from Hyderabad. I’m usually quiet until the conversation turns to something I want to build.</p><p>I tend to work late at night, with a half-working project in front of me and one more thing to try. I move between code and hardware because I like seeing an idea do something outside my head.</p><p>Outside projects, I dance and play badminton. I’m a night person, but a good sunset will get me away from my laptop. I’m learning a little Spanish too, slowly.</p></div>
 </section>
 <div id="site-toast" class="site-toast" role="status" aria-live="polite"></div>
 <!-- chapter separator -->
- <div class="thread-divider" aria-hidden="true"><span>↘</span><svg viewBox="0 0 1200 80" preserveAspectRatio="none"><path d="M0 40Q200 -20 400 40T800 40T1200 40" stroke="currentColor" fill="none" stroke-width="1.5"/><path d="M0 55Q200 0 400 55T800 55T1200 55" stroke="currentColor" fill="none" stroke-width=".7"/></svg><small>KEEP SCROLLING / FOLLOW THE THREAD</small></div>
+ 
  <section id="lab" class="lab-section" aria-label="Interactive engineering animation">
   <div class="lab-sticky" id="lab-sticky">
 <div class="cinema-visual">
-  <canvas id="cinema3d" aria-label="A scroll-controlled real-time 3D world: fly between rooftops, webs, and electronic assemblies" role="img"></canvas>
+  <canvas id="cinema3d" aria-label="A city street that moves as you scroll" role="img"></canvas>
   <div class="cinema-fog" aria-hidden="true"></div>
   <div class="cinema-redlight" aria-hidden="true"></div>
   <div class="cinema-crosshair" aria-hidden="true"></div>
@@ -585,9 +601,9 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
 </div>
 <div class="cinema-ui">
   <div class="cinema-topbar"><span><i class="cinema-red-dot"></i>THE RED THREAD / NOT QUITE THE PLAN</span><span>REAL-TIME 3D WORLD · 01 / 04</span></div>
-<div class="cinema-chapter active" aria-hidden="false"><div class="cinema-kicker">01 / NOT QUITE THE PLAN</div><h2>IT WASN’T<br><span>THE PLAN.</span></h2><p>I wasn’t really interested in computer science at first. I certainly didn’t picture myself spending this much time building things.</p><span class="cinema-chapter-end">↓ SCROLL INTO THE STORY</span></div><div class="cinema-chapter" aria-hidden="true"><div class="cinema-kicker">02 / THEN SOMETHING CHANGED</div><h2>THEN I<br><span>MADE THINGS.</span></h2><p>I found out how satisfying it is to get something working after being stuck on it for hours. I wanted to try more.</p><span class="cinema-chapter-end">↓ FOLLOW THE THREAD</span></div><div class="cinema-chapter" aria-hidden="true"><div class="cinema-kicker">03 / A LITTLE BIT OF EVERYTHING</div><h2>CODE.<br><span>CIRCUITS.</span><br>AND MORE.</h2><p>Machine learning, electronics, strange interactive websites. I kept finding one more thing I wanted to try.</p><span class="cinema-chapter-end">↓ WATCH IT COME TOGETHER</span></div><div class="cinema-chapter" aria-hidden="true"><div class="cinema-kicker">04 / STILL FIGURING IT OUT</div><h2>STILL<br><span>EXPLORING.</span></h2><p>I’m still not sure which part I like most. Anyway, here’s how I got here.</p><span class="cinema-chapter-end">↓ THIS WAY TO MY JOURNEY</span></div>
+<div class="cinema-chapter active" aria-hidden="false"><span class="question-project">CIRCUIT STUDIO</span><h2>The wires are in.<br><em>So why is the sensor silent?</em></h2><a class="question-link" href="projects/circuit-studio.html">OPEN THE WORKBENCH ↗</a></div><div class="cinema-chapter" aria-hidden="true"><span class="question-project">KIKO</span><h2>“Where do I click?”<br><em>I heard that a lot.</em></h2><a class="question-link" href="projects/kiko.html">MEET KIKO ↗</a></div><div class="cinema-chapter" aria-hidden="true"><span class="question-project">CHRONOMIND AI</span><h2>It’s late again.<br><em>Am I actually getting anywhere?</em></h2><a class="question-link" href="projects/chronomind-ai.html">SEE THE EXPERIMENT ↗</a></div><div class="cinema-chapter" aria-hidden="true"><span class="question-project">LUMORA</span><h2>Lumos.<br><em>And the room lights up.</em></h2><a class="question-link" href="projects/lumora.html">STEP INSIDE ↗</a></div>
   <div class="cinema-rail" aria-hidden="true"><div class="cinema-rail-numbers"><strong id="cinema-count">01</strong><span>/ 04</span></div><div class="cinema-rail-line"><i id="cinema-track-fill"></i></div></div>
-  <div class="cinema-bottom"><div class="cinema-bottom-left"><b id="cinema-hotspot">ROOFTOP / ORIGIN</b><span>SCROLL TO FLY THROUGH THE SCENE ↓</span></div><div class="cinema-bottom-right"><span class="cinema-interaction-caption">MOVE YOUR CURSOR TO LOOK AROUND<br>CLICK TO CAST A WEB</span><button id="cast-web" type="button">↗ CAST A WEB</button></div></div>
+  <div class="cinema-bottom"><div class="cinema-bottom-left"><b id="cinema-hotspot">ROOFTOP / ORIGIN</b><span>SCROLL TO FLY THROUGH THE SCENE ↓</span></div><div class="cinema-bottom-right"><span class="cinema-interaction-caption">MOVE YOUR CURSOR TO LOOK AROUND<br>CLICK TO CAST A WEB</span></div></div>
 </div>
 
     <div class="lab-grid" aria-hidden="true"></div>
@@ -611,98 +627,40 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
 </section>
 <!-- 02: scroll-to-walk a map. The map is a world, not a vertical timeline -->
  
-<section class="field-notes" id="field-notes" aria-label="Photographs from the making process">
-  <div class="field-heading"><span class="field-index">01.5 / BEHIND THE SCENES</span><h2>THERE'S THE<br><em>DEMO.</em><br>AND THEN <span>THIS.</span></h2><p>Real moments from the things I've worked on. No renders needed.</p></div>
-  <div class="field-wall" aria-label="Original development photographs">
-   <figure class="field-photo field-photo-a"><img src="assets/workbench.webp" loading="lazy" alt="Breadboards, wires, laptop code and energy drinks on a work surface"/><figcaption>ASTRA / PROTOTYPE WORKBENCH</figcaption></figure>
-   <figure class="field-photo field-photo-b"><img src="assets/gnss.webp" loading="lazy" alt="GNSS receiver and OLED display beside hand-drawn electronics notes"/><figcaption>THE FIRST SKETCH / TREKKER</figcaption></figure>
-   <figure class="field-photo field-photo-c"><img src="assets/nerf.webp" loading="lazy" alt="A blue and orange Nerf blaster adapted with breadboards and jumper wires"/><figcaption>THE EXPERIMENT / NERF CONTROLLER</figcaption></figure>
-  </div>
-  <div class="field-footer"><span>REAL PHOTOS / REAL PROJECTS</span><span>KEEP SCROLLING ↓</span></div>
-</section>
 
-<section id="journey" class="journey-section" aria-label="My journey">
-  <div class="journey-sticky">
-   <div class="journey-world" id="journey-world">
-    <div class="terrain-ring terrain-one"></div><div class="terrain-ring terrain-two"></div><div class="terrain-ring terrain-three"></div>
-    <svg id="journey-map-svg" viewBox="0 0 1400 2300" preserveAspectRatio="none" aria-hidden="true">
-     <defs><filter id="pathGlow"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-     <g opacity=".22" fill="none" stroke="#be797c"><path d="M-140 280Q230 40 690 350T1510 340"/><path d="M-190 320Q190 80 710 400T1520 400"/><path d="M-130 360Q190 145 710 445T1480 450"/><path d="M-130 420Q190 205 710 500T1480 500"/><path d="M-160 900Q250 630 650 955T1550 900"/><path d="M-160 945Q250 680 650 1005T1550 960"/><path d="M-160 990Q250 730 650 1050T1550 1010"/><path d="M-160 1500Q230 1200 710 1540T1510 1540"/><path d="M-160 1545Q230 1245 710 1585T1510 1585"/><path d="M-160 1590Q230 1290 710 1630T1510 1630"/></g>
-     <g class="journey-web-mesh" transform="translate(710 490)" fill="none" stroke="#d72632" stroke-width="1.3" opacity=".24"><path d="M0 0L410.0 0.0"/><path d="M0 0L355.1 205.0"/><path d="M0 0L205.0 355.1"/><path d="M0 0L0.0 410.0"/><path d="M0 0L-205.0 355.1"/><path d="M0 0L-355.1 205.0"/><path d="M0 0L-410.0 0.0"/><path d="M0 0L-355.1 -205.0"/><path d="M0 0L-205.0 -355.1"/><path d="M0 0L-0.0 -410.0"/><path d="M0 0L205.0 -355.1"/><path d="M0 0L355.1 -205.0"/><polygon points="86.1,0.0 74.6,43.0 43.1,74.6 0.0,86.1 -43.0,74.6 -74.6,43.0 -86.1,0.0 -74.6,-43.1 -43.1,-74.6 -0.0,-86.1 43.1,-74.6 74.6,-43.1" /><polygon points="164.0,0.0 142.0,82.0 82.0,142.0 0.0,164.0 -82.0,142.0 -142.0,82.0 -164.0,0.0 -142.0,-82.0 -82.0,-142.0 -0.0,-164.0 82.0,-142.0 142.0,-82.0" /><polygon points="254.2,0.0 220.1,127.1 127.1,220.1 0.0,254.2 -127.1,220.1 -220.1,127.1 -254.2,0.0 -220.1,-127.1 -127.1,-220.1 -0.0,-254.2 127.1,-220.1 220.1,-127.1" /><polygon points="340.3,0.0 294.7,170.1 170.2,294.7 0.0,340.3 -170.1,294.7 -294.7,170.1 -340.3,0.0 -294.7,-170.2 -170.2,-294.7 -0.0,-340.3 170.2,-294.7 294.7,-170.2" /><polygon points="410.0,0.0 355.1,205.0 205.0,355.1 0.0,410.0 -205.0,355.1 -355.1,205.0 -410.0,0.0 -355.1,-205.0 -205.0,-355.1 -0.0,-410.0 205.0,-355.1 355.1,-205.0" /></g><g class="journey-web-mesh" transform="translate(700 1130)" fill="none" stroke="#d72632" stroke-width="1.3" opacity=".24"><path d="M0 0L390.0 0.0"/><path d="M0 0L337.7 195.0"/><path d="M0 0L195.0 337.7"/><path d="M0 0L0.0 390.0"/><path d="M0 0L-195.0 337.7"/><path d="M0 0L-337.7 195.0"/><path d="M0 0L-390.0 0.0"/><path d="M0 0L-337.7 -195.0"/><path d="M0 0L-195.0 -337.7"/><path d="M0 0L-0.0 -390.0"/><path d="M0 0L195.0 -337.7"/><path d="M0 0L337.7 -195.0"/><polygon points="81.9,0.0 70.9,40.9 41.0,70.9 0.0,81.9 -40.9,70.9 -70.9,40.9 -81.9,0.0 -70.9,-41.0 -41.0,-70.9 -0.0,-81.9 41.0,-70.9 70.9,-41.0" /><polygon points="156.0,0.0 135.1,78.0 78.0,135.1 0.0,156.0 -78.0,135.1 -135.1,78.0 -156.0,0.0 -135.1,-78.0 -78.0,-135.1 -0.0,-156.0 78.0,-135.1 135.1,-78.0" /><polygon points="241.8,0.0 209.4,120.9 120.9,209.4 0.0,241.8 -120.9,209.4 -209.4,120.9 -241.8,0.0 -209.4,-120.9 -120.9,-209.4 -0.0,-241.8 120.9,-209.4 209.4,-120.9" /><polygon points="323.7,0.0 280.3,161.8 161.9,280.3 0.0,323.7 -161.8,280.3 -280.3,161.8 -323.7,0.0 -280.3,-161.9 -161.9,-280.3 -0.0,-323.7 161.9,-280.3 280.3,-161.9" /><polygon points="390.0,0.0 337.7,195.0 195.0,337.7 0.0,390.0 -195.0,337.7 -337.7,195.0 -390.0,0.0 -337.7,-195.0 -195.0,-337.7 -0.0,-390.0 195.0,-337.7 337.7,-195.0" /></g><g class="journey-web-mesh" transform="translate(695 1840)" fill="none" stroke="#d72632" stroke-width="1.3" opacity=".24"><path d="M0 0L430.0 0.0"/><path d="M0 0L372.4 215.0"/><path d="M0 0L215.0 372.4"/><path d="M0 0L0.0 430.0"/><path d="M0 0L-215.0 372.4"/><path d="M0 0L-372.4 215.0"/><path d="M0 0L-430.0 0.0"/><path d="M0 0L-372.4 -215.0"/><path d="M0 0L-215.0 -372.4"/><path d="M0 0L-0.0 -430.0"/><path d="M0 0L215.0 -372.4"/><path d="M0 0L372.4 -215.0"/><polygon points="90.3,0.0 78.2,45.1 45.2,78.2 0.0,90.3 -45.1,78.2 -78.2,45.1 -90.3,0.0 -78.2,-45.2 -45.2,-78.2 -0.0,-90.3 45.2,-78.2 78.2,-45.2" /><polygon points="172.0,0.0 149.0,86.0 86.0,149.0 0.0,172.0 -86.0,149.0 -149.0,86.0 -172.0,0.0 -149.0,-86.0 -86.0,-149.0 -0.0,-172.0 86.0,-149.0 149.0,-86.0" /><polygon points="266.6,0.0 230.9,133.3 133.3,230.9 0.0,266.6 -133.3,230.9 -230.9,133.3 -266.6,0.0 -230.9,-133.3 -133.3,-230.9 -0.0,-266.6 133.3,-230.9 230.9,-133.3" /><polygon points="356.9,0.0 309.1,178.4 178.5,309.1 0.0,356.9 -178.4,309.1 -309.1,178.4 -356.9,0.0 -309.1,-178.5 -178.5,-309.1 -0.0,-356.9 178.5,-309.1 309.1,-178.5" /><polygon points="430.0,0.0 372.4,215.0 215.0,372.4 0.0,430.0 -215.0,372.4 -372.4,215.0 -430.0,0.0 -372.4,-215.0 -215.0,-372.4 -0.0,-430.0 215.0,-372.4 372.4,-215.0" /></g>
-     <path id="web-swing-line" d="M970 125L970 125" fill="none" stroke="#f9f9f9" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 5" opacity=".7"/><path id="web-swing-ghost" d="M970 125L970 125" fill="none" stroke="#db1724" stroke-width="7" opacity=".15"/>
-     <path id="map-path-base" d="M970 125 C700 100 455 200 610 400 S1120 575 850 790 S280 920 495 1170 S1190 1350 855 1560 S335 1765 630 2045 S1010 2190 980 2260" fill="none" stroke="#91888a" stroke-width="4" stroke-dasharray="9 12" opacity=".57" />
-     <path id="map-path-progress" d="M970 125 C700 100 455 200 610 400 S1120 575 850 790 S280 920 495 1170 S1190 1350 855 1560 S335 1765 630 2045 S1010 2190 980 2260" fill="none" stroke="#de1521" stroke-width="7" stroke-linecap="round" filter="url(#pathGlow)" />
-     <g id="map-dots" fill="#df1621"><circle cx="970" cy="125" r="13"/><circle cx="657" cy="418" r="13"/><circle cx="899" cy="780" r="13"/><circle cx="490" cy="1170" r="13"/><circle cx="855" cy="1560" r="13"/><circle cx="630" cy="2045" r="13"/></g>
-     <g id="moving-marker" transform="translate(970 125)"><circle r="27" fill="#df1621" opacity=".25"/><circle r="15" fill="#f3e6e2" stroke="#de1521" stroke-width="6"/><path d="M0 -38 L8 -27 L-8 -27Z" fill="#df1621"/></g>
-    </svg>
-    <span class="map-landmark landmark-one">BHASHYAM / SCHOOL</span><span class="map-landmark landmark-two">DEXTERITY / DEXSCHOOL</span><span class="map-landmark landmark-three">GLEC / COLLEGE</span><span class="map-landmark landmark-four">FIRST BUILDS / EXPERIMENTING</span><span class="map-landmark landmark-five">HACKATHONS / NOW</span>
-   </div>
-   <div class="journey-top"><div class="section-id">02 / THE JOURNEY</div><div class="journey-map-buttons"><button id="journey-minus" type="button" aria-label="Zoom out">−</button><button id="journey-plus" type="button" aria-label="Zoom in">+</button><button id="journey-overview" type="button">VIEW JOURNEY MAP ↗</button></div></div>
-   <div class="journey-info"><div class="journey-headline"><small>SCROLL TO SWING THROUGH THE STORY</small><h2>THE<br><i>WEB.</i></h2></div>
-    <div class="journey-stop"><div class="stop-fraction" id="stop-fraction">01 / 06</div><div class="stop-year" id="stop-year">01</div><h3 id="stop-title">SCHOOL</h3><p id="stop-desc">I worked hard in school, but I hadn’t figured out what I wanted to do. Discovering Dexterity at Bhashyam turned out to matter far more than I expected.</p><figure class="stop-photo" id="stop-photo-box" hidden><img id="stop-photo" src="assets/dex.webp" alt="" /><figcaption id="stop-photo-caption"></figcaption></figure><div class="stop-signal"><i></i><span id="stop-signal-label">ON THE MAP / STOP ONE</span></div></div>
-   </div>
-   <div class="journey-bottom"><span>EVERY CONNECTION HAS A STORY.</span><span id="journey-pct">00% EXPLORED</span></div>
-   <div class="journey-progress"><span id="journey-progress-fill"></span></div>
-  </div>
- </section>
- <div id="map-modal" class="map-modal" hidden><div class="map-modal-head"><span>THE WHOLE ROUTE / YOUR CHAPTERS</span><button id="map-close" type="button" aria-label="Close journey map">✕ CLOSE</button></div><div class="route-panel"><svg viewBox="0 0 680 600" aria-hidden="true"><path d="M510 38 C200 35 120 128 300 205 S550 330 345 396 S210 485 435 566" fill="none" stroke="#de1521" stroke-width="5" stroke-dasharray="10 8"/></svg><div class="map-list" id="map-list"></div></div></div>
 
- <div class="responsibility-scene" id="responsibility" aria-label="With great power comes great responsibility">
+<section id="journey" class="scroll-route" aria-label="What I have done so far"><div class="route-sticky"><div class="route-heading"><span>02 / WHAT I’VE DONE SO FAR</span><span id="route-count" aria-live="polite">01 / 04</span></div><div class="route-world" id="route-world" aria-hidden="true"><svg id="route-svg" viewBox="0 0 1400 2600"><defs><pattern id="route-grain" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".7" fill="#dfd6d1" opacity=".15"/></pattern></defs><path id="route-road" d="M950 60C1250 260 450 280 570 710S1180 1010 870 1330S250 1600 550 1930S1050 2300 640 2550"/><path id="route-centre" d="M950 60C1250 260 450 280 570 710S1180 1010 870 1330S250 1600 550 1930S1050 2300 640 2550"/><path id="route-progress" d="M950 60C1250 260 450 280 570 710S1180 1010 870 1330S250 1600 550 1930S1050 2300 640 2550"/><g id="route-webs"></g><path id="route-swing" d="M950 60L950 60"/><g id="route-marker"><circle r="15" fill="#f1e8d9"/><path d="M-6 -7Q0 -3 6 -7L4 4Q0 8 -4 4Z" fill="#d41d35"/></g></svg></div><div class="route-stories"><article class="route-chapter active" aria-hidden="false" data-route="0"><div class="route-copy"><span>01</span><h3>Dexterity Global.</h3><p>Dexterity Global was where I started seeing a path for myself. At DexSchool, I was around people who made me want to try things I would’ve talked myself out of before. I felt alive there. More like myself. I still think about that week when I’m unsure what comes next.</p><a class="dexterity-link" href="https://www.dexterityglobal.org/" target="_blank" rel="noopener noreferrer">MORE ABOUT DEXTERITY GLOBAL ↗</a></div><figure class="route-photo"><img src="assets/dex.webp" alt="DexSchool / Dexterity Global" loading="lazy"><figcaption>DexSchool / Dexterity Global</figcaption></figure></article><article class="route-chapter" aria-hidden="true" data-route="1"><div class="route-copy"><span>02</span><h3>The first builds.</h3><p>A breadboard, a sensor, and wires I kept checking. I liked that the result wasn’t just on a screen anymore. There was something in front of me that could move, sense, or respond. That’s what made me want to keep building.</p></div><figure class="route-photo"><img src="assets/workbench.webp" alt="At the hardware workbench" loading="lazy"><figcaption>At the hardware workbench</figcaption></figure></article><article class="route-chapter" aria-hidden="true" data-route="2"><div class="route-copy"><span>03</span><h3>Hackathons.</h3><p>Four hackathons so far. At Hack’O’Ber, my teammate and I came second. <a class="story-project-link" href="projects/tree.html">TREE took us to Round 2 at IIITH MegathonX ↗</a>. I like having a deadline, someone to figure things out with, and a build we can actually put in front of people.</p></div><figure class="route-photo"><img src="assets/hackober.webp" alt="Hack’O’Ber 2026" loading="lazy"><figcaption>Hack’O’Ber 2026</figcaption></figure></article><article class="route-chapter" aria-hidden="true" data-route="3"><div class="route-copy"><span>04</span><h3>Right now.</h3><p>I’m still working on Circuit Studio, KIKO, ChronoMind AI, and Lumora. There’s a lot I want to get right in each of them. We’re also planning a Tesla car demo as our major project. That one is still ahead of us, and I’m excited to start building it.</p></div><figure class="route-photo"><img src="assets/megathon.webp" alt="IIITH MegathonX" loading="lazy"><figcaption>IIITH MegathonX</figcaption></figure></article></div><div class="route-footer"><span>SCROLL TO FOLLOW THE WEB ↓</span><nav aria-label="Story stops"><button type="button" data-route-stop="0" aria-pressed="true"><i></i><span>Dexterity</span></button><button type="button" data-route-stop="1" aria-pressed="false"><i></i><span>First builds</span></button><button type="button" data-route-stop="2" aria-pressed="false"><i></i><span>Hackathons</span></button><button type="button" data-route-stop="3" aria-pressed="false"><i></i><span>Right now</span></button></nav><span id="route-percent">00%</span></div></div></section>
+<div class="responsibility-scene" id="responsibility" aria-label="With great power comes great responsibility">
    <div class="responsibility-web" aria-hidden="true">
     <svg viewBox="0 0 900 900"><g fill="none" stroke="currentColor" stroke-width="1"><g id="quote-web-rings"></g><g id="quote-web-spokes"></g></g><circle cx="450" cy="450" r="13" fill="#d80f1d"/></svg>
    </div>
    <div class="responsibility-copy"><span>INTERMISSION / A FRIENDLY REMINDER</span><h2>WITH GREAT POWER<br>COMES GREAT<br><em>RESPONSIBILITY.</em></h2><p>And a few unfinished side projects. Let’s not count them.</p></div>
-   <div class="responsibility-lower"><span>02 — 03 / THE THREAD CONTINUES</span><span>SCROLL ↓</span></div>
+   
  </div>
  <!-- 03: Harish-inspired horizontally cycling skill ribbons, not static icons -->
  <section id="skills" class="skills-section">
-  <div class="skills-heading"><div class="section-id">03 / MY TOOLBOX</div><h2>WHAT I<br><em>WORK WITH.</em></h2><div class="skills-description">Languages, machine learning, and electronics I have actually worked with. <span>Hover to inspect ↘</span></div></div>
+  <div class="skills-heading"><div class="section-id">03 / SKILLS</div><h2>SKILLS.</h2></div>
   <div class="skills-list" id="skills-list"></div>
-  <div class="skills-footer"><span>ALWAYS LEARNING / ALWAYS BUILDING</span><div class="skills-detail" id="skills-detail"><strong>✳ YOUR TOOLKIT</strong><span>Pick a skill to discover its place in the process.</span></div></div>
+  
  </section>
  <!-- 04: original curved film-strip project gallery -->
 
-<section class="roadster-feature" id="current-focus" aria-label="Current major project, Tesla Roadster demo">
- <div class="roadster-feature-inner">
-  <div class="roadster-tag"><i></i> CURRENT MAJOR PROJECT / IN DEVELOPMENT</div>
-  <div class="roadster-content"><div><span class="roadster-overline">WHAT WE'RE FOCUSING ON NOW</span><h2>TESLA<br><em>ROADSTER</em><br>DEMO.</h2><p>We're currently working on a Tesla Roadster demo. It's the major project we're focusing on right now — still in development, with the build and demonstrations to be added as they come together.</p><small>INDEPENDENT STUDENT PROJECT · NOT AFFILIATED WITH TESLA</small><div class="tesla-credit">Concept illustration generated for this portfolio. It is not a photograph of our build or a Tesla promotional image.</div><a href="#projects">EXPLORE MY OTHER BUILDS ↗</a></div><div class="roadster-image" aria-label="Roadster-inspired concept illustration, not our real demo"><img src="assets/roadster-concept.webp" alt="Roadster-inspired concept illustration; not a photo of this student project" loading="lazy" /></div></div>
- </div>
-</section>
+
  <section id="projects" class="projects-section">
   <div class="projects-sticky">
    <div class="projects-top"><span class="section-id">04 / PROJECTS</span><span>SCROLL OR DRAG TO BEND THE FILM <b>↔</b></span><span id="project-count">01 — 10</span></div>
    <div class="projects-heading"><div class="project-eyebrow">MADE, EXPERIMENTED WITH, OR STILL MAKING</div><h2>IN <em>MOTION.</em></h2></div>
    <div class="film-viewport" id="film-viewport"><div class="film-track" id="film-track"></div></div>
-   <div class="projects-footer"><span>DRAG / SCROLL / HOVER / OPEN A PROJECT</span><div class="project-track-progress"><i id="project-progress-fill"></i></div><span id="film-position">001 / 010</span></div>
+   <div class="projects-footer"><span>DRAG / SCROLL / HOVER / OPEN A PROJECT</span><div class="project-track-progress"><i id="project-progress-fill"></i></div><span class="film-switches"><button id="film-prev" type="button" aria-label="Previous project">←</button><span id="film-position">001 / 010</span><button id="film-next" type="button" aria-label="Next project">→</button></span></div>
   </div>
  </section>
  <div class="project-modal" id="project-modal" hidden><div class="project-modal-shell"><button id="project-close" class="project-modal-close" aria-label="Close project" type="button">✕ CLOSE PROJECT</button><div class="project-modal-visual" id="modal-visual"></div><div class="project-modal-copy"><span id="modal-category">PROJECT</span><h3 id="modal-title">PROJECT TITLE</h3><p id="modal-desc">Project description goes here.</p><div class="modal-tags" id="modal-tags"></div><p class="modal-footnote">PREVIEW / CONTENT AND MEDIA CAN BE REPLACED LATER.</p></div></div></div>
  <!-- 05: James-style personal scrapbook and photo collage -->
- <section id="offclock" class="offclock-section">
-  <div class="off-head"><span class="section-id">05 / OFF THE CLOCK</span><span>THE OTHER STUFF I LIKE.</span></div>
-  <div class="off-main"><h2>OFF THE<br><em>CLOCK.</em></h2><p>I like dancing and badminton.<br><i>Also sunsets, stars and the occasional free afternoon.</i></p></div>
-  <div class="scrapbook" id="scrapbook">
-  <article class="scrap scrap-dance" style="--r:-6deg;--x:4%;--y:5%;--w:260px" tabindex="0"><div class="scrap-art"><img src="assets/hobby-dance.webp" loading="lazy" alt="Illustrated dance silhouette in dramatic red stage lighting"></div><div class="scrap-caption"><b>DANCE TO RESET</b><span>DANCE / 001</span></div></article>
-  <article class="scrap scrap-sky" style="--r:6deg;--x:38%;--y:9%;--w:270px" tabindex="0"><div class="scrap-art"><img src="assets/hobby-badminton.webp" loading="lazy" alt="Illustrated badminton racket and shuttlecock"></div><div class="scrap-caption"><b>ONE MORE MATCH</b><span>BADMINTON / 002</span></div></article>
-  <article class="scrap scrap-sunset" style="--r:-5deg;--x:60%;--y:46%;--w:360px" tabindex="0"><div class="scrap-art"><img src="assets/sunset-palms.webp" loading="lazy" alt="Jagruthi's photograph of orange clouds over palms at sunset"></div><div class="scrap-caption"><b>THE SKY DID THAT.</b><span>MY CAMERA / 005</span></div></article>
-  <div class="sticker-scribble">my<br>kind of<br>pause. <span>↗</span></div><div class="sticker-label">DRAG A PHOTO / FOLLOW THE SUNSET</div>
-</div>
-<div class="off-bottom"><span>DANCE · BADMINTON · SUNSETS</span><span>THESE SUNSETS ARE MY OWN ↗</span></div>
- <div class="sunset-gallery" aria-label="Sunsets photographed by Jagruthi">
-  <div class="sunset-gallery-heading"><span>MY CAMERA ROLL / SUNSET COLLECTION</span><strong>Some skies are worth stopping for.</strong></div>
-  <div class="sunset-reel">
-    <figure><img src="assets/sunset-clouds.webp" loading="lazy" alt="Warm dramatic clouds over Jagruthi's city"><figcaption>01 / A SKY FULL OF COLOUR</figcaption></figure>
-    <figure><img src="assets/sunset-dusk.webp" loading="lazy" alt="Red sun falling behind distant rooftops"><figcaption>02 / LAST LIGHT</figcaption></figure>
-    <figure><img src="assets/sunset-golden.webp" loading="lazy" alt="Sunset beside a building and garden"><figcaption>03 / GOLDEN HOUR</figcaption></figure>
-    <figure><img src="assets/sunset-palms.webp" loading="lazy" alt="Pastel sunset framed by palm trees"><figcaption>04 / ONE MORE PHOTO</figcaption></figure>
-  </div>
-  <div class="sunset-gallery-foot">ALL FOUR SUNSET PHOTOGRAPHS ARE MY OWN · THE OTHER HOBBY VISUALS ARE ILLUSTRATIVE</div>
-</div>
-</section>
+ 
  <!-- 06: one-question-at-a-time message form -->
  <section id="contact" class="contact-section">
   <div class="contact-meta"><span class="section-id">06 / SAY SOMETHING</span><span>THIS IS THE LAST PAGE. OR THE FIRST CONVERSATION.</span></div>
-  <div class="contact-layout"><div class="contact-copy"><span>A LITTLE HELLO.</span><h2>LET'S<br>MAKE A<br><i>CONNECTION.</i></h2><p>Questions, collaborations, or something completely random? I'm listening.</p><p class="contact-direct"><a href="mailto:jagruthig2020@gmail.com">jagruthig2020@gmail.com ↗</a></p><div class="contact-visual"><svg viewBox="0 0 400 260" aria-hidden="true"><g stroke="#e21926" fill="none" stroke-width="2"><path d="M40 200Q90 100 220 50T375 30"/><path d="M40 200Q160 140 340 170"/><path d="M40 200Q200 225 350 85"/><path d="M40 200Q130 85 345 85"/><path d="M40 200Q225 125 375 30"/></g><circle cx="40" cy="200" r="12" fill="#df1621"/></svg><span>HI, FROM MY CORNER OF THE INTERNET ↗</span></div></div>
+  <div class="contact-layout"><div class="contact-copy"><span>A LITTLE HELLO.</span><h2>Let’s make<br><i>a connection.</i></h2><p>Questions, collaborations, or something completely random? I'm listening.</p><p class="contact-direct"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jagruthig2020%40gmail.com" target="_blank" rel="noopener">jagruthig2020@gmail.com ↗</a></p></div>
   <div class="contact-form-shell"><div class="form-steps"><span id="form-step-index">01 / 03</span><div><i id="form-progress"></i></div><span>PRESS ENTER TO CONTINUE</span></div>
    <form id="contact-form" novalidate><div class="form-step active" data-step="0"><label for="contact-name">01 — FIRST, WHAT'S YOUR NAME?</label><input id="contact-name" name="name" placeholder="Your name here..." autocomplete="name" required/><div class="step-hint">I promise I won't make it weird.</div></div>
     <div class="form-step" data-step="1"><label for="contact-email">02 — WHERE CAN I REACH YOU?</label><input id="contact-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required/><div class="step-hint">Just for the reply.</div></div>
@@ -723,17 +681,17 @@ html[data-theme=light]{--red:#b80715;--red-deep:#73020b}
     <aside class="gm-copy">
       <div class="gm-kicker">SIDE QUEST 001 / A REAL MINI-GAME</div>
       <h2>DEFEND<br>THE<br><em>SIGNAL.</em></h2>
-      <p class="gm-desc">A broken circuit. Eight project signals. One core to protect. Shoot red web-threads at incoming glitches before they reach the center.</p>
-      <div class="gm-instructions"><div><strong>DESKTOP</strong> Click on red packets to intercept</div><div><strong>MOBILE</strong> Tap the packets</div><div><strong>WEB BURST</strong> Space / on-screen button</div><div><strong>ESC</strong> Exit game mode</div></div>
+      <p class="gm-desc">A broken circuit. Ten project signals. One core to protect. Shoot red web-threads at incoming glitches before they reach the center.</p>
+      <div class="gm-instructions"><div><strong>DESKTOP</strong> Click on red packets to intercept</div><div><strong>MOBILE</strong> Tap the packets</div><div><strong>WEB BURST</strong> Space / on-screen button</div><div><strong>P</strong> Pause / resume &nbsp; · &nbsp; <strong>ESC</strong> Exit</div></div>
       <div class="gm-live-stat"><div class="gm-stat"><small>YOUR SCORE</small><strong id="gm-score">0000</strong></div><div class="gm-stat"><small>CORE INTEGRITY</small><strong id="gm-integrity" class="gm-red">100%</strong></div></div>
-      <div class="gm-reveals"><div class="gm-reveals-title">RESTORE ELEVEN PROJECT SIGNALS // EVERY TWO HITS</div><div id="gm-modules" class="gm-reveals-list"><span>TREKKER</span><span>NERF</span><span>CHRONOMIND</span><span>PARADOX</span><span>CIRCUIT STUDIO</span><span>RACEOS</span><span>KIKO</span><span>TREE</span><span>ASTRA</span><span>ROADSTER</span><span>MILO</span></div></div>
+      <div class="gm-reveals"><div class="gm-reveals-title">RESTORE TEN PROJECT SIGNALS // EVERY TWO HITS</div><div id="gm-modules" class="gm-reveals-list"><span>TREKKER</span><span>NERF</span><span>CHRONOMIND</span><span>LUMORA</span><span>CIRCUIT STUDIO</span><span>RACEOS</span><span>KIKO</span><span>TREE</span><span>ASTRA</span><span>MILO</span></div></div>
     </aside>
     <section class="gm-stage" aria-label="Playable interactive circuit defense game">
       <div class="gm-stage-top"><span>SIMULATION // JG-01</span><span><b id="gm-state">AWAITING INPUT</b> &nbsp; | &nbsp; <span id="gm-time">45</span>s REMAINING</span></div>
       <div class="gm-canvas-wrap" id="gm-canvas-wrap"><div class="gm-mobile-score"><span>SCORE <b id="gm-mobile-score">0000</b></span><span>HEALTH <b id="gm-mobile-integrity">100%</b></span></div><canvas id="gm-canvas" aria-label="Circuit arena. Tap or click red enemy packets before they reach the center."></canvas><div class="gm-scanline" aria-hidden="true"></div><div class="gm-radar-coordinates" aria-hidden="true">X: 00.012 / Y: 06.042</div>
         <div class="gm-canvas-overlay" id="gm-panel"><div class="gm-dialog"><small id="gm-panel-kicker">SYSTEM / STANDBY</small><h3 id="gm-panel-title">READY TO<br>RECONNECT?</h3><p id="gm-panel-text">You have 45 seconds. Intercept the corrupted signals. Every two clean hits bring a project system back online.</p><button type="button" class="gm-primary" id="gm-start">INITIALIZE MISSION ↗</button></div></div>
       </div>
-      <div class="gm-stage-bottom"><span>INTERCEPT / REPAIR / UNLOCK</span><div class="gm-play-controls"><button type="button" id="gm-sfx" aria-label="Toggle game sound effects">♫ SFX OFF</button><button type="button" id="gm-burst">✳ WEB BURST / SPACE</button></div><span class="gm-best">BEST <b id="gm-best">0000</b></span></div>
+      <div class="gm-stage-bottom"><span>INTERCEPT / REPAIR / UNLOCK</span><div class="gm-play-controls"><button type="button" id="gm-pause" aria-pressed="false">Ⅱ PAUSE</button><button type="button" id="gm-music" aria-pressed="false">♫ MUSIC</button><button type="button" id="gm-sfx" aria-label="Toggle game sound effects">♫ SFX OFF</button><button type="button" id="gm-burst">✳ WEB BURST / SPACE</button></div><span class="gm-best">BEST <b id="gm-best">0000</b></span></div>
     </section>
   </div>
 </div>
@@ -744,10 +702,39 @@ const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const lerp=(a,b,t)=>a+(b-a)*t;
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const state={scroll:0,mouseX:0,mouseY:0,filmTarget:0,filmCurrent:0,filmVelocity:0,filmLast:0,filmDragging:false,filmMoved:false,activeStop:-1,zoom:1,modal:false};
-// A quiet Vivian-inspired name pop followed by a curtain opening onto the photo-led hero.
+// Cinematic opening; only this overlay owns its animation lifecycle.
 const loader=$('#loader');let loaderDone=false;
 function finishLoader(){if(loaderDone)return;loaderDone=true;loader.classList.add('out');document.body.classList.add('loaded');setTimeout(()=>loader.remove(),1100)}
-if(reduceMotion)finishLoader();else setTimeout(finishLoader,2700);
+if(reduceMotion)finishLoader();else {
+ const frames=Array.from(loader.querySelectorAll('.inf-frame'));
+ const title=loader.querySelector('.inf-title'),halo=loader.querySelector('.inf-halo'),shade=loader.querySelector('.inf-shade');
+ let started=false;
+ function startOpening(){
+  if(started||loaderDone)return;started=true;
+  const timers=[];const later=(fn,ms)=>timers.push(setTimeout(()=>{if(!loaderDone)fn()},ms));
+  frames.forEach((frame,i)=>{
+   later(()=>{
+    frame.style.visibility='visible';frame.style.zIndex=10+i;
+    const x=-innerWidth/1.6+(innerWidth/0.8)*(i/(frames.length-1));
+    const angle=Math.sin(i*7.31)*20,settle=Math.sin(i*3.7)*3;
+    frame.firstElementChild.animate([
+     {transform:`translate(${x}px,${-innerHeight-150}px) rotate(${angle}deg) scale(1.25)`},
+     {transform:`translate(0,0) rotate(${settle}deg) scale(1.2)`}
+    ],{duration:300,easing:'cubic-bezier(.18,.89,.35,1.2)',fill:'forwards'});
+    if(i>0)later(()=>{frames[i-1].style.visibility='hidden'},300);
+   },i*200);
+  });
+  later(()=>{
+   title.animate([{opacity:0,clipPath:'inset(0 100% 0 0)'},{opacity:1,clipPath:'inset(0 0% 0 0)'}],{duration:1500,easing:'cubic-bezier(.215,.61,.355,1)',fill:'forwards'});
+   halo.animate([{opacity:0},{opacity:1}],{duration:1500,fill:'forwards'});
+  },1400);
+  later(()=>shade.animate([{opacity:0},{opacity:.3}],{duration:800,fill:'forwards'}),2900);
+  later(finishLoader,4100);
+ }
+ const ready=Array.from(loader.querySelectorAll('img')).map(img=>img.decode().catch(()=>{}));
+ Promise.all([...ready,document.fonts.load('100px IntroBangers')]).then(startOpening).catch(startOpening);
+ setTimeout(startOpening,3500); // Failed assets never trap the visitor behind the intro.
+}
 $('#loader-skip').addEventListener('click',finishLoader);
 
 // Links, settings and mouse-following thread cursor.
@@ -760,21 +747,15 @@ const cursor=$('#cursor-ring');window.addEventListener('pointermove',e=>{if(e.po
 const webCanvas=$('#web-fx'),webCtx=webCanvas.getContext('2d');let webTrail=[],lastWebMove=-1;let webW=0,webH=0;
 function fitWeb(){let d=Math.min(devicePixelRatio||1,2);webW=innerWidth;webH=innerHeight;webCanvas.width=Math.floor(webW*d);webCanvas.height=Math.floor(webH*d);webCtx.setTransform(d,0,0,d,0,0)}fitWeb();window.addEventListener('resize',fitWeb);
 if(!reduceMotion){window.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;webTrail.unshift({x:e.clientX,y:e.clientY});webTrail=webTrail.slice(0,18);lastWebMove=performance.now()},{passive:true});function drawWeb(t){webCtx.clearRect(0,0,webW,webH);let fade=clamp(1-(t-lastWebMove)/850,0,1);if(fade>.01&&webTrail.length>2){for(let strand=0;strand<3;strand++){webCtx.beginPath();webTrail.forEach((pt,i)=>{const shift=Math.sin(i*.65+strand*2.1)*i*1.25;let x=pt.x+shift,y=pt.y+strand*i*.34;if(!i)webCtx.moveTo(x,y);else webCtx.lineTo(x,y)});webCtx.lineWidth=strand===0?1.25:.55;webCtx.strokeStyle=strand===0?`rgba(213,12,26,${fade*.6})`:`rgba(240,240,240,${fade*.27})`;webCtx.stroke()}for(let i=2;i<webTrail.length-2;i+=3){const pt=webTrail[i],prev=webTrail[i-1],dx=pt.x-prev.x,dy=pt.y-prev.y,mag=Math.hypot(dx,dy)||1,nx=-dy/mag,ny=dx/mag,d=(5+i*.7)*fade;webCtx.strokeStyle=`rgba(243,243,243,${fade*.24})`;webCtx.lineWidth=.75;webCtx.beginPath();webCtx.moveTo(pt.x+nx*d,pt.y+ny*d);webCtx.lineTo(pt.x-nx*d,pt.y-ny*d);webCtx.stroke()}}requestAnimationFrame(drawWeb)}requestAnimationFrame(drawWeb)}
-const art=$('#hero-art');art.addEventListener('pointermove',e=>{if(reduceMotion)return;let r=art.getBoundingClientRect();let dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;art.style.transform=`rotateY(${dx*13}deg) rotateX(${-dy*10}deg) translate3d(${dx*8}px,${dy*8}px,0)`});art.addEventListener('pointerleave',()=>art.style.transform='');
+const art=$('#hero-art');art?.addEventListener('pointermove',e=>{if(reduceMotion)return;let r=art.getBoundingClientRect();let dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;art.style.transform=`rotateY(${dx*13}deg) rotateX(${-dy*10}deg) translate3d(${dx*8}px,${dy*8}px,0)`});art?.addEventListener('pointerleave',()=>art.style.transform='');
 // Music player is initialized independently at the end of the page,
 // so a failure elsewhere in the animated site cannot disable playback.
-// A true scroll-following route: marker travels an SVG path and map pans under it.
-const journey=$('#journey'),world=$('#journey-world'),svgPath=$('#map-path-base'),progressPath=$('#map-path-progress'),marker=$('#moving-marker'),stopCard=$('.journey-stop');
-const swingLine=$('#web-swing-line'),swingGhost=$('#web-swing-ghost');const pathLen=svgPath.getTotalLength();progressPath.style.strokeDasharray=pathLen+' '+pathLen;progressPath.style.strokeDashoffset=pathLen;
-const stops=[{"year":"01","title":"BHASHYAM SCHOOL","desc":"I worked hard in school, but I hadn’t figured out what I wanted to do. Discovering Dexterity at Bhashyam turned out to matter far more than I expected.","tag":"CHAPTER 01 / SCHOOL"},{"year":"02","title":"DEXTERITY GLOBAL","desc":"Dexterity Global supports young people through leadership and education. At DexSchool, 74 of us spent a packed week together. I still think about those people and that experience.","tag":"CHAPTER 02 / DEXSCHOOL","photo":"assets/dex.webp","caption":"A MEMORY FROM DEXSCHOOL"},{"year":"03","title":"GLEC","desc":"Studying B.Tech CSE at Gokaraju Lailavathi Engineering College. The place where software started becoming something I could experiment with, not just study.","tag":"CHAPTER 03 / COLLEGE"},{"year":"04","title":"FIRST BUILDS","desc":"Microcontrollers, sensors, models, endless troubleshooting. The first time hardware and code worked together the way I wanted, I kept looking for another thing to try.","tag":"CHAPTER 04 / MAKING","photo":"assets/workbench.webp","caption":"THE HARDWARE WORKBENCH"},{"year":"05","title":"HACKATHONS","desc":"Four attended so far. Second place at Hack’O’Ber; TREE reached Round 2 at IIITH MegathonX. The people, pressure and last-minute fixes keep bringing me back.","tag":"CHAPTER 05 / TEAMWORK","photo":"assets/hackober.webp","caption":"HACK’O’BER 2026"},{"year":"06","title":"RIGHT NOW","desc":"Exploring interactive experiences, accessible AI tools and friendlier ways to learn electronics. There’s still a lot I want to try.","tag":"CHAPTER 06 / OPEN END","photo":"assets/megathon.webp","caption":"MEGATHONX / ONE OF FOUR SO FAR"}];
-function renderStop(i){if(i===state.activeStop)return;state.activeStop=i;stopCard.classList.add('change');setTimeout(()=>{const s=stops[i];$('#stop-fraction').textContent=String(i+1).padStart(2,'0')+' / 06';$('#stop-year').textContent=s.year;$('#stop-title').textContent=s.title;$('#stop-desc').textContent=s.desc;$('#stop-signal-label').textContent=s.tag;const f=$('#stop-photo-box');if(s.photo){f.hidden=false;$('#stop-photo').src=s.photo;$('#stop-photo').alt=s.caption||s.title;$('#stop-photo-caption').textContent=s.caption||''}else{f.hidden=true;}stopCard.classList.remove('change')},reduceMotion?0:130)}
-const modal=$('#map-modal'),mapList=$('#map-list');stops.forEach((s,i)=>{let b=document.createElement('button');b.type='button';b.innerHTML=`<strong>${s.year}</strong><span>${s.title} ↗</span>`;b.addEventListener('click',()=>{modal.hidden=true;document.body.style.overflow='';let top=journey.getBoundingClientRect().top+scrollY;window.scrollTo({top:top+(journey.offsetHeight-innerHeight)*(i/5),behavior:'smooth'})});mapList.appendChild(b)});
-$('#journey-overview').addEventListener('click',()=>{modal.hidden=false;document.body.style.overflow='hidden'});$('#map-close').addEventListener('click',()=>{modal.hidden=true;document.body.style.overflow=''});$('#journey-plus').addEventListener('click',()=>state.zoom=clamp(state.zoom+.12,.75,1.4));$('#journey-minus').addEventListener('click',()=>state.zoom=clamp(state.zoom-.12,.75,1.4));
 // Harish-type infinite skill strips, with real skills only.
-const skillRows=[{"name":"PROGRAMMING","dir":0,"speed":34,"skills":[["Py","Python","Data, applications and machine learning"],["C","C","Programming fundamentals and embedded experiments"],["C#","C#","Programming and software work"],["TS","TypeScript","React and Next.js interfaces"],["JS","JavaScript","Interactive web features"],["SQL","SQL","Queries and relational data"]]},{"name":"WEB + TOOLS","dir":1,"speed":36,"skills":[["Re","React","Interfaces and interactions"],["Nx","Next.js","Web apps including ChronoMind"],["FA","FastAPI","Python web services"],["St","Streamlit","RaceOS experiments"],["PG","PostgreSQL","Data storage and queries"],["Git","Git / GitHub","Projects and version control"]]},{"name":"DATA + ML","dir":0,"speed":39,"skills":[["Np","NumPy","Numerical computing"],["Pd","Pandas","Working with data"],["Sk","scikit-learn","Training and evaluation"],["RF","Random Forest","Tabular machine learning"],["CV","OpenCV (basics)","Exploring computer vision"],["Ev","Model evaluation","Measuring what works"]]},{"name":"HARDWARE","dir":1,"speed":42,"skills":[["32","ESP32","Microcontroller prototypes"],["Ar","Arduino IDE","Microcontroller development"],["I²C","I²C","Talking to sensors and OLEDs"],["GN","GNSS","Location-aware builds"],["IMU","MPU6050","Motion and movement sensing"],["BLE","BLE","Connected wearable experiments"]]}];
-const skillList=$('#skills-list');skillRows.forEach(row=>{const el=document.createElement('div');el.className='skill-row'+(row.dir?' reverse':'');el.innerHTML=`<div class="skill-label">${row.name}</div><div class="skill-track" style="--speed:${row.speed}s"></div>`;const track=$('.skill-track',el);for(let copy=0;copy<2;copy++){row.skills.forEach(s=>{const tile=document.createElement('button');tile.type='button';tile.className='skill-card';tile.innerHTML=`<span class="skill-symbol">${s[0]}</span><span class="skill-name">${s[1]}</span>`;tile.setAttribute('aria-label',s[1]+': '+s[2]);const show=()=>{$('#skills-detail').innerHTML=`<strong>✳ ${s[1].toUpperCase()}</strong><span>${s[2]}</span>`};tile.addEventListener('pointerenter',show);tile.addEventListener('focus',show);track.appendChild(tile)})}skillList.appendChild(el)});
+const skillList=$('#skills-list');
+const skillEvidence=[["Languages", [["Python", "projects/chronomind-ai.html", "Used in ChronoMind"], ["Java", "https://dev.java/learn/", "Java language reference"], ["C / C++", "projects/nerf-controller.html", "ESP32 firmware work"], ["C#", "https://learn.microsoft.com/en-us/dotnet/csharp/", "C# language reference"], ["JavaScript / TypeScript", "projects/circuit-studio.html", "Web interfaces"], ["SQL", "https://www.postgresql.org/docs/current/tutorial-sql.html", "SQL reference"]]], ["Web & apps", [["HTML / CSS", "https://github.com/jagruthig2020-ship-it/Portfolio", "Portfolio source"], ["React / Next.js", "projects/chronomind-ai.html", "ChronoMind interface"], ["FastAPI", "projects/circuit-studio.html", "Workbench backend"], ["Streamlit", "projects/raceos.html", "RaceOS interface"]]], ["Data & ML", [["Machine Learning", "projects/chronomind-ai.html", "Cognitive performance modelling"], ["Deep Learning", "https://www.tensorflow.org/learn", "Learning reference"], ["scikit-learn", "projects/chronomind-ai.html", "Model training and evaluation"], ["Pandas / NumPy", "projects/raceos.html", "Race data processing"], ["OpenCV / YOLO", "https://docs.ultralytics.com/", "Computer vision reference"], ["Keras", "https://keras.io/guides/", "Keras reference"]]], ["Hardware & tools", [["Embedded Systems / ESP32", "projects/astra.html", "ESP32 system prototype"], ["Arduino", "projects/nerf-controller.html", "Controller development"], ["Git / GitHub", "https://github.com/jagruthig2020-ship-it", "Public project repositories"], ["VS Code", "https://code.visualstudio.com/docs", "Editor reference"], ["PostgreSQL", "https://www.postgresql.org/docs/", "Database reference"]]]];
+skillEvidence.forEach(([group,items])=>{const row=document.createElement("div");row.className="tool-row";const h=document.createElement("h3");h.textContent=group;row.append(h);items.forEach(([name,href,note])=>{const a=document.createElement("a");a.href=href;a.className="skill-evidence";a.textContent=name+" ↗";a.title=note;a.setAttribute("aria-label",name+": "+note);if(href.startsWith("https:")){a.target="_blank";a.rel="noopener noreferrer"}row.append(a)});skillList.append(row)});
 // Seven distinct SVG project artboards based on the selected projects.
-const projects=[{"name":"TREKKER","category":"HARDWARE / SAFETY WEARABLE","desc":"A wearable safety prototype combining GNSS tracking, activity sensing, and an emergency SOS mechanism. Built to explore how a small device could make outdoor trips safer.","tags":["ESP32","NEO-M8N GNSS","Wearable"],"kind":"trekker","colors":["#df101c","#101317","#f2f1eb"],"cover":"assets/cover_01.webp","status":"Prototype"},{"name":"NERF CONTROLLER","category":"HARDWARE / MOTION INTERACTION","desc":"A physical controller built around an ESP32, MPU6050 and buttons, with lights and other feedback. The hardware became a playful way to experiment with motion-driven interaction.","tags":["ESP32","MPU6050","Interactive hardware"],"kind":"nerf","colors":["#df101c","#111112","#f1ede9"],"cover":"assets/cover_02.webp","status":"Built"},{"name":"CHRONOMIND AI","category":"MACHINE LEARNING / COGNITION","desc":"I work late a lot, so I began researching when we actually focus best. ChronoMind uses cognitive challenges, performance analysis and machine learning to explore personalized schedules.","tags":["Python","scikit-learn","Next.js"],"kind":"chrono","colors":["#df101c","#101114","#ffffff"],"cover":"assets/cover_03.webp","status":"Built / iterative"},{"name":"PARADOX","category":"INTERACTIVE WEB / PERCEPTION","desc":"An interactive museum of optical illusions, designed around the wonderfully unreliable way we see the world. Still evolving; I would love to explore VR as it grows.","tags":["Interactive web","Optical illusions","VR planned"],"kind":"paradox","colors":["#df101c","#131219","#f8f5ee"],"cover":"assets/cover_04.webp","status":"Work in progress"},{"name":"CIRCUIT STUDIO","category":"ELECTRONICS / LEARNING TOOL","desc":"An experimental workbench for people who are new to IoT: explore components, experiment with virtual connections, and gradually understand real hardware. The larger vision includes connecting physical boards.","tags":["IoT","Electronics","Web interactions"],"kind":"circuit","colors":["#df101c","#141418","#fff"],"cover":"assets/cover_05.webp","status":"Work in progress"},{"name":"RACEOS","category":"FORMULA 1 / MACHINE LEARNING","desc":"My Formula 1 curiosity turned into a machine-learning experiment using telemetry, tyre information and racing context to explore pit-stop strategy.","tags":["Python","FastF1","Random Forest"],"kind":"race","colors":["#df101c","#111115","#f8f8f1"],"cover":"assets/cover_06.webp","status":"Built"},{"name":"KIKO","category":"ACCESSIBILITY / DESKTOP ASSISTANT","desc":"A desktop assistant intended to help people navigate unfamiliar computer tasks through step-by-step, multilingual guidance. Still an exploratory prototype with limitations I’m working through.","tags":["Python","Multilingual UX","Ollama"],"kind":"kiko","colors":["#df101c","#111113","#f6f3ee"],"cover":"assets/cover_07.webp","status":"Prototype / in progress"},{"name":"TREE","category":"SUSTAINABILITY / MEGATHONX","desc":"A collaborative home-energy retrofit assessment concept that scores efficiency and highlights areas for improvement. TREE advanced to Round 2 of IIITH MegathonX.","tags":["Energy","Scoring model","Team project"],"kind":"tree","colors":["#df101c","#111315","#f3f0eb"],"cover":"assets/cover_08.webp","status":"Hackathon prototype"},{"name":"ASTRA","category":"EMBEDDED SYSTEMS / FAULT RECOVERY","desc":"A spacecraft fault-detection and recovery testbed using ESP32 boards and sensor feedback to simulate detection, safe shutdown, and recovery. This is a prototype, not a flight-ready spacecraft system.","tags":["ESP32","Sensors","Recovery logic"],"kind":"astra","colors":["#df101c","#121315","#f1f1ed"],"cover":"assets/cover_09.webp","status":"Prototype"},{"name":"TESLA ROADSTER DEMO","category":"CURRENT MAJOR PROJECT / AUTOMOTIVE DEMO","desc":"Our main project focus right now is a Tesla Roadster demo. We're developing the prototype and will add its real features, media, and results as the work progresses. This is an independent student build and is not affiliated with Tesla.","tags":["Current focus","Demo","In development"],"kind":"planned2","colors":["#df101c","#121315","#f1f1ed"],"cover":"assets/cover_10.webp","status":"Current focus / not yet complete"},{"name":"MILO","category":"AI COMPANION / ELDERLY CARE","desc":"A teddy-bear-inspired mobile companion robot concept for older adults. I'm developing a low-cost prototype that brings together voice interaction, reminders, wearable safety sensing, and caregiver alerts. These features are in development, not a finished care product.","tags":["Companion robot","ESP32","In development"],"kind":"planned2","colors":["#d51e28","#111315","#f3f0eb"],"cover":"assets/cover_11.webp","status":"In development / concept"}];
+const projects=[{"name": "CIRCUIT STUDIO", "category": "ELECTRONICS / LEARNING TOOL", "desc": "I kept moving between pin diagrams, component pages, wiring notes, and code just to get one sensor working. Circuit Studio is my attempt to put those steps in one place, so I can spend more time building and less time finding the next tab.", "tags": ["IoT", "Electronics", "Web interactions"], "kind": "circuit", "colors": ["#df101c", "#141418", "#fff"], "cover": "assets/circuit-studio-preview.png", "status": "Work in progress", "slug": "circuit-studio", "page": "projects/circuit-studio.html", "credit": "Solo project"}, {"name": "KIKO", "category": "ACCESSIBILITY / DESKTOP ASSISTANT", "desc": "I saw people around me get stuck on computer tasks I barely thought about. A familiar screen to me could be a confusing one to them. I built KIKO because I wanted to help with that exact moment: what do I do next?", "tags": ["Python", "Multilingual UX", "Ollama"], "kind": "kiko", "colors": ["#df101c", "#111113", "#f6f3ee"], "cover": "assets/cover_07.webp", "status": "Prototype / in progress", "slug": "kiko", "page": "projects/kiko.html", "credit": "Solo project"}, {"name": "CHRONOMIND AI", "category": "MACHINE LEARNING / COGNITION", "desc": "I work late a lot, but being awake and being able to focus aren’t always the same thing. I wanted to understand why some nights felt easier than others. ChronoMind AI started with that question, and with testing whether the data could tell me anything useful.", "tags": ["Python", "scikit-learn", "Next.js"], "kind": "chrono", "colors": ["#df101c", "#101114", "#ffffff"], "cover": "assets/cover_03.webp", "status": "Built / iterative", "slug": "chronomind-ai", "page": "projects/chronomind-ai.html", "credit": "Solo project"}, {"name": "TREKKER", "category": "HARDWARE / SAFETY WEARABLE", "desc": "We wanted someone to be able to ask for help with a physical button. So we started putting the button, location sensing, and movement sensing into a wearable. TREKKER is our attempt to make that first action easier when reaching for a phone isn’t convenient.", "tags": ["ESP32", "NEO-M8N GNSS", "Wearable"], "kind": "trekker", "colors": ["#df101c", "#101317", "#f2f1eb"], "cover": "assets/cover_01.webp", "status": "Prototype", "slug": "trekker", "page": "projects/trekker.html", "credit": "Group project"}, {"name": "NERF CONTROLLER", "category": "HARDWARE / MOTION INTERACTION", "desc": "We had a Nerf blaster and wanted to see what we could make it respond to. We added motion sensing, buttons, lights, and a buzzer. A lot of the work came down to small adjustments: which movement counts, and when should the feedback happen?", "tags": ["ESP32", "MPU6050", "Interactive hardware"], "kind": "nerf", "colors": ["#df101c", "#111112", "#f1ede9"], "cover": "assets/cover_02.webp", "status": "Built", "slug": "nerf-controller", "page": "projects/nerf-controller.html", "credit": "Group project"}, {"name": "ASTRA", "category": "EMBEDDED SYSTEMS / FAULT RECOVERY", "desc": "We wanted to see a system notice that something had gone wrong, shut down a payload, and try to recover. So we built a spacecraft-inspired testbed with a main ESP32 and a second board watching it. The interesting part is what happens after the fault.", "tags": ["ESP32", "Sensors", "Recovery logic"], "kind": "astra", "colors": ["#df101c", "#121315", "#f1f1ed"], "cover": "assets/cover_09.webp", "status": "Prototype", "slug": "astra", "page": "projects/astra.html", "credit": "Group project"}, {"name": "RACEOS", "category": "FORMULA 1 / MACHINE LEARNING", "desc": "We wanted to look more closely at the pit-stop decision in a race. RaceOS takes lap number, tyre age, tyre compound, and position, then uses a model trained on race data to explore a strategy prediction. It’s an experiment we can test, rather than a strategy we can promise will win.", "tags": ["Python", "FastF1", "Random Forest"], "kind": "race", "colors": ["#df101c", "#111115", "#f8f8f1"], "cover": "assets/cover_06.webp", "status": "Built", "slug": "raceos", "page": "projects/raceos.html", "credit": "Group project"}, {"name": "ROADSTER", "category": "HARDWARE / MAJOR PROJECT", "desc": "We’re planning a Tesla Roadster-inspired car demo as our major project. The goal is to move from the car we’re imagining to a prototype we can drive, measure, and keep improving.", "tags": ["Vehicle prototype", "Group project", "Planned"], "kind": "planned2", "colors": ["#df101c", "#111315", "#f3f0eb"], "cover": "assets/cover_10.webp", "status": "Planned major project", "slug": "roadster", "page": "projects/roadster.html", "credit": "Group project"}, {"name": "MILO", "category": "AI COMPANION / ELDERLY CARE", "desc": "We’re exploring a small companion robot for elderly care: something that could come closer, speak a reminder, and help a caregiver know when something might be wrong. MILO is a group project, and we’re still working toward a dependable prototype.", "tags": ["Companion robot", "ESP32", "In development"], "kind": "planned2", "colors": ["#d51e28", "#111315", "#f3f0eb"], "cover": "assets/cover_11.webp", "status": "In development / concept", "slug": "milo", "page": "projects/milo.html", "credit": "Group project"}, {"name": "LUMORA", "category": "INTERACTIVE WEB / SPELLCASTING", "desc": "I didn’t want another page about Harry Potter. I wanted a room I could do things in: light it up, lift an object, try a spell and watch it respond. Lumora is where I’ve been trying to turn that idea into something you can explore.", "tags": ["Interactive web", "Voice spells", "ESP32 wand planned"], "kind": "lumora", "colors": ["#df101c", "#131219", "#f8f5ee"], "cover": "assets/lumora-room.webp", "status": "Undergoing", "slug": "lumora", "page": "projects/lumora.html", "credit": "Solo project", "displayStatus": "UNDERGOING"}];
 function artwork(p){let [a,b,c]=p.colors;const common=`<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="${b}"/><stop offset="1" stop-color="${a}"/></linearGradient><linearGradient id="beam" x1="0" x2="1"><stop stop-color="${a}"/><stop offset="1" stop-color="${c}"/></linearGradient><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#fff" opacity=".19"/></pattern></defs><rect width="680" height="860" fill="url(#bg)"/><rect width="680" height="860" fill="url(#dots)"/><path d="M-40 150L700 -30M-40 340L700 160M-40 530L700 350M-40 720L700 540" stroke="${c}" stroke-width="1" opacity=".14"/>`;
  let mid='';
  if(p.kind==='race') mid=`<circle cx="355" cy="410" r="248" stroke="${c}" stroke-width="13" fill="none" opacity=".25"/><circle cx="355" cy="410" r="182" stroke="${c}" stroke-width="11" fill="none" opacity=".6"/><circle cx="355" cy="410" r="112" stroke="#17121a" stroke-width="35" fill="none"/><circle cx="355" cy="410" r="49" fill="${c}"/><path d="M115 460C170 250 560 260 555 450S235 675 200 550" stroke="#f6e3dd" stroke-width="23" fill="none" opacity=".8"/><g stroke="#fff" stroke-width="3"><path d="M355 300V520M245 410H465M278 333L433 485M433 334L279 487"/></g><path d="M50 680H630" stroke="#fff" opacity=".4"/><path d="M55 681L105 619L175 675L230 595L305 634L380 537L440 576L520 475L610 512" fill="none" stroke="${c}" stroke-width="10"/>`;
@@ -783,7 +764,7 @@ function artwork(p){let [a,b,c]=p.colors;const common=`<defs><linearGradient id=
  if(p.kind==='trekker')mid=`<g transform="translate(330 425) rotate(-22)"><rect x="-89" y="-345" width="178" height="690" rx="85" fill="#101b20" stroke="${c}" stroke-width="15"/><rect x="-115" y="-165" width="230" height="330" rx="57" fill="#22272b" stroke="${a}" stroke-width="19"/><rect x="-89" y="-135" width="178" height="270" rx="25" fill="#101215"/><path d="M-70 27L-45 -10L-17 32L11 -40L36 16L58 -3L75 12" fill="none" stroke="${c}" stroke-width="10"/><circle cx="0" cy="-71" r="16" fill="${a}"/><path d="M-45 81H50" stroke="${c}" stroke-width="6"/></g><g fill="none" stroke="${c}" stroke-width="3" opacity=".5"><circle cx="330" cy="425" r="310"/><circle cx="330" cy="425" r="260"/></g>`;
   if(p.kind==='kiko')mid=`<g transform="translate(83 205)"><rect x="0" y="0" width="515" height="360" rx="15" fill="#151515" stroke="${c}" stroke-width="8"/><rect x="18" y="20" width="480" height="294" rx="5" fill="#232324"/><rect x="40" y="49" width="437" height="44" rx="8" fill="#151515"/><circle cx="66" cy="72" r="8" fill="${a}"/><circle cx="95" cy="72" r="8" fill="${c}"/><circle cx="124" cy="72" r="8" fill="${c}"/><rect x="42" y="114" width="210" height="150" rx="19" fill="#d6111f"/><text x="66" y="168" fill="#fff" font-family="sans-serif" font-weight="bold" font-size="37">KIKO</text><text x="66" y="208" fill="#fff" font-family="monospace" font-size="17">LET'S LEARN</text><rect x="274" y="121" width="185" height="32" rx="10" fill="#666"/><rect x="274" y="172" width="160" height="32" rx="10" fill="#a6a6a6"/><rect x="274" y="222" width="118" height="32" rx="10" fill="${a}"/><path d="M-19 330H535L582 390H-67Z" fill="#b1b1b1"/><path d="M215 371H325L350 390H191Z" fill="#353535"/></g><g transform="translate(445 610)"><circle r="83" fill="#d6111f"/><path d="M-38 -19q39 -48 80 0q-6 49 -39 53l-12 29-3-31q-36 -8 -26 -51Z" fill="none" stroke="#fff" stroke-width="8"/><circle cx="-20" cy="-12" r="6" fill="#fff"/><circle cx="1" cy="-12" r="6" fill="#fff"/><circle cx="23" cy="-12" r="6" fill="#fff"/></g>`;
   if(p.kind==='nerf')mid=`<g transform="translate(340 410) rotate(-21)"><path d="M-230 -40H-95L-60 -135H75L105 -75H222L251 -7L184 48H75L45 170H-34L-67 50H-235Z" fill="#1b2023" stroke="${c}" stroke-width="13"/><path d="M-228 -40H-110L-80 35H-235Z" fill="${a}"/><rect x="-75" y="-98" width="140" height="98" rx="12" fill="#3e4448" stroke="${a}" stroke-width="10"/><path d="M-10 43L47 47L21 141H-31Z" fill="${a}"/><path d="M97 -69L210 -69M108 -32L200 -32" stroke="${a}" stroke-width="11"/><circle cx="-17" cy="-50" r="22" fill="${c}"/><circle cx="-17" cy="-50" r="10" fill="${a}"/></g><g fill="none" stroke="${c}" opacity=".65"><circle cx="340" cy="410" r="280" stroke-dasharray="3 13" stroke-width="4"/><path d="M100 162L550 640M95 650L590 190" stroke-width="2" stroke-dasharray="16 10"/></g><g fill="${c}" font-size="15" font-family="monospace"><text x="74" y="705">MOTION / INPUT</text><text x="392" y="166">FEEDBACK / OUTPUT</text></g>`;
-  if(p.kind==='paradox')mid=`<g transform="translate(340 422)" fill="none" stroke="${c}" stroke-width="8"><path d="M-245 -230H245V230H-245Z"/><path d="M-245 -230L-178 -166L178 -166L245 -230M245 230L178 166L178 -166M-245 230L-178 166L-178 -166M-245 230L-178 166H178L245 230"/><path d="M-178 -166L-120 -108H120L178 -166M178 166L120 108V-108M-178 166L-120 108H120M-120 -108V108M-120 -108L-62 -50H62L120 -108M120 108L62 50V-50M-120 108L-62 50H62M-62 -50V50M-62 -50L-20 -15H20L62 -50M62 50L20 15V-15M-62 50L-20 15H20M-20 -15V15"/><path d="M-140 -140L145 145M145 -145L-145 145" stroke="${a}" stroke-width="3" opacity=".8"/></g><circle cx="340" cy="422" r="45" fill="${a}"/><circle cx="340" cy="422" r="18" fill="${c}"/><g font-family="monospace" letter-spacing="3" fill="${c}" font-size="20"><text x="65" y="736">LOOK TWICE</text><text x="411" y="736">NOTHING IS STILL</text></g>`;
+  if(p.kind==='lumora')mid=`<g transform="translate(340 422)" fill="none" stroke="${c}" stroke-width="8"><path d="M-245 -230H245V230H-245Z"/><path d="M-245 -230L-178 -166L178 -166L245 -230M245 230L178 166L178 -166M-245 230L-178 166L-178 -166M-245 230L-178 166H178L245 230"/><path d="M-178 -166L-120 -108H120L178 -166M178 166L120 108V-108M-178 166L-120 108H120M-120 -108V108M-120 -108L-62 -50H62L120 -108M120 108L62 50V-50M-120 108L-62 50H62M-62 -50V50M-62 -50L-20 -15H20L62 -50M62 50L20 15V-15M-62 50L-20 15H20M-20 -15V15"/><path d="M-140 -140L145 145M145 -145L-145 145" stroke="${a}" stroke-width="3" opacity=".8"/></g><circle cx="340" cy="422" r="45" fill="${a}"/><circle cx="340" cy="422" r="18" fill="${c}"/><g font-family="monospace" letter-spacing="3" fill="${c}" font-size="20"><text x="65" y="736">LOOK TWICE</text><text x="411" y="736">NOTHING IS STILL</text></g>`;
   if(p.kind==='circuit')mid=`<g transform="translate(90 230) rotate(-8 260 230)"><rect x="0" y="0" width="500" height="400" rx="20" fill="#101b1a" stroke="${c}" stroke-width="12"/><rect x="35" y="40" width="425" height="310" rx="6" fill="#24322e"/><g fill="${c}" opacity=".65">${Array.from({length:11},(_,row)=>Array.from({length:14},(_,col)=>`<circle cx="${54+col*30}" cy="${63+row*27}" r="3.1"/>`).join('')).join('')}</g><rect x="120" y="70" width="150" height="120" rx="8" fill="#090d0f" stroke="${a}" stroke-width="8"/><rect x="145" y="97" width="100" height="65" rx="5" fill="#303739"/><circle cx="390" cy="115" r="40" fill="#061319" stroke="${c}" stroke-width="7"/><circle cx="390" cy="115" r="20" fill="${a}"/><path d="M78 240C140 240 110 166 190 166S282 286 336 272S386 222 440 226" fill="none" stroke="${a}" stroke-width="15" stroke-linecap="round"/><path d="M80 288C173 275 161 328 236 316S312 208 414 290" fill="none" stroke="#f4f1e4" stroke-width="9" stroke-linecap="round"/><circle cx="80" cy="240" r="10" fill="#fff"/><circle cx="440" cy="226" r="10" fill="#fff"/></g><g fill="${c}" font-family="monospace" font-size="18" letter-spacing="3"><text x="92" y="735">PATCH / TEST / BUILD</text></g>`;
   if(p.kind==='planned1')mid=`<g fill="none" stroke="${c}" stroke-width="3" opacity=".9"><path d="M110 260h460v375H110z" stroke-dasharray="11 12"/><path d="M135 284l405 322M540 284L135 606" opacity=".28"/><circle cx="340" cy="448" r="122" stroke="${a}" stroke-width="8"/><path d="M340 327v240M219 448h242" stroke="${c}" opacity=".55"/><path d="M250 687h180"/></g><text x="340" y="466" text-anchor="middle" fill="${c}" font-family="sans-serif" font-weight="bold" font-size="90">?</text><text x="340" y="732" text-anchor="middle" fill="${c}" font-family="monospace" font-size="21" letter-spacing="5">IN PROGRESS</text>`;
   if(p.kind==='planned2')mid=`<g fill="none" stroke="${c}" stroke-width="3" opacity=".95"><path d="M340 235l203 118v232L340 705 137 585V353Z" stroke="${a}" stroke-width="9"/><path d="M340 235v232m203 -114L340 467 137 353m203 114v238"/><circle cx="340" cy="467" r="105" stroke-dasharray="8 16"/><path d="M340 386v162M260 467h162" opacity=".5"/></g><text x="340" y="483" text-anchor="middle" fill="${c}" font-family="sans-serif" font-weight="bold" font-size="88">?</text><text x="340" y="760" text-anchor="middle" fill="${c}" font-family="monospace" font-size="21" letter-spacing="5">NEXT CHAPTER</text>`;
@@ -791,21 +772,27 @@ function artwork(p){let [a,b,c]=p.colors;const common=`<defs><linearGradient id=
 }
 const enc=(svg)=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
 const filmViewport=$('#film-viewport'),filmTrack=$('#film-track');const filmCards=[];
-projects.forEach((p,i)=>{const card=document.createElement('div');card.className='film-card';card.dataset.index=String(i+1).padStart(2,'0');card.setAttribute('role','button');card.setAttribute('tabindex','0');card.setAttribute('aria-label','Open '+p.name+' project');card.dataset.art=p.cover||enc(artwork(p));card.innerHTML=`<div class="film-art"><div class="film-slices"></div><div class="film-shine"></div></div><span class="film-open">↗</span><div class="film-meta"><div class="film-category">${p.category}</div><h3>${p.name}</h3></div>`;
- filmTrack.appendChild(card);filmCards.push(card);card.addEventListener('click',()=>{if(!state.filmMoved)openProject(i)});card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(i)}});card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();card.dataset.mouse=((e.clientX-r.left)/r.width).toFixed(3)});card.addEventListener('pointerleave',()=>delete card.dataset.mouse);
+projects.forEach((p,i)=>{const card=document.createElement('a');card.href=p.page;card.draggable=false;card.className='film-card';card.dataset.index=String(i+1).padStart(2,'0');card.setAttribute('tabindex','0');card.setAttribute('aria-label','Open '+p.name+' project');card.dataset.art=p.cover||enc(artwork(p));card.innerHTML=`<div class="film-art"><div class="film-slices"></div><div class="film-shine"></div></div><span class="film-open">↗</span><div class="film-meta"><div class="film-category">${p.category}</div><h3>${p.name}</h3><span class="film-credit">${p.credit}${p.displayStatus?" · "+p.displayStatus:""}${p.achievement?" · "+p.achievement:""}</span></div>`;
+ filmTrack.appendChild(card);filmCards.push(card);card.addEventListener('click',e=>{if(state.filmMoved)e.preventDefault()});card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(i)}});card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();card.dataset.mouse=((e.clientX-r.left)/r.width).toFixed(3)});card.addEventListener('pointerleave',()=>delete card.dataset.mouse);
 });
 function sizeSlices(){filmCards.forEach(card=>{const el=$('.film-slices',card),w=$('.film-art',card).clientWidth,h=$('.film-art',card).clientHeight;const n=20;if(el.children.length!==n){el.innerHTML='';for(let i=0;i<n;i++){let s=document.createElement('span');s.className='film-slice';el.appendChild(s)}}[...el.children].forEach((s,i)=>{s.style.width=(100/n+.01)+'%';s.style.backgroundImage=`url("${card.dataset.art}")`;s.style.backgroundSize=`${w}px ${h}px`;s.style.backgroundPosition=`-${i*w/n}px 0`;s.style.backgroundRepeat='no-repeat'})})}
 function filmBounds(){return Math.max(0,filmTrack.scrollWidth-filmViewport.clientWidth)}
 function filmScrollProgress(){const r=$('#projects').getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight),0,1)}
 function filmUpdate(now){const projectSection=$('#projects').getBoundingClientRect(),inView=projectSection.bottom>0&&projectSection.top<innerHeight;let max=filmBounds();if(!state.filmDragging)state.filmTarget=max*filmScrollProgress();let prev=state.filmCurrent;state.filmCurrent=lerp(prev,state.filmTarget,reduceMotion?1:.115);let vel=state.filmCurrent-prev;state.filmVelocity=lerp(state.filmVelocity,vel,.25);
- if(inView){filmTrack.style.transform=`translate3d(${-state.filmCurrent}px,0,0)`;const mid=innerWidth/2;let activeIdx=0,min=Infinity;filmCards.forEach((card,i)=>{const cw=card.offsetWidth;const pos=(filmTrack.parentElement.getBoundingClientRect().left)+35*innerWidth/100 + i*(cw+35)-state.filmCurrent+cw/2;const rel=(pos-mid)/innerWidth;const dist=Math.abs(rel);if(dist<min){min=dist;activeIdx=i}card.style.transform=`perspective(1200px) rotateY(${clamp(-rel*21,-23,23)}deg) translateZ(${-(Math.abs(rel)*105)}px) rotateZ(${clamp(rel*4,-5,5)}deg)`;const slices=$$('.film-slice',card);const bend=clamp(state.filmVelocity*5,-43,43);let mx=card.dataset.mouse===undefined?-.3:parseFloat(card.dataset.mouse)*2-1;slices.forEach((slice,j)=>{const t=j/(slices.length-1);const curve=Math.sin(t*Math.PI)*bend;const hover=card.dataset.mouse!==undefined?Math.exp(-Math.pow((t-.5-mx*.45)/.22,2))*4:0;slice.style.transform=`translate3d(0,${curve*.19+hover}px,${curve}px) rotateY(${curve*.30}deg)`})});$('#film-position').textContent=String(activeIdx+1).padStart(3,'0')+' / '+String(projects.length).padStart(3,'0');$('#project-progress-fill').style.width=(100*state.filmCurrent/Math.max(1,max))+'%'}
+ if(inView){filmTrack.style.transform=`translate3d(${-state.filmCurrent}px,0,0)`;const mid=innerWidth/2;let activeIdx=0,min=Infinity;filmCards.forEach((card,i)=>{const cw=card.offsetWidth;const pos=filmViewport.getBoundingClientRect().left+card.offsetLeft-state.filmCurrent+cw/2;const rel=(pos-mid)/innerWidth;const dist=Math.abs(rel);if(dist<min){min=dist;activeIdx=i}card.style.transform=`perspective(1200px) rotateY(${clamp(-rel*21,-23,23)}deg) translateZ(${-(Math.abs(rel)*105)}px) rotateZ(${clamp(rel*4,-5,5)}deg)`;const slices=$$('.film-slice',card);const bend=clamp(state.filmVelocity*5,-43,43);let mx=card.dataset.mouse===undefined?-.3:parseFloat(card.dataset.mouse)*2-1;slices.forEach((slice,j)=>{const t=j/(slices.length-1);const curve=Math.sin(t*Math.PI)*bend;const hover=card.dataset.mouse!==undefined?Math.exp(-Math.pow((t-.5-mx*.45)/.22,2))*4:0;slice.style.transform=`translate3d(0,${curve*.19+hover}px,${curve}px) rotateY(${curve*.30}deg)`})});$('#film-position').textContent=String(activeIdx+1).padStart(3,'0')+' / '+String(projects.length).padStart(3,'0');$('#project-progress-fill').style.width=(100*state.filmCurrent/Math.max(1,max))+'%'}
  state.filmLast=now;requestAnimationFrame(filmUpdate)}
+function stepProject(direction){const max=filmBounds();let nearest=0,distance=Infinity;filmCards.forEach((card,i)=>{const d=Math.abs(card.offsetLeft+card.offsetWidth/2-state.filmCurrent-filmViewport.clientWidth/2);if(d<distance){distance=d;nearest=i}});const card=filmCards[clamp(nearest+direction,0,projects.length-1)];const target=clamp(card.offsetLeft+card.offsetWidth/2-filmViewport.clientWidth/2,0,max);const section=$('#projects');window.scrollTo({top:section.getBoundingClientRect().top+scrollY+target/Math.max(1,max)*(section.offsetHeight-innerHeight),behavior:reduceMotion?'auto':'smooth'})}
+$('#film-prev').addEventListener('click',()=>stepProject(-1));$('#film-next').addEventListener('click',()=>stepProject(1));
 let dragStartX=0,dragStartTarget=0,dragStartY=0;
-filmViewport.addEventListener('pointerdown',e=>{if(e.button!==0&&e.pointerType!=='touch')return;state.filmDragging=true;state.filmMoved=false;dragStartX=e.clientX;dragStartY=e.clientY;dragStartTarget=state.filmTarget;filmViewport.setPointerCapture(e.pointerId)});
-filmViewport.addEventListener('pointermove',e=>{if(!state.filmDragging)return;let dx=e.clientX-dragStartX,dy=e.clientY-dragStartY;if(Math.abs(dx)>8||Math.abs(dy)>8)state.filmMoved=true;state.filmTarget=clamp(dragStartTarget-dx,0,filmBounds())});
+filmViewport.addEventListener('pointerdown',e=>{state.filmMoved=false;dragStartX=e.clientX;dragStartY=e.clientY;if(e.target.closest('.film-card'))return;if(e.button!==0&&e.pointerType!=='touch')return;state.filmDragging=true;state.filmMoved=false;dragStartX=e.clientX;dragStartY=e.clientY;dragStartTarget=state.filmTarget;/* Capture only after a drag starts; preserve normal anchor clicks. */});
+filmViewport.addEventListener('pointermove',e=>{if(!state.filmDragging)return;let dx=e.clientX-dragStartX,dy=e.clientY-dragStartY;if(Math.abs(dx)>8||Math.abs(dy)>8){state.filmMoved=true;if(!filmViewport.hasPointerCapture(e.pointerId))filmViewport.setPointerCapture(e.pointerId);}state.filmTarget=clamp(dragStartTarget-dx,0,filmBounds())});
 function releaseDrag(){if(!state.filmDragging)return;state.filmDragging=false;if(state.filmMoved){let top=$('#projects').getBoundingClientRect().top+scrollY;let p=state.filmTarget/Math.max(1,filmBounds());window.scrollTo({top:top+p*($('#projects').offsetHeight-innerHeight),behavior:'auto'});setTimeout(()=>state.filmMoved=false,80)}}
-filmViewport.addEventListener('pointerup',releaseDrag);filmViewport.addEventListener('pointercancel',releaseDrag);
-const projectModal=$('#project-modal');function openProject(i){const p=projects[i];$('#modal-category').textContent=p.category;$('#modal-title').textContent=p.name;$('#modal-desc').textContent=p.desc;$('#modal-tags').innerHTML=('<span>'+p.status+'</span>')+p.tags.map(tag=>'<span>'+tag+'</span>').join('');$('#modal-visual').style.backgroundImage=`url("${p.cover||enc(artwork(p))}")`;projectModal.hidden=false;document.body.style.overflow='hidden';state.modal=true}
+filmViewport.addEventListener('pointerup',e=>{
+ const moved=Math.hypot(e.clientX-dragStartX,e.clientY-dragStartY)>12;
+ releaseDrag();
+ if(!moved){const hit=filmCards.find(card=>{const r=card.getBoundingClientRect();return e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom});if(hit){e.preventDefault();window.openPortfolioProject ? window.openPortfolioProject(hit.href) : window.location.assign(hit.href)}}
+});filmViewport.addEventListener('pointercancel',releaseDrag);
+const projectModal=$('#project-modal');function openProject(i){if(window.openPortfolioProject){window.openPortfolioProject(projects[i].page);return;}window.location.href=projects[i].page;return;const p=projects[i];$('#modal-category').textContent=p.category;$('#modal-title').textContent=p.name;$('#modal-desc').textContent=p.desc;$('#modal-tags').innerHTML=('<span>'+p.status+'</span>')+p.tags.map(tag=>'<span>'+tag+'</span>').join('');$('#modal-visual').style.backgroundImage=`url("${p.cover||enc(artwork(p))}")`;projectModal.hidden=false;document.body.style.overflow='hidden';state.modal=true}
 function closeProject(){projectModal.hidden=true;document.body.style.overflow='';state.modal=false}$('#project-close').addEventListener('click',closeProject);projectModal.addEventListener('click',e=>{if(e.target===projectModal)closeProject()});
 // Off-the-clock: physically move photo prints, don't only animate text on hover.
 let topZ=30;$$('.scrap').forEach(card=>{let d=null;card.addEventListener('pointerdown',e=>{if(e.button!==0&&e.pointerType!=='touch')return;d={x:e.clientX,y:e.clientY,dx:parseFloat(card.dataset.dx||0),dy:parseFloat(card.dataset.dy||0)};card.style.zIndex=++topZ;card.setPointerCapture(e.pointerId)});card.addEventListener('pointermove',e=>{if(!d)return;let dx=d.dx+e.clientX-d.x,dy=d.dy+e.clientY-d.y;card.dataset.dx=dx;card.dataset.dy=dy;card.style.transform=`translate(${dx}px,${dy}px) rotate(${getComputedStyle(card).getPropertyValue('--r')}) scale(1.04)`});const end=()=>{if(!d)return;d=null;card.style.transform=`translate(${card.dataset.dx||0}px,${card.dataset.dy||0}px) rotate(${getComputedStyle(card).getPropertyValue('--r')})`};card.addEventListener('pointerup',end);card.addEventListener('pointercancel',end);card.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();const dx=+(card.dataset.dx||0)+(e.key==='ArrowRight'?12:e.key==='ArrowLeft'?-12:0);const dy=+(card.dataset.dy||0)+(e.key==='ArrowDown'?12:e.key==='ArrowUp'?-12:0);card.dataset.dx=dx;card.dataset.dy=dy;card.style.transform=`translate(${dx}px,${dy}px) rotate(var(--r))`}})});
@@ -852,10 +839,9 @@ const rings=$('#quote-web-rings'),spokes=$('#quote-web-spokes');
 if(rings&&spokes){const center=450;for(let radius=60;radius<=440;radius+=58){const pts=Array.from({length:18},(_,i)=>{let a=i*Math.PI*2/18;return [(center+Math.cos(a)*radius).toFixed(1),(center+Math.sin(a)*radius).toFixed(1)].join(',')}).join(' ');const el=document.createElementNS('http://www.w3.org/2000/svg','polygon');el.setAttribute('points',pts);rings.appendChild(el)}for(let i=0;i<18;i++){const a=i*Math.PI*2/18;const el=document.createElementNS('http://www.w3.org/2000/svg','path');el.setAttribute('d',`M450 450L${center+Math.cos(a)*440} ${center+Math.sin(a)*440}`);spokes.appendChild(el)}}
 if('IntersectionObserver' in window){const quoteObserver=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting)e.target.classList.add('in-view')},{threshold:.27});quoteObserver.observe($('#responsibility'))}
 // Escape accessibility.
-window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!projectModal.hidden)closeProject();if(!modal.hidden){modal.hidden=true;document.body.style.overflow=''}if(!$('#mobile-panel').hidden)$('#mobile-panel').hidden=true}});
-let currentScroll=scrollY;function mainFrame(){state.scroll=lerp(state.scroll,scrollY,reduceMotion?1:.2);$('#progress').style.width=(100*scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight))+'%';const r=journey.getBoundingClientRect();if(r.bottom>=0&&r.top<=innerHeight){const scrollable=journey.offsetHeight-innerHeight;const p=clamp(-r.top/Math.max(1,scrollable),0,1);const point=svgPath.getPointAtLength(p*pathLen);progressPath.style.strokeDashoffset=pathLen*(1-p);const swing=Math.sin(performance.now()/430)*13;marker.setAttribute('transform',`translate(${(point.x+swing).toFixed(2)} ${point.y.toFixed(2)}) rotate(${(swing*.55).toFixed(1)})`);const anchorX=Math.max(25,Math.min(1375,point.x+240*Math.sin(p*10+2))),anchorY=point.y-230;const pathSwing=`M${anchorX.toFixed(1)} ${anchorY.toFixed(1)}Q${(point.x+90).toFixed(1)} ${(point.y-160).toFixed(1)} ${(point.x+swing).toFixed(1)} ${point.y.toFixed(1)}`;swingLine.setAttribute('d',pathSwing);swingGhost.setAttribute('d',pathSwing);let cameraY=innerHeight*.40-point.y;world.style.transform=`translateY(${cameraY}px) scale(${state.zoom})`;renderStop(clamp(Math.floor(p*stops.length),0,5));$('#journey-pct').textContent=String(Math.round(p*100)).padStart(2,'0')+'% EXPLORED';$('#journey-progress-fill').style.width=(p*100)+'%'}
- requestAnimationFrame(mainFrame)}
-window.addEventListener('resize',sizeSlices);sizeSlices();requestAnimationFrame(filmUpdate);requestAnimationFrame(mainFrame);renderStop(0);
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!projectModal.hidden)closeProject();if(!$('#mobile-panel').hidden)$('#mobile-panel').hidden=true}});
+function mainFrame(){const bar=$('#progress');if(bar)bar.style.width=(100*scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight))+'%';requestAnimationFrame(mainFrame)}
+window.addEventListener('resize',sizeSlices);sizeSlices();requestAnimationFrame(filmUpdate);requestAnimationFrame(mainFrame);
 })();
 
 </script>
@@ -867,21 +853,22 @@ const $=(q)=>document.querySelector(q);
 const overlay=$('#game-overlay'),canvas=$('#gm-canvas'),wrap=$('#gm-canvas-wrap'),ctx=canvas.getContext('2d',{alpha:false});
 if(!overlay||!canvas||!ctx)return;
 const panel=$('#gm-panel'),scoreEl=$('#gm-score'),integrityEl=$('#gm-integrity'),timeEl=$('#gm-time'),statusEl=$('#gm-state'),burstBtn=$('#gm-burst'),startBtn=$('#gm-start'),bestEl=$('#gm-best'),mods=[...$('#gm-modules').children];
-const projectLabels=['TREKKER','NERF','CHRONOMIND','PARADOX','CIRCUIT STUDIO','RACEOS','KIKO','TREE','ASTRA','ROADSTER','MILO'];
+const projectLabels=['TREKKER','NERF','CHRONOMIND','LUMORA','CIRCUIT STUDIO','RACEOS','KIKO','TREE','ASTRA','MILO'];
+const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const TAU=Math.PI*2,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const rnd=(a,b)=>a+(b-a)*Math.random();
 let w=700,h=560,dpr=1,cx=350,cy=275,radius=205,lastTick=0,raf=0,lastFocus=null,screenFlash=0,shake=0,mouse={x:-999,y:-999},sfx=false,audioContext=null;
 let best=0;try{best=Number(localStorage.getItem('jagruthi-red-thread-best')||0)||0}catch(e){}bestEl.textContent=String(best).padStart(4,'0');
-const game={phase:'ready',time:45,elapsed:0,health:100,score:0,hits:0,combo:0,spawnIn:.65,enemies:[],particles:[],shots:[],sparks:[],burstCooldown:0,unlocked:0};
+const game={phase:'ready',time:45,elapsed:0,health:100,score:0,hits:0,combo:0,spawnIn:.65,enemies:[],particles:[],shots:[],sparks:[],burstCooldown:0,unlocked:0,paused:false,notices:[]};
 const lanes=Array.from({length:projectLabels.length},(_,i)=>{return {angle:-Math.PI/2+i*TAU/projectLabels.length,name:projectLabels[i]}});
 function resize(){const b=wrap.getBoundingClientRect();if(!b.width||!b.height)return;w=b.width;h=b.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.max(1,Math.round(w*dpr));canvas.height=Math.max(1,Math.round(h*dpr));ctx.setTransform(dpr,0,0,dpr,0,0);cx=w*.5;cy=h*.52;radius=clamp(Math.min(w*.37,h*.405),90,360)}
 function restoreScroll(){document.body.classList.remove('game-active')}
 function openGame(){if(!overlay.hidden)return;lastFocus=document.activeElement;overlay.hidden=false;document.body.classList.add('game-active');resize();lastTick=performance.now();requestAnimationFrame(()=>{overlay.classList.add('is-open');$('#gm-exit').focus({preventScroll:true})});if(!raf)raf=requestAnimationFrame(frame)}
 function closeGame(){if(overlay.hidden)return;overlay.classList.remove('is-open');restoreScroll();setTimeout(()=>{if(!overlay.classList.contains('is-open'))overlay.hidden=true},450);if(lastFocus?.focus)lastFocus.focus({preventScroll:true})}
 $('#game-toggle').addEventListener('click',openGame);$('#game-hero')?.addEventListener('click',openGame);$('#gm-exit').addEventListener('click',closeGame);
-function syncHud(){scoreEl.textContent=String(game.score).padStart(4,'0');integrityEl.textContent=Math.max(0,game.health)+'%';$('#gm-mobile-score').textContent=String(game.score).padStart(4,'0');$('#gm-mobile-integrity').textContent=Math.max(0,game.health)+'%';timeEl.textContent=String(Math.max(0,Math.ceil(game.time))).padStart(2,'0');integrityEl.style.color=game.health<40?'#ff5660':'#e41b27';statusEl.textContent=game.phase==='playing'?'LIVE / DEFENDING':game.phase==='ready'?'AWAITING INPUT':'MISSION ENDED';mods.forEach((m,i)=>m.classList.toggle('unlocked',i<game.unlocked))}
+function syncHud(){const headerState=overlay.querySelector('.gm-header-status');if(headerState?.lastChild)headerState.lastChild.textContent=game.paused?' SIGNAL HELD // PAUSED':game.phase==='playing'?' SIGNAL DEFENSE // LIVE':' ALTERNATE EXPERIENCE // READY';scoreEl.textContent=String(game.score).padStart(4,'0');integrityEl.textContent=Math.max(0,game.health)+'%';$('#gm-mobile-score').textContent=String(game.score).padStart(4,'0');$('#gm-mobile-integrity').textContent=Math.max(0,game.health)+'%';timeEl.textContent=String(Math.max(0,Math.ceil(game.time))).padStart(2,'0');integrityEl.style.color=game.health<40?'#ff5660':'#e41b27';statusEl.textContent=game.paused?'PAUSED':game.phase==='playing'?'LIVE / DEFENDING':game.phase==='ready'?'AWAITING INPUT':'MISSION ENDED';mods.forEach((m,i)=>m.classList.toggle('unlocked',i<game.unlocked))}
 function setPanel(kicker,title,text,button){$('#gm-panel-kicker').textContent=kicker;$('#gm-panel-title').innerHTML=title;$('#gm-panel-text').textContent=text;startBtn.textContent=button;panel.hidden=false}
-function resetGame(){game.phase='playing';game.time=45;game.elapsed=0;game.health=100;game.score=0;game.hits=0;game.combo=0;game.spawnIn=.65;game.enemies=[];game.particles=[];game.shots=[];game.sparks=[];game.burstCooldown=0;game.unlocked=0;screenFlash=0;shake=0;panel.hidden=true;burstBtn.disabled=false;burstBtn.textContent='✳ WEB BURST / SPACE';syncHud();tone(360,.13,'triangle')}
+function resetGame(){game.paused=false;game.notices=[];$('#gm-pause').textContent='Ⅱ PAUSE';$('#gm-pause').setAttribute('aria-pressed','false');game.phase='playing';game.time=45;game.elapsed=0;game.health=100;game.score=0;game.hits=0;game.combo=0;game.spawnIn=.65;game.enemies=[];game.particles=[];game.shots=[];game.sparks=[];game.burstCooldown=0;game.unlocked=0;screenFlash=0;shake=0;panel.hidden=true;burstBtn.disabled=false;burstBtn.textContent='✳ WEB BURST / SPACE';syncHud();tone(360,.13,'triangle')}
 startBtn.addEventListener('click',resetGame);
 function endGame(won){game.phase=won?'won':'lost';burstBtn.disabled=true;if(game.score>best){best=game.score;bestEl.textContent=String(best).padStart(4,'0');try{localStorage.setItem('jagruthi-red-thread-best',String(best))}catch(e){}}setPanel(won?'SIMULATION / COMPLETE':'CORE / OFFLINE',won?'SIGNAL<br>RESTORED.':'SIGNAL<br>LOST.',won?`You intercepted ${game.hits} glitches and restored ${game.unlocked} of ${projectLabels.length} project signals. Final score: ${game.score}.`:`The core went offline, but the circuit is still yours to repair. You scored ${game.score}.`,'PLAY AGAIN ↗');tone(won?620:170,.34,'sawtooth')}
 function tone(freq=480,duration=.07,type='sine'){if(!sfx)return;try{audioContext=audioContext||new (window.AudioContext||window.webkitAudioContext)();const osc=audioContext.createOscillator(),vol=audioContext.createGain();osc.type=type;osc.frequency.setValueAtTime(freq,audioContext.currentTime);osc.frequency.exponentialRampToValueAtTime(Math.max(80,freq*.45),audioContext.currentTime+duration);vol.gain.setValueAtTime(.035,audioContext.currentTime);vol.gain.exponentialRampToValueAtTime(.0001,audioContext.currentTime+duration);osc.connect(vol).connect(audioContext.destination);osc.start();osc.stop(audioContext.currentTime+duration)}catch(e){}}
@@ -889,18 +876,21 @@ $('#gm-sfx').addEventListener('click',()=>{sfx=!sfx;$('#gm-sfx').textContent=sfx
 function getCoords(lane,progress=0){const a=lanes[lane].angle;const dist=radius*(1-progress)+23;return{x:cx+Math.cos(a)*dist,y:cy+Math.sin(a)*dist}}
 function spawnEnemy(){const lane=Math.floor(Math.random()*projectLabels.length);game.enemies.push({lane,p:0,speed:rnd(.087,.128)+game.elapsed*.00065,phase:rnd(0,TAU),size:rnd(11,15),id:Math.random()})}
 function burstParticles(x,y,color='#e51623',count=22){for(let i=0;i<count;i++){const a=rnd(0,TAU),v=rnd(45,270),life=rnd(.3,.9);game.particles.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,life,max:life,size:rnd(1.4,4.5),color})}if(game.particles.length>240)game.particles.splice(0,game.particles.length-240)}
-function hitEnemy(index,fromBurst=false){const e=game.enemies[index];if(!e)return;const pos=getCoords(e.lane,e.p);game.enemies.splice(index,1);burstParticles(pos.x,pos.y,fromBurst?'#ffbbc0':'#f01a26',fromBurst?12:26);game.combo++;game.hits++;game.score+=fromBurst?75:125+Math.min(8,game.combo)*25;shake=Math.min(10,shake+3.5);screenFlash=.14;const newUnlocked=Math.min(projectLabels.length,Math.floor(game.hits/2));if(newUnlocked>game.unlocked){game.unlocked=newUnlocked;game.shots.push({x1:cx,y1:cy,x2:pos.x,y2:pos.y,life:1.4,max:1.4,unlock:true});burstParticles(cx,cy,'#fff',38);tone(670,.16,'triangle')}else{tone(530+game.combo*20,.09,'triangle')}syncHud()}
-function webShot(x,y){if(game.phase!=='playing')return;game.shots.push({x1:cx,y1:cy,x2:x,y2:y,life:.31,max:.31,unlock:false});let target=-1,bestDist=44;for(let i=0;i<game.enemies.length;i++){const e=game.enemies[i],p=getCoords(e.lane,e.p),dist=Math.hypot(x-p.x,y-p.y);if(dist<bestDist){bestDist=dist;target=i}}if(target>=0)hitEnemy(target);else{game.combo=0;burstParticles(x,y,'#c9c9ce',5);tone(180,.035,'sine')}}
+function hitEnemy(index,fromBurst=false){const e=game.enemies[index];if(!e)return;const pos=getCoords(e.lane,e.p);game.enemies.splice(index,1);burstParticles(pos.x,pos.y,fromBurst?'#ffbbc0':'#f01a26',fromBurst?12:26);game.combo++;game.hits++;game.notices.push({x:pos.x,y:pos.y,text:game.combo>1?game.combo+'× COMBO':'CLEAN HIT',life:1,max:1,kind:'hit'});game.shots.push({x1:pos.x,y1:pos.y,life:.6,max:.6,web:true});game.score+=fromBurst?75:125+Math.min(8,game.combo)*25;shake=Math.min(10,shake+3.5);screenFlash=.14;const newUnlocked=Math.min(projectLabels.length,Math.floor(game.hits/2));if(newUnlocked>game.unlocked){game.unlocked=newUnlocked;game.notices.push({x:cx,y:cy-95,text:projectLabels[newUnlocked-1]+' ONLINE',life:1.7,max:1.7,kind:'unlock'});game.shots.push({x1:cx,y1:cy,x2:pos.x,y2:pos.y,life:1.4,max:1.4,unlock:true});burstParticles(cx,cy,'#fff',38);tone(670,.16,'triangle')}else{tone(530+game.combo*20,.09,'triangle')}syncHud()}
+function webShot(x,y){if(game.phase!=='playing'||game.paused)return;game.shots.push({x1:cx,y1:cy,x2:x,y2:y,life:.31,max:.31,unlock:false});let target=-1,bestDist=44;for(let i=0;i<game.enemies.length;i++){const e=game.enemies[i],p=getCoords(e.lane,e.p),dist=Math.hypot(x-p.x,y-p.y);if(dist<bestDist){bestDist=dist;target=i}}if(target>=0)hitEnemy(target);else{game.combo=0;burstParticles(x,y,'#c9c9ce',5);tone(180,.035,'sine')}}
 canvas.addEventListener('pointerdown',e=>{e.preventDefault();const b=canvas.getBoundingClientRect();webShot((e.clientX-b.left)*w/b.width,(e.clientY-b.top)*h/b.height)});
 canvas.addEventListener('pointermove',e=>{const b=canvas.getBoundingClientRect();mouse={x:e.clientX-b.left,y:e.clientY-b.top}},{passive:true});canvas.addEventListener('pointerleave',()=>mouse={x:-999,y:-999});
-function webBurst(){if(game.phase!=='playing'||game.burstCooldown>0)return;game.burstCooldown=11;game.shots.push({x1:cx,y1:cy,x2:cx+radius,y2:cy,life:1.05,max:1.05,burst:true});burstParticles(cx,cy,'#fafafa',70);shake=12;screenFlash=.32;for(let i=game.enemies.length-1;i>=0;i--)hitEnemy(i,true);tone(280,.32,'sawtooth');syncHud()}
+function webBurst(){if(game.phase!=='playing'||game.paused||game.burstCooldown>0)return;game.burstCooldown=11;game.shots.push({x1:cx,y1:cy,x2:cx+radius,y2:cy,life:1.05,max:1.05,burst:true});burstParticles(cx,cy,'#fafafa',70);shake=12;screenFlash=.32;for(let i=game.enemies.length-1;i>=0;i--)hitEnemy(i,true);tone(280,.32,'sawtooth');syncHud()}
 burstBtn.addEventListener('click',webBurst);
-window.addEventListener('keydown',e=>{if(overlay.hidden)return;if(e.key==='Escape'){e.preventDefault();closeGame();return}if(e.code==='Space'&&game.phase==='playing'){e.preventDefault();webBurst()}if(e.code==='Enter'&&!panel.hidden&&document.activeElement!==startBtn){e.preventDefault();resetGame()}});
+window.addEventListener('keydown',e=>{if(overlay.hidden)return;if(e.key==='Escape'){e.preventDefault();closeGame();return}if(e.code==='KeyP'){e.preventDefault();togglePause();return}if(e.code==='Space'&&game.phase==='playing'){e.preventDefault();webBurst()}if(e.code==='Enter'&&!panel.hidden&&document.activeElement!==startBtn){e.preventDefault();resetGame()}});
 // Draw functions -----------------------------------------------------------
 function line(x1,y1,x2,y2,color='#ffffff1a',width=1){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
 function ring(x,y,r,col='#ffffff22',wid=1){ctx.beginPath();ctx.arc(x,y,Math.max(.1,r),0,TAU);ctx.strokeStyle=col;ctx.lineWidth=wid;ctx.stroke()}
 function hex(x,y,r,rot=0){ctx.beginPath();for(let i=0;i<6;i++){const a=rot+i*TAU/6;const px=x+Math.cos(a)*r,py=y+Math.sin(a)*r;if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py)}ctx.closePath()}
 function drawBackdrop(t){ctx.fillStyle='#08090b';ctx.fillRect(0,0,w,h);const grd=ctx.createRadialGradient(cx,cy,8,cx,cy,Math.max(w,h)*.7);grd.addColorStop(0,'#1f090c');grd.addColorStop(.45,'#100d0f');grd.addColorStop(1,'#080809');ctx.fillStyle=grd;ctx.fillRect(0,0,w,h);
+ // Layered skyline and suspended silk keep the original arena grounded in the portfolio theme.
+ for(let i=0;i<17;i++){const bw=w/16,bh=28+((i*43)%95),x=i*bw-10;ctx.fillStyle=i%2?'#10121c':'#15131d';ctx.fillRect(x,h-bh,bw-4,bh);for(let wy=h-bh+10;wy<h-10;wy+=14)for(let wx=x+9;wx<x+bw-9;wx+=12){ctx.fillStyle=((i+Math.floor(wy))%4===0)?'#a9494b45':'#55405428';ctx.fillRect(wx,wy,3,5)}}
+ ctx.save();ctx.strokeStyle='#baa2af15';ctx.lineWidth=.7;for(let j=1;j<6;j++){const r=radius*(.25+j*.16);ctx.beginPath();lanes.forEach((lane,i)=>{const a=lane.angle,b=lanes[(i+1)%lanes.length].angle,mid=a+Math.PI/lanes.length;if(!i)ctx.moveTo(cx+Math.cos(a)*r,cy+Math.sin(a)*r);ctx.quadraticCurveTo(cx+Math.cos(mid)*r*.8,cy+Math.sin(mid)*r*.8,cx+Math.cos(b)*r,cy+Math.sin(b)*r)});ctx.closePath();ctx.stroke()}ctx.restore();
  // A technical board, not a stock starfield: traces, vias, and oscillating scanlines.
  ctx.lineWidth=1;for(let x=20;x<w;x+=38)line(x,0,x,h,Math.round(x/38)%3===0?'#ad1c2515':'#ededed08');for(let y=16;y<h;y+=38)line(0,y,w,y,Math.round(y/38)%3===0?'#ad1c2515':'#ededed08');
  for(let i=0;i<14;i++){let x=(i*97+38)%Math.max(100,w),y=(i*133+47)%Math.max(100,h);ctx.strokeStyle='#da192015';ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(x-24,y);ctx.lineTo(x,y);ctx.lineTo(x,y+18);ctx.lineTo(x+27,y+18);ctx.stroke();ctx.fillStyle='#e31b2423';ctx.beginPath();ctx.arc(x+27,y+18,2.2,0,TAU);ctx.fill()}
@@ -917,394 +907,33 @@ function drawCore(t){ctx.save();ctx.translate(cx,cy);ctx.shadowColor='#f01c2b';c
  const g=ctx.createRadialGradient(0,0,3,0,0,65);g.addColorStop(0,'#ed1c28');g.addColorStop(.25,'#681219');g.addColorStop(.8,'#141417');g.addColorStop(1,'#070708');ctx.fillStyle=g;ring(0,0,55,'#c5202b',2);ctx.beginPath();ctx.arc(0,0,55,0,TAU);ctx.fill();ctx.shadowBlur=0;
  ctx.save();ctx.rotate(t*.22);hex(0,0,42,Math.PI/6);ctx.strokeStyle='#ffffff85';ctx.lineWidth=1.8;ctx.stroke();ctx.restore();ctx.save();ctx.rotate(-t*.32);hex(0,0,27,0);ctx.strokeStyle='#e71b2a';ctx.lineWidth=2.4;ctx.stroke();ctx.restore();ctx.fillStyle='#fff';ctx.font='700 17px monospace';ctx.textAlign='center';ctx.fillText('JG',0,6);ctx.font='9px monospace';ctx.fillStyle='#ffffff7b';ctx.fillText('CORE',0,74);ctx.restore();
  if(game.health<35){ctx.fillStyle=`rgba(214,12,22,${.04+.05*(.5+.5*Math.sin(t*12))})`;ctx.fillRect(0,0,w,h)}}
-function drawEnemies(t){for(let i=0;i<game.enemies.length;i++){const e=game.enemies[i],p=getCoords(e.lane,e.p);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(t*2+e.phase);ctx.shadowColor='#f02331';ctx.shadowBlur=18+Math.sin(t*5)*5;hex(0,0,e.size);ctx.fillStyle='#db1521';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.2;ctx.stroke();ctx.shadowBlur=0;ctx.strokeStyle='#fff';ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(-4,-4);ctx.lineTo(4,4);ctx.moveTo(4,-4);ctx.lineTo(-4,4);ctx.stroke();ctx.restore();ring(p.x,p.y,e.size+9+Math.sin(t*6+e.phase)*3,'#f3233159',1.1);}
+function drawEnemies(t){for(let i=0;i<game.enemies.length;i++){const e=game.enemies[i],p=getCoords(e.lane,e.p);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(t*2+e.phase);ctx.shadowColor='#f02331';ctx.shadowBlur=18+Math.sin(t*5)*5;hex(0,0,e.size);ctx.fillStyle='#db1521';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.2;ctx.stroke();ctx.shadowBlur=0;ctx.strokeStyle='#fff';ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(-4,-4);ctx.lineTo(4,4);ctx.moveTo(4,-4);ctx.lineTo(-4,4);ctx.stroke();ctx.restore();ring(p.x,p.y,e.size+9+Math.sin(t*6+e.phase)*3,'#f3233159',1.1);if(Math.hypot(mouse.x-p.x,mouse.y-p.y)<44){ring(p.x,p.y,e.size+14,'#f7d8aa',2);ctx.fillStyle='#f7d8aa';ctx.font='8px monospace';ctx.textAlign='center';ctx.fillText('INTERCEPT',p.x,p.y-e.size-23);ctx.textAlign='left'}}
 }
-function drawShots(t){for(const s of game.shots){const alpha=clamp(s.life/s.max,0,1);if(s.burst){ring(s.x1,s.y1,(1-alpha)*radius*1.3,`rgba(241,241,241,${alpha*.8})`,4*alpha);ring(s.x1,s.y1,(1-alpha)*radius*.8,`rgba(229,20,33,${alpha})`,3*alpha);continue}ctx.save();ctx.lineWidth=s.unlock?3:2.4;ctx.shadowColor='#fc2634';ctx.shadowBlur=14;ctx.strokeStyle=`rgba(237,28,39,${alpha})`;ctx.beginPath();ctx.moveTo(s.x1,s.y1);const mx=(s.x1+s.x2)/2,my=(s.y1+s.y2)/2-22*Math.sin(alpha*TAU);ctx.quadraticCurveTo(mx,my,s.x2,s.y2);ctx.stroke();ctx.shadowBlur=0;ctx.strokeStyle=`rgba(244,244,244,${alpha*.7})`;ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(s.x1,s.y1);ctx.quadraticCurveTo(mx-12,my-6,s.x2,s.y2);ctx.stroke(); // branching web-strands
+function drawShots(t){for(const s of game.shots){const alpha=clamp(s.life/s.max,0,1);if(s.web){drawImpactWeb(s.x1,s.y1,(1-alpha)*35+10,alpha);continue}if(s.burst){drawImpactWeb(cx,cy,(1-alpha)*radius*1.3,alpha*.8);ring(s.x1,s.y1,(1-alpha)*radius*1.3,`rgba(241,241,241,${alpha*.8})`,4*alpha);ring(s.x1,s.y1,(1-alpha)*radius*.8,`rgba(229,20,33,${alpha})`,3*alpha);continue}ctx.save();ctx.lineWidth=s.unlock?3:2.4;ctx.shadowColor='#fc2634';ctx.shadowBlur=14;ctx.strokeStyle=`rgba(237,28,39,${alpha})`;ctx.beginPath();ctx.moveTo(s.x1,s.y1);const mx=(s.x1+s.x2)/2,my=(s.y1+s.y2)/2-22*Math.sin(alpha*TAU);ctx.quadraticCurveTo(mx,my,s.x2,s.y2);ctx.stroke();ctx.shadowBlur=0;ctx.strokeStyle=`rgba(244,244,244,${alpha*.7})`;ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(s.x1,s.y1);ctx.quadraticCurveTo(mx-12,my-6,s.x2,s.y2);ctx.stroke(); // branching web-strands
  for(let k=1;k<=4;k++){const v=k/5,px=s.x1*(1-v)+s.x2*v,py=s.y1*(1-v)+s.y2*v-12*Math.sin(v*Math.PI);line(px-9,py-8,px+8,py+7,`rgba(220,220,220,${alpha*.5})`,.75)}ctx.restore()}}
 function drawParticles(){for(const p of game.particles){ctx.globalAlpha=clamp(p.life/p.max,0,1);ctx.fillStyle=p.color;ctx.fillRect(p.x,p.y,p.size,p.size)}ctx.globalAlpha=1}
 function drawCrosshair(t){if(mouse.x<0||mouse.y<0||game.phase!=='playing')return;ctx.save();ctx.translate(mouse.x,mouse.y);ctx.rotate(t*.28);ctx.strokeStyle='#ffffffa8';ctx.lineWidth=1;ring(0,0,17,'#ffffff77',1);for(let i=0;i<4;i++){const a=i*Math.PI/2;line(Math.cos(a)*23,Math.sin(a)*23,Math.cos(a)*32,Math.sin(a)*32,'#e31a27c9',1.4)}ctx.restore()}
-function draw(t){if(!w||!h)return;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.save();if(shake>.1)ctx.translate(rnd(-shake,shake),rnd(-shake,shake));drawBackdrop(t);drawCircuit(t);drawCore(t);drawEnemies(t);drawShots(t);drawParticles();drawCrosshair(t);if(screenFlash>.01){ctx.fillStyle=`rgba(235,26,35,${screenFlash*.13})`;ctx.fillRect(0,0,w,h)}ctx.restore()}
-function frame(now){raf=requestAnimationFrame(frame);if(overlay.hidden)return;const dt=clamp((now-(lastTick||now))/1000,0,.055);lastTick=now;const t=now/1000;if(game.phase==='playing'&&!document.hidden){game.time-=dt;game.elapsed+=dt;game.spawnIn-=dt;game.burstCooldown=Math.max(0,game.burstCooldown-dt);if(game.spawnIn<=0){spawnEnemy();game.spawnIn=rnd(1.0,1.4)*Math.max(.72,1-game.elapsed/120)}
+function draw(t){if(!w||!h)return;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.save();if(!calm&&shake>.1)ctx.translate(rnd(-shake,shake),rnd(-shake,shake));drawBackdrop(t);drawCircuit(t);drawCore(t);drawEnemies(t);drawShots(t);drawParticles();drawCrosshair(t);drawNotices();if(screenFlash>.01){ctx.fillStyle=`rgba(235,26,35,${screenFlash*.13})`;ctx.fillRect(0,0,w,h)}ctx.restore()}
+function frame(now){if(overlay.hidden){raf=0;return}raf=requestAnimationFrame(frame);const dt=clamp((now-(lastTick||now))/1000,0,.055);lastTick=now;const t=now/1000;if(game.phase==='playing'&&!game.paused&&!document.hidden){game.time-=dt;game.elapsed+=dt;game.spawnIn-=dt;game.burstCooldown=Math.max(0,game.burstCooldown-dt);if(game.spawnIn<=0){spawnEnemy();game.spawnIn=rnd(1.0,1.4)*Math.max(.72,1-game.elapsed/120)}
  for(let i=game.enemies.length-1;i>=0;i--){const e=game.enemies[i];e.p+=e.speed*dt;if(e.p>=1){const pos=getCoords(e.lane,1);burstParticles(pos.x,pos.y,'#f8f8f8',16);game.enemies.splice(i,1);game.health=Math.max(0,game.health-15);game.combo=0;screenFlash=.5;shake=10;tone(130,.23,'sawtooth');syncHud();if(game.health<=0){endGame(false);break}}}
  if(game.time<=0&&game.phase==='playing'){game.time=0;endGame(true)}
  burstBtn.disabled=game.burstCooldown>0;burstBtn.textContent=game.burstCooldown>0?`✳ RECHARGING ${Math.ceil(game.burstCooldown)}s`:'✳ WEB BURST / SPACE';timeEl.textContent=String(Math.max(0,Math.ceil(game.time))).padStart(2,'0')}
- const motionDt=document.hidden?0:dt;for(let i=game.particles.length-1;i>=0;i--){let p=game.particles[i];p.life-=motionDt;p.x+=p.vx*motionDt;p.y+=p.vy*motionDt;p.vx*=.988;p.vy*=.988;if(p.life<=0)game.particles.splice(i,1)}for(let i=game.shots.length-1;i>=0;i--){game.shots[i].life-=motionDt;if(game.shots[i].life<=0)game.shots.splice(i,1)}screenFlash=Math.max(0,screenFlash-dt*1.7);shake=Math.max(0,shake-dt*24);draw(t)}
+ const motionDt=document.hidden||game.paused?0:dt;for(let i=game.notices.length-1;i>=0;i--){game.notices[i].life-=motionDt;if(game.notices[i].life<=0)game.notices.splice(i,1)}for(let i=game.particles.length-1;i>=0;i--){let p=game.particles[i];p.life-=motionDt;p.x+=p.vx*motionDt;p.y+=p.vy*motionDt;p.vx*=.988;p.vy*=.988;if(p.life<=0)game.particles.splice(i,1)}for(let i=game.shots.length-1;i>=0;i--){game.shots[i].life-=motionDt;if(game.shots[i].life<=0)game.shots.splice(i,1)}screenFlash=Math.max(0,screenFlash-dt*1.7);shake=Math.max(0,shake-dt*24);draw(t)}
 window.addEventListener('resize',()=>{if(!overlay.hidden)resize()});
-// Test/automation-friendly semantic updates and no network dependency.
+
+function drawImpactWeb(x,y,r,alpha){ctx.save();ctx.globalAlpha=alpha;ctx.strokeStyle='#eee2df';ctx.lineWidth=.8;for(let k=0;k<12;k++){const a=k*TAU/12;line(x,y,x+Math.cos(a)*r,y+Math.sin(a)*r,'#e9cdd7',.8)}for(let j=1;j<=3;j++){ctx.beginPath();for(let k=0;k<12;k++){const a=k*TAU/12,b=(k+1)*TAU/12,m=(a+b)/2,rr=r*j/3;if(!k)ctx.moveTo(x+rr,y);ctx.quadraticCurveTo(x+Math.cos(m)*rr*.82,y+Math.sin(m)*rr*.82,x+Math.cos(b)*rr,y+Math.sin(b)*rr)}ctx.closePath();ctx.stroke()}ctx.restore()}
+function drawNotices(){for(const n of game.notices){ctx.save();ctx.globalAlpha=Math.min(1,n.life*3);ctx.textAlign='center';ctx.font=n.kind==='unlock'?'bold 12px monospace':'bold 10px monospace';ctx.fillStyle=n.kind==='unlock'?'#f1d7a4':'#f4dce4';ctx.shadowColor='#000';ctx.shadowBlur=8;ctx.fillText(n.text,n.x,n.y-(calm?0:(1-n.life/n.max)*30));ctx.restore()}}
+function togglePause(){if(game.phase!=='playing')return;game.paused=!game.paused;$('#gm-pause').textContent=game.paused?'▶ RESUME':'Ⅱ PAUSE';$('#gm-pause').setAttribute('aria-pressed',String(game.paused));syncHud()}
+$('#gm-pause').addEventListener('click',togglePause);
+const soundtrack=document.querySelector('#soundtrack'),musicButton=$('#gm-music');function musicLabel(){const on=soundtrack&&!soundtrack.paused;musicButton.textContent=on?'♫ PAUSE MUSIC':'♫ PLAY MUSIC';musicButton.setAttribute('aria-pressed',String(on))}musicButton.addEventListener('click',()=>$('#music-toggle').click());soundtrack?.addEventListener('play',musicLabel);soundtrack?.addEventListener('pause',musicLabel);musicLabel();
+overlay.addEventListener('keydown',event=>{if(event.key!=='Tab')return;const focusable=[...overlay.querySelectorAll('button:not([disabled])')].filter(e=>e.getClientRects().length);if(!focusable.length)return;const first=focusable[0],last=focusable[focusable.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}});
+
+// Semantic HUD updates; no network dependency.
 syncHud();burstBtn.disabled=true;
 })();
 
 </script>
-<script>
-/* THE RED THREAD // an original, dependency-free WebGL scene.
-   This is deliberately authored geometry (not video or a stock 3D model).
-   It runs offline from a local HTML file. */
-(() => {
-  'use strict';
-  const canvas = document.getElementById('cinema3d');
-  const section = document.getElementById('lab');
-  if (!canvas || !section) return;
-  const cards = [...document.querySelectorAll('.cinema-chapter')];
-  const counter = document.getElementById('cinema-count');
-  const track = document.getElementById('cinema-track-fill');
-  const cast = document.getElementById('cast-web');
-  const hotspot = document.getElementById('cinema-hotspot');
-  const gl = canvas.getContext('webgl', {antialias:true,alpha:false,powerPreference:'high-performance',preserveDrawingBuffer:false});
-  if (!gl) { document.body.classList.add('no-webgl'); return; }
-  const vs = `attribute vec3 aP;attribute vec3 aN;attribute vec3 aC;
-    uniform mat4 uPV;uniform mat4 uM;uniform vec3 uEye;
-    varying vec3 vC;varying vec3 vN;varying float vD;varying vec3 vW;
-    void main(){vec4 w=uM*vec4(aP,1.);vW=w.xyz;vC=aC;vN=mat3(uM)*aN;vD=distance(uEye,w.xyz);
-    gl_Position=uPV*w;}`;
-  const fs = `precision mediump float;varying vec3 vC;varying vec3 vN;varying float vD;varying vec3 vW;
-    uniform float uLight;uniform float uTime;uniform vec3 uFog;
-    void main(){vec3 n=normalize(vN);float d=max(dot(n,normalize(vec3(-0.5,0.95,0.42))),0.);float rim=pow(1.-abs(n.z),2.)*.12;
-    float shading=(.42+d*.56+rim);vec3 c=vC*shading;
-    float red=step(.35,vC.r)*step(vC.g+.09,vC.r); c+=red*vec3(.09,.012,.018)*(0.5+.5*sin(uTime*1.9+vW.z*.06));
-    float fog=1.-exp(-pow(vD/175.,2.));c=mix(c,uFog,clamp(fog*.92,0.,.93));
-    c*=uLight;gl_FragColor=vec4(c,1.);}`;
-  const lvs = `attribute vec3 aP;attribute vec3 aC;uniform mat4 uPV;uniform float uT;uniform float uReveal;
-    varying vec3 vC;varying float vFade;
-    void main(){vC=aC;gl_Position=uPV*vec4(aP,1.);vFade=1.;}`;
-  const lfs = `precision mediump float;varying vec3 vC;uniform float uAlpha;
-    void main(){gl_FragColor=vec4(vC,uAlpha);}`;
-  const pvs = `attribute vec3 aP;attribute vec3 aC;uniform mat4 uPV;uniform float uTime;
-    varying vec3 vC;void main(){vec4 q=uPV*vec4(aP,1.);gl_Position=q;
-    gl_PointSize=clamp(10.*(65./max(12.,q.w)),1.8,13.);vC=aC;}`;
-  const pfs = `precision mediump float;varying vec3 vC;uniform float uOpacity;
-    void main(){float d=length(gl_PointCoord-vec2(.5));float a=pow(max(0.,1.-d*2.),2.2);
-    gl_FragColor=vec4(vC,a*uOpacity);}`;
-  function shader(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){throw new Error(gl.getShaderInfoLog(s));}return s;}
-  function program(v,f){let p=gl.createProgram();gl.attachShader(p,shader(gl.VERTEX_SHADER,v));gl.attachShader(p,shader(gl.FRAGMENT_SHADER,f));gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));return p;}
-  let main,line,points;
-  try{main=program(vs,fs);line=program(lvs,lfs);points=program(pvs,pfs);}catch(e){console.error('WebGL shader error',e);document.body.classList.add('no-webgl');return;}
-  function locs(p){return {p,aP:gl.getAttribLocation(p,'aP'),aN:gl.getAttribLocation(p,'aN'),aC:gl.getAttribLocation(p,'aC'),pv:gl.getUniformLocation(p,'uPV'),m:gl.getUniformLocation(p,'uM'),eye:gl.getUniformLocation(p,'uEye'),time:gl.getUniformLocation(p,'uTime'),light:gl.getUniformLocation(p,'uLight'),fog:gl.getUniformLocation(p,'uFog'),alpha:gl.getUniformLocation(p,'uAlpha'),opacity:gl.getUniformLocation(p,'uOpacity')};}
-  const MP=locs(main),LP=locs(line),PP=locs(points);
-  function clamp(x,a=0,b=1){return Math.max(a,Math.min(b,x));}
-  const lerp=(a,b,t)=>a+(b-a)*t;
-  const ease=t=>t*t*(3-2*t);
-  const reds=[[.82,.034,.075],[.98,.105,.15],[.54,.025,.05]];
-  const C={building:[.084,.091,.107],roof:[.15,.16,.19],steel:[.24,.27,.29],sil:[.35,.35,.36],red:[.9,.045,.065],white:[.9,.88,.83],glow:[1,.25,.24],black:[.035,.038,.043],grey:[.12,.135,.15]};
-  function rand(seed){let x=Math.sin(seed*127.1+12.72)*43758.5453123;return x-Math.floor(x);}
-  function MeshBuilder(){this.p=[];this.n=[];this.c=[];this.i=[];}
-  MeshBuilder.prototype.face=function(corners,n,col){let o=this.p.length/3;for(let v of corners){this.p.push(...v);this.n.push(...n);this.c.push(...col);}this.i.push(o,o+1,o+2,o,o+2,o+3);};
-  MeshBuilder.prototype.box=function(x,y,z,w,h,d,col){const l=x-w/2,r=x+w/2,b=y-h/2,t=y+h/2,f=z+d/2,k=z-d/2;
-    let faces=[[[l,b,f],[r,b,f],[r,t,f],[l,t,f]],[0,0,1],[[r,b,k],[l,b,k],[l,t,k],[r,t,k]],[0,0,-1],[[l,b,k],[l,b,f],[l,t,f],[l,t,k]],[-1,0,0],[[r,b,f],[r,b,k],[r,t,k],[r,t,f]],[1,0,0],[[l,t,f],[r,t,f],[r,t,k],[l,t,k]],[0,1,0],[[l,b,k],[r,b,k],[r,b,f],[l,b,f]],[0,-1,0]];
-    for(let i=0;i<faces.length;i+=2){const shade=[1,.78,.7,.9,1.14,.65][i/2];this.face(faces[i],faces[i+1],col.map(n=>Math.min(1,n*shade)));}
-  };
-  MeshBuilder.prototype.quad=function(a,b,c,d,col){this.face([a,b,c,d],[0,0,1],col);};
-  MeshBuilder.prototype.make=function(){let m={num:this.i.length};m.pos=buffer(this.p);m.norm=buffer(this.n);m.col=buffer(this.c);m.idx=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,m.idx);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(this.i),gl.STATIC_DRAW);return m;};
-  function buffer(data,usage){const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),usage||gl.STATIC_DRAW);return b;}
-  function bindAttr(at,buf,size){if(at<0||!buf)return;gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.enableVertexAttribArray(at);gl.vertexAttribPointer(at,size,gl.FLOAT,false,0,0);}
-  function matIdentity(){return new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]);}
-  function matMul(a,b){const c=new Float32Array(16);for(let i=0;i<4;i++)for(let j=0;j<4;j++)for(let k=0;k<4;k++)c[j*4+i]+=a[k*4+i]*b[j*4+k];return c;}
-  function perspective(fov,a,n,f){let t=1/Math.tan(fov/2),m=new Float32Array(16);m[0]=t/a;m[5]=t;m[10]=(f+n)/(n-f);m[11]=-1;m[14]=(2*f*n)/(n-f);return m;}
-  function sub(a,b){return a.map((n,i)=>n-b[i]);}
-  function norm(v){let l=Math.hypot(...v)||1;return v.map(n=>n/l);}
-  function cross(a,b){return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
-  function dot(a,b){return a.reduce((s,n,i)=>s+n*b[i],0);}
-  function lookAt(e,t){const z=norm(sub(e,t)),x=norm(cross([0,1,0],z)),y=cross(z,x);return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-dot(x,e),-dot(y,e),-dot(z,e),1]);}
-  function model(x,y,z,s=1,rot=0){let c=Math.cos(rot),a=Math.sin(rot);return new Float32Array([c*s,0,-a*s,0,0,s,0,0,a*s,0,c*s,0,x,y,z,1]);}
-  // Build an original red-and-black city from procedural 3D geometry.
-  const city=new MeshBuilder(), windows=new MeshBuilder(), roads=new MeshBuilder(), roofs=[];
-  roads.box(0,-2,-70,250,.8,410,C.black);
-  for(let z=35;z>-212;z-=13){roads.box(0,-1.4,z,5,.10,3,[.2,.2,.20]);}
-  for(let row=0;row<21;row++)for(let side of [-1,1])for(let col=0;col<4;col++){
-    let id=row*8+col+side*331;
-    const z=35-row*12.2+(rand(id+1)-.5)*3.5;
-    let x=side*(22+col*16+(rand(id+2)-.5)*3);
-    let w=10+rand(id+4)*6,d=9+rand(id+5)*6,h=9+rand(id+3)*42;
-    // A long opening between rooftops keeps the moving camera unobstructed.
-    if(Math.abs(x)<27)h=9+rand(id+5)*22;
-    let v=.07+rand(id+8)*.07;city.box(x,h/2-1.5,z,w,h,d,[v,v+.009,v+.017]);
-    city.box(x,h-1,z,w+.7,.85,d+.7,[.16,.17,.19]);
-    roofs.push([x,h-1.1,z]);
-    const floors=Math.min(11,Math.floor(h/3.15));
-    for(let j=1;j<floors;j++)for(let k=-2;k<=2;k++){
-      if(rand(id*9+j*12+k*3)>.72){const c=(rand(id*7+j*3+k*2)>.91)?[.82,.085,.09]:[.41,.38,.35];
-        windows.box(x+k*w/5.8,1+j*3.05,z+d/2+.035,.9,1.04,.045,c);
-      }
-    }
-  }
-  // Distinct architecture visible during the fly-through.
-  city.box(-32,41,-88,17,83,18,[.13,.14,.16]);
-  city.box(32,32,-132,21,65,17,[.11,.12,.14]);
-  for(let k=0;k<10;k++){let z=-20-k*19;roads.box(-12,-1.0,z,1,.15,11,[.26,.03,.045]);roads.box(12,-1.0,z,1,.15,11,[.26,.03,.045]);}
-  // A suspended engineering assembly, deliberately recognizable as a circuit build.
-  const assembly=new MeshBuilder();
-  assembly.box(0,0,0,17,.8,10,[.09,.13,.12]);
-  assembly.box(0,.46,0,16.5,.16,9.5,[.13,.16,.15]);
-  assembly.box(0,2,0,6,2.8,5,C.black);
-  assembly.box(0,3.53,0,5.2,.16,4.3,[.25,.26,.27]);
-  assembly.box(-5.3,1.25,-2.3,3,1.5,3,C.steel);
-  assembly.box(5.3,1.2,2.3,3,1.4,3,[.19,.21,.23]);
-  assembly.box(-4.9,1.2,3,2,1.6,1.8,[.55,.09,.10]);
-  assembly.box(5.4,1.5,-2.2,2.6,2.1,1.8,C.sil);
-  for(let k=0;k<12;k++){
-    let a=(k-5.5)*.9;
-    assembly.box(-8.2,0.2,a,.8,.32,.42,[.77,.74,.65]);
-    assembly.box(8.2,0.2,a,.8,.32,.42,[.77,.74,.65]);
-  }
-  for(let k=0;k<15;k++)assembly.box(-5+k*.7,.54,-4.1,.07,.04,2.3,[.51,.11,.12]);
-  const hub=new MeshBuilder();hub.box(0,0,0,5.6,5.6,5.6,[.65,.025,.04]);hub.box(0,0,0,3.7,3.7,5.9,[.15,.15,.18]);hub.box(0,0,0,3.85,3.85,6.1,C.red);
-  hub.box(0,0,3.12,2.4,2.4,.2,[.94,.89,.84]);
-  const cityMesh=city.make(),windowMesh=windows.make(),roadMesh=roads.make(),assemblyMesh=assembly.make(),hubMesh=hub.make();
-  // Decorative physical cables + spider-web geometries that are part of the world.
-  const linePos=[],lineCol=[],pointPos=[],pointCol=[];
-  function segment(a,b,color=[.7,.06,.08]){linePos.push(...a,...b);lineCol.push(...color,...color);}
-  function point(a,color=[.9,.08,.12]){pointPos.push(...a);pointCol.push(...color);}
-  function curved(a,b,arc=0,col=[.72,.07,.09],count=18){let prev=a;for(let k=1;k<=count;k++){let t=k/count;let v=[lerp(a[0],b[0],t),lerp(a[1],b[1],t)+Math.sin(t*Math.PI)*arc,lerp(a[2],b[2],t)];segment(prev,v,col);prev=v;}}
-  function spiderWeb(center,radius,n=12,ringCount=5,forward=0){const [x,y,z]=center;
-    for(let k=0;k<n;k++){let a=k*Math.PI*2/n;
-      segment(center,[x+Math.cos(a)*radius,y+Math.sin(a)*radius,z],C.red);
-      for(let j=1;j<=ringCount;j++){let t=j/ringCount,b=(k+1)*Math.PI*2/n;
-        segment([x+Math.cos(a)*radius*t,y+Math.sin(a)*radius*t,z+Math.sin(t*12+k)*.55],[x+Math.cos(b)*radius*t,y+Math.sin(b)*radius*t,z+Math.sin(t*12+k+1)*.55],[.43+.36*t,.035,.047]);}
-    }
-    point(center,C.white);
-  }
-  spiderWeb([-21,23,-37],13,14,6);spiderWeb([24,31,-75],15,15,7);spiderWeb([-27,32,-145],12,15,7);
-  // Rooftop to rooftop 'swing' threads.
-  for(let k=0;k<18;k++){
-    let z=21-k*12;let a=[-25,18+rand(k+9)*17,z],b=[25,19+rand(k+11)*19,z-8];
-    curved(a,b,-10-k%3*2, k%3===0?C.red:[.23,.25,.26],22);
-    point(a,C.red);point(b,C.white);
-  }
-  // The end of the camera journey is a physical radial web network with project nodes.
-  const center=[0,27,-194];
-  for(let ring=1;ring<=7;ring++){
-    for(let j=0;j<20;j++){
-      const a=j*2*Math.PI/20,b=(j+1)*2*Math.PI/20,r=ring*4.3;
-      let p=[Math.cos(a)*r+center[0],Math.sin(a)*r+center[1],center[2]+ring*.72];
-      let q=[Math.cos(b)*r+center[0],Math.sin(b)*r+center[1],center[2]+ring*.72];
-      segment(p,q,ring%2?C.red:[.31,.32,.34]);
-      if(ring<7)segment(p,[Math.cos(a)*(r+4.3),Math.sin(a)*(r+4.3)+center[1],center[2]+(ring+1)*.72],C.red);
-    }
-  }
-  for(let i=0;i<7;i++){
-    let a=(i/7)*Math.PI*2+Math.PI/8,r=20;
-    let p=[Math.cos(a)*r,center[1]+Math.sin(a)*r,center[2]+4.2];
-    point(p,C.white);curved(center,p,2,C.red,12);
-  }
-  // Vertical light and transit lines establish scale and depth.
-  for(let k=0;k<80;k++){
-    let x=(rand(k*11+1)-.5)*190,z=50-rand(k*7+4)*260,y=2+rand(k*5+3)*65;
-    segment([x,0,z],[x,y,z],[.10,.11,.12]);
-    if(k%5===0)point([x,y,z],C.red);
-  }
-  const cableBuffer=buffer(linePos),cableColors=buffer(lineCol),cableCount=linePos.length/3;
-  const pointBuffer=buffer(pointPos),pointColors=buffer(pointCol),pointCount=pointPos.length/3;
-  function drawMesh(mesh,m,pv,eye,time,light=1){gl.useProgram(MP.p);gl.uniformMatrix4fv(MP.pv,false,pv);gl.uniformMatrix4fv(MP.m,false,m);gl.uniform3fv(MP.eye,eye);gl.uniform1f(MP.time,time);gl.uniform1f(MP.light,light);gl.uniform3f(MP.fog,.014,.014,.018);
-    bindAttr(MP.aP,mesh.pos,3);bindAttr(MP.aN,mesh.norm,3);bindAttr(MP.aC,mesh.col,3);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,mesh.idx);gl.drawElements(gl.TRIANGLES,mesh.num,gl.UNSIGNED_SHORT,0);}
-  function drawLines(pv,time,opacity){gl.useProgram(LP.p);gl.uniformMatrix4fv(LP.pv,false,pv);gl.uniform1f(LP.alpha,opacity);bindAttr(LP.aP,cableBuffer,3);bindAttr(LP.aC,cableColors,3);gl.drawArrays(gl.LINES,0,cableCount);}
-  function drawPoints(pv,opacity){gl.useProgram(PP.p);gl.uniformMatrix4fv(PP.pv,false,pv);gl.uniform1f(PP.opacity,opacity);bindAttr(PP.aP,pointBuffer,3);bindAttr(PP.aC,pointColors,3);gl.drawArrays(gl.POINTS,0,pointCount);}
-  const camKeys=[
-    [0.0,[0,23,77],[0,15,-31]],
-    [.16,[-5,17,29],[-3,18,-35]],
-    [.34,[8,25,-20],[-2,20,-91]],
-    [.53,[13,31,-83],[0,24,-115]],
-    [.71,[-12,24,-120],[0,24,-157]],
-    [.85,[6,28,-158],[0,27,-194]],
-    [1.0,[1,27,-178],[0,27,-194]]
-  ];
-  function camAt(p){let i=0;while(i<camKeys.length-2 && camKeys[i+1][0]<p)i++;
-    let a=camKeys[i],b=camKeys[i+1],t=ease(clamp((p-a[0])/(b[0]-a[0])));
-    return [a[1].map((v,j)=>lerp(v,b[1][j],t)),a[2].map((v,j)=>lerp(v,b[2][j],t))];}
-  let progress=0,smoothed=0,px=0,py=0,webPulse=0,webShots=[],active=true,t0=performance.now(),last=0,w=0,h=0;
-  function resize(){let d=Math.min(window.devicePixelRatio||1,window.innerWidth<760?1.2:1.6);let ww=Math.max(1,Math.floor(canvas.clientWidth*d));let hh=Math.max(1,Math.floor(canvas.clientHeight*d));if(w!==ww||h!==hh){canvas.width=ww;canvas.height=hh;w=ww;h=hh;gl.viewport(0,0,w,h);}}
-  function updateProgress(){let rect=section.getBoundingClientRect(),length=Math.max(1,section.offsetHeight-window.innerHeight);
-    progress=clamp(-rect.top/length);let j=Math.min(3,Math.floor(progress*4));
-    cards.forEach((c,i)=>{let on=i===j;c.classList.toggle('active',on);c.setAttribute('aria-hidden',String(!on));});
-    if(counter)counter.textContent=String(j+1).padStart(2,'0');if(track)track.style.transform=`scaleY(${progress})`;
-    const labels=['ROOFTOP / ORIGIN','THREAD / MOMENTUM','HARDWARE / REVEAL','WEB / EVERYTHING CONNECTS'];
-    if(hotspot)hotspot.textContent=labels[j];
-  }
-  function shootWeb(){webPulse=1;cast?.classList.add('cast-active');setTimeout(()=>cast?.classList.remove('cast-active'),450);
-    const flash=document.createElement('span');flash.className='cinema-impact';flash.style.left=`${(px*.5+.5)*100}%`;flash.style.top=`${(py*.5+.5)*100}%`;
-    section.querySelector('.lab-sticky').appendChild(flash);setTimeout(()=>flash.remove(),680);
-  }
-  canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect();px=clamp((e.clientX-r.left)/r.width*2-1,-1,1);py=clamp((e.clientY-r.top)/r.height*2-1,-1,1);});
-  cast?.addEventListener('click',shootWeb);canvas.addEventListener('click',shootWeb);
-  window.addEventListener('scroll',updateProgress,{passive:true});window.addEventListener('resize',resize,{passive:true});updateProgress();
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function frame(ts){requestAnimationFrame(frame);if(document.hidden)return;
-    const r=section.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight)return;
-    if(!w||!h||canvas.clientWidth*w===0)resize();
-    smoothed+=((reduced?progress:progress)-smoothed)*(reduced?1:.065);
-    const [eye,target]=camAt(smoothed);
-    eye[0]+=px*2.1;eye[1]-=py*1.25;target[0]+=px*.9;target[1]-=py*.65;
-    // Gentle camera sway so even an idle scene feels physically alive.
-    let time=(ts-t0)/1000;
-    if(!reduced){eye[1]+=Math.sin(time*.42)*.34;eye[0]+=Math.sin(time*.23)*.21;}
-    let view=lookAt(eye,target),proj=perspective(Math.PI/3.05,w/h,.3,400),pv=matMul(proj,view);
-    gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);gl.disable(gl.BLEND);
-    gl.clearColor(.011,.012,.016,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
-    const identity=matIdentity();
-    drawMesh(roadMesh,identity,pv,eye,time,1);drawMesh(cityMesh,identity,pv,eye,time,1);
-    // Highlight city windows without flooding the black/red palette.
-    drawMesh(windowMesh,identity,pv,eye,time,1.55);
-    // A tangible engineering object: the parts rotate and assemble as we reach them.
-    let assemblyProgress=clamp((smoothed-.4)/.25),scale=.65+ease(assemblyProgress)*.45;
-    let rot=-.25+time*.09;
-    drawMesh(assemblyMesh,model(0,22,-122,scale,rot),pv,eye,time,1.45);
-    // The last chapter replaces isolated components with a connected glowing core.
-    let coreProgress=clamp((smoothed-.65)/.26),coreScale=.6+ease(coreProgress)*1.3;
-    drawMesh(hubMesh,model(0,27,-194,coreScale,.24+time*.21),pv,eye,time,1.35);
-    gl.depthMask(false);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);
-    drawLines(pv,time,.42+webPulse*.42);
-    drawPoints(pv,.8+webPulse*.2);
-    gl.depthMask(true);gl.disable(gl.BLEND);
-    webPulse=Math.max(0,webPulse-.035);
-  }
-  resize();requestAnimationFrame(frame);
-})();
-
-</script>
-<script>
-/* Software 3D fallback for browsers where WebGL is blocked.
-   Perspective-projected city, webs, and systems; independent of external APIs. */
-(()=>{
-  const canvas=document.getElementById('cinema3d'),section=document.getElementById('lab');
-  if(!canvas||!section||!document.body.classList.contains('no-webgl'))return;
-  const ctx=canvas.getContext('2d');if(!ctx)return;
-  const rand=s=>{let x=Math.sin(s*127.1+12.72)*43758.5453123;return x-Math.floor(x)};
-  const mix=(a,b,t)=>a+(b-a)*t,clamp=(a,l=0,h=1)=>Math.max(l,Math.min(h,a));
-  const norm=v=>{let q=Math.hypot(...v)||1;return v.map(z=>z/q)};
-  const minus=(a,b)=>a.map((z,i)=>z-b[i]);
-  const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
-  const dot=(a,b)=>a.reduce((s,z,i)=>s+z*b[i],0);
-  const ease=t=>t*t*(3-2*t);
-  const keys=[
-    [0,[0,23,77],[0,15,-31]],
-    [.16,[-5,17,29],[-3,18,-35]],
-    [.34,[8,25,-20],[-2,20,-91]],
-    [.53,[13,31,-83],[0,24,-115]],
-    [.71,[-12,24,-120],[0,24,-157]],
-    [.85,[6,28,-158],[0,27,-194]],
-    [1,[1,27,-178],[0,27,-194]]
-  ];
-  const buildings=[];
-  for(let row=0;row<21;row++)for(let side of [-1,1])for(let col=0;col<4;col++){
-    let id=row*8+col+side*331,z=35-row*12.2+(rand(id+1)-.5)*3.5;
-    let x=side*(22+col*16+(rand(id+2)-.5)*3),w=10+rand(id+4)*6,d=9+rand(id+5)*6,h=9+rand(id+3)*42;
-    if(Math.abs(x)<27)h=9+rand(id+5)*22;
-    buildings.push({x,z,w,d,h,id});
-  }
-  function keyCam(p){let i=0;while(i<keys.length-2&&keys[i+1][0]<p)i++;
-    let a=keys[i],b=keys[i+1],t=ease(clamp((p-a[0])/(b[0]-a[0])));
-    return [a[1].map((v,j)=>mix(v,b[1][j],t)),a[2].map((v,j)=>mix(v,b[2][j],t))];}
-  let w=0,h=0,scroll=0,smoothed=0,frame=0,px=0,py=0;
-  canvas.addEventListener('pointermove',e=>{const b=canvas.getBoundingClientRect();px=(e.clientX-b.left)/b.width*2-1;py=(e.clientY-b.top)/b.height*2-1;});
-  function resize(){let d=Math.min(devicePixelRatio||1,1.4),cw=Math.round(canvas.clientWidth*d),ch=Math.round(canvas.clientHeight*d);
-    if(cw!==w||ch!==h){w=cw;h=ch;canvas.width=w;canvas.height=h;}}
-  function poly(pts,col,alpha=1){if(pts.some(p=>!p))return;ctx.globalAlpha=alpha;ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fillStyle=col;ctx.fill();ctx.globalAlpha=1;}
-  function line(a,b,col,width=1,alpha=1){if(!a||!b)return;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.globalAlpha=alpha;ctx.strokeStyle=col;ctx.lineWidth=width;ctx.stroke();ctx.globalAlpha=1;}
-  function glow(a,r=5,col='#df1729'){if(!a)return;let grd=ctx.createRadialGradient(a[0],a[1],0,a[0],a[1],r*7);grd.addColorStop(0,col);grd.addColorStop(.2,'rgba(213,11,29,.6)');grd.addColorStop(1,'rgba(213,11,29,0)');ctx.fillStyle=grd;ctx.beginPath();ctx.arc(a[0],a[1],r*7,0,7);ctx.fill();ctx.fillStyle='#ff2638';ctx.beginPath();ctx.arc(a[0],a[1],r,0,7);ctx.fill();}
-  function projectBuild(e,t){const forward=norm(minus(t,e)),right=norm(cross(forward,[0,1,0])),up=cross(right,forward),fov=Math.min(w,h)*1.08;
-    return (p)=>{const v=minus(p,e),z=dot(v,forward);if(z<=1.4)return null;
-      let sx=w/2+dot(v,right)*fov/z,sy=h/2-dot(v,up)*fov/z;
-      return [sx,sy,z];};}
-  function cube(project,x,y,z,w,h,d,color='#111317',strength=1){
-    let l=x-w/2,r=x+w/2,front=z+d/2,back=z-d/2,bot=y,top=y+h;
-    let p=[project([l,bot,front]),project([r,bot,front]),project([r,top,front]),project([l,top,front]),project([l,bot,back]),project([r,bot,back]),project([r,top,back]),project([l,top,back])];
-    if(!p[0]||!p[2]||!p[7])return;
-    poly([p[4],p[5],p[6],p[7]],'#23262d',strength);
-    poly([p[0],p[3],p[7],p[4]],'#33363f',strength);
-    poly([p[1],p[2],p[6],p[5]],'#171a21',strength);
-    poly([p[0],p[1],p[2],p[3]],color,strength);
-    poly([p[3],p[2],p[6],p[7]],'#444650',strength);
-    line(p[3],p[2],'#5e1420',1,.55*strength);
-  }
-  function webs(proj){for(let k=0;k<15;k++){
-    const z=21-k*12,a=[-25,18+rand(k+9)*17,z],b=[25,19+rand(k+11)*19,z-8];let last=null;
-    for(let j=0;j<=25;j++){let t=j/25,p=proj([mix(a[0],b[0],t),mix(a[1],b[1],t)-Math.sin(t*Math.PI)*(10+k%3*2),mix(a[2],b[2],t)]);
-      if(p&&last)line(last,p,k%3?'rgba(176,182,185,.45)':'rgba(250,34,47,.68)',1.0);last=p;}
-  }
-    function web(cx,cy,cz,r){let p=proj([cx,cy,cz]);if(!p)return;let n=13,R=5;
-      for(let i=0;i<n;i++){let a=i*2*Math.PI/n,next=(i+1)*2*Math.PI/n;
-        line(p,proj([cx+Math.cos(a)*r,cy+Math.sin(a)*r,cz]),'#c7172a',1.1,.65);
-        for(let j=1;j<=R;j++){let d=j*r/R;
-          line(proj([cx+Math.cos(a)*d,cy+Math.sin(a)*d,cz]),proj([cx+Math.cos(next)*d,cy+Math.sin(next)*d,cz]),'#d31829',.85,.57);
-        }
-      }
-      glow(p,2);
-    }
-    web(-21,23,-37,13);web(24,31,-75,15);web(-27,32,-145,12);
-  }
-  function board(proj,time){const t=Date.now()/1000;cube(proj,0,20,-122,16,1.5,10,'#28312d');cube(proj,0,21.5,-122,6,2.6,4.5,'#101a1c');
-    cube(proj,-5.2,21.4,-125,2.8,2,2.8,'#9e1420');cube(proj,5.4,22,-119,3,1.7,2.2,'#495057');
-    for(let i=0;i<12;i++){let p=proj([-7.6+i*1.37,22.8,-121]);if(p){glow(p,1.25,'#e21c2b');}}
-  }
-  function projectWeb(proj,time){let c=[0,27,-194],q=proj(c);if(!q)return;
-    for(let j=0;j<22;j++){let a=j*Math.PI*2/22,b=(j+1)*Math.PI*2/22;
-      for(let n=1;n<=7;n++){let r=n*4.4,z=c[2]+n*.72;
-        let p=proj([Math.cos(a)*r,27+Math.sin(a)*r,z]),p2=proj([Math.cos(b)*r,27+Math.sin(b)*r,z]);line(p,p2,n%2?'#c61829':'#545760',n===1?1.6:1.1,.72);
-        if(n<7)line(p,proj([Math.cos(a)*(r+4.4),27+Math.sin(a)*(r+4.4),z+.72]),'#ae1728',.8,.54);
-      }
-    }
-    cube(proj,0,24,-194,6,6,6,'#cc0d1f');let pul=2+Math.sin(time*2)*1;glow(q,3+ulFix(), '#ed0a20');
-    function ulFix(){return Math.sin(time*2)*.35;}
-  }
-  function render(now){requestAnimationFrame(render);const rect=section.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return;
-    resize();if(!w||!h)return;let len=Math.max(1,section.offsetHeight-innerHeight),p=clamp(-rect.top/len);smoothed+=(p-smoothed)*.09;
-    const [eye,target]=keyCam(smoothed);eye[0]+=px*1.9;eye[1]-=py*1.1;
-    let proj=projectBuild(eye,target);
-    ctx.clearRect(0,0,w,h);
-    const bg=ctx.createLinearGradient(0,0,0,h);bg.addColorStop(0,'#171a21');bg.addColorStop(.56,'#06070b');bg.addColorStop(1,'#030408');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
-    const moon=proj([1,60,-230]);if(moon){let rd=Math.min(165,Math.max(28,900/(moon[2]*.032)));let gr=ctx.createRadialGradient(moon[0],moon[1],0,moon[0],moon[1],rd*2.1);gr.addColorStop(0,'rgba(204,12,27,.16)');gr.addColorStop(1,'rgba(204,12,27,0)');ctx.fillStyle=gr;ctx.fillRect(0,0,w,h);}
-    // Horizon haze and perspective street.
-    let f0=proj([-10,-1,43]),f1=proj([10,-1,43]),b0=proj([-10,-1,-210]),b1=proj([10,-1,-210]);poly([f0,f1,b1,b0],'#0e0e12',.7);
-    const sorted=buildings.filter(b=>Math.hypot(b.x-eye[0],b.z-eye[2])<155).sort((a,b)=>
-      Math.hypot(b.x-eye[0],b.z-eye[2])-Math.hypot(a.x-eye[0],a.z-eye[2]));
-    for(let b of sorted){let dist=Math.hypot(b.x-eye[0],b.z-eye[2]);let alpha=clamp((180-dist)/125,.28,1);
-      cube(proj,b.x,-1.5,b.z,b.w,b.h,b.d,'#262933',alpha);
-      if(dist<88){for(let k=0;k<7;k++){
-        if(rand(b.id*9+k*4)>.48){let a=proj([b.x+(rand(b.id+k)*.7-.35)*b.w,1.9+k*3.4,b.z+b.d/2+.06]);
-          if(a&&a[2]>2&&a[2]<98){ctx.fillStyle=rand(b.id+k*11)>.91?'#aa1a22':'#b1a4a0';ctx.globalAlpha=alpha*.85;ctx.fillRect(a[0],a[1],Math.min(6,30/a[2]),Math.min(11,60/a[2]));ctx.globalAlpha=1;}
-        }
-      }}
-    }
-    webs(proj);board(proj,now/1000);projectWeb(proj,now/1000);
-    let v=ctx.createRadialGradient(w*.67,h*.44,w*.10,w*.67,h*.44,w*.75);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.48)');ctx.fillStyle=v;ctx.fillRect(0,0,w,h);
-  }
-
-  // Keep captions and progress in sync even without WebGL.
-  const cards=[...document.querySelectorAll('.cinema-chapter')];
-  const counter=document.getElementById('cinema-count'),track=document.getElementById('cinema-track-fill'),hotspot=document.getElementById('cinema-hotspot');
-  function updateText(){let rect=section.getBoundingClientRect(),length=Math.max(1,section.offsetHeight-innerHeight),p=clamp(-rect.top/length),idx=Math.min(3,Math.floor(p*4));
-    cards.forEach((c,i)=>{c.classList.toggle('active',i===idx);c.setAttribute('aria-hidden',String(i!==idx));});
-    if(counter)counter.textContent=String(idx+1).padStart(2,'0');
-    if(track)track.style.transform=`scaleY(${p})`;
-    if(hotspot)hotspot.textContent=['ROOFTOP / ORIGIN','THREAD / MOMENTUM','HARDWARE / REVEAL','WEB / EVERYTHING CONNECTS'][idx];
-  }
-  const cast=document.getElementById('cast-web');
-  function shoot(e){const d=document.createElement('span');d.className='cinema-impact';d.style.left=(`${e&&e.offsetX?e.offsetX/canvas.clientWidth*100:66}%`);d.style.top=(`${e&&e.offsetY?e.offsetY/canvas.clientHeight*100:48}%`);section.querySelector('.lab-sticky').appendChild(d);setTimeout(()=>d.remove(),700);}
-  canvas.addEventListener('click',shoot);cast?.addEventListener('click',shoot);
-  addEventListener('scroll',updateText,{passive:true});updateText();
-  requestAnimationFrame(render);
-})();
-
-</script>
-
-<script>
-(()=>{
- const canvas=document.getElementById('loader-threads'),loader=document.getElementById('loader');
- if(!canvas||!loader||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- let ctx=canvas.getContext('2d'),w=0,h=0,dpr=1,start=performance.now(),raf=0;
- const resize=()=>{dpr=Math.min(devicePixelRatio||1,2);w=canvas.clientWidth;h=canvas.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)};
- resize();window.addEventListener('resize',resize);
- function frame(now){if(!loader.isConnected){cancelAnimationFrame(raf);return}ctx.clearRect(0,0,w,h);const t=(now-start)/1000;const reveal=Math.min(1,Math.max(0,(t-.45)/1.4)),e=reveal*reveal*(3-2*reveal);
- const cx=w*.5,cy=h*.52;for(let arm=0;arm<16;arm++){
-   const a=(arm/16)*Math.PI*2+Math.sin(t*.3)*.12,inner=50+Math.sin(arm*7)*25,outer=Math.min(w*.65,h*.85);
-   let x1=cx+Math.cos(a)*inner,y1=cy+Math.sin(a)*inner;
-   let x2=cx+Math.cos(a)*outer*e,y2=cy+Math.sin(a)*outer*e;
-   ctx.strokeStyle=arm%3===0?`rgba(230,22,34,${.32*e})`:`rgba(245,245,245,${.09*e})`;ctx.lineWidth=arm%3===0?1.25:.65;
-   ctx.beginPath();ctx.moveTo(x1,y1);ctx.quadraticCurveTo(cx+Math.cos(a+.4)*outer*.48,cy+Math.sin(a+.4)*outer*.48,x2,y2);ctx.stroke();
-   const px=x1+(x2-x1)*(Math.sin(t*1.7+arm)*.5+.5);const py=y1+(y2-y1)*(Math.sin(t*1.7+arm)*.5+.5);
-   if(t>1.15){ctx.fillStyle='rgba(232,24,35,.8)';ctx.beginPath();ctx.arc(px,py,1.7,0,Math.PI*2);ctx.fill()}
- }
- raf=requestAnimationFrame(frame)}raf=requestAnimationFrame(frame);
-})();
-</script>
+<script src="assets/city-street.js?v=edit09"></script>
 <script>(function(){const e=document.getElementById('field-notes');if(!e)return;const obs=new IntersectionObserver(([x])=>{if(x.isIntersecting)e.classList.add('in');},{threshold:.13});obs.observe(e);})();</script>
 
 <!-- Separate from the animation engine, so background music works even if an animation errors. -->
@@ -1332,6 +961,19 @@ syncHud();burstBtn.disabled=true;
   const file=document.getElementById('music-file');
   if(!audio||!header||!playButton||!status||!dock||!miniLabel)return;
   let fileUrl=null;
+  let deliberatelyPaused=false;
+  try{deliberatelyPaused=sessionStorage.getItem('jagruthi-audio-paused')==='yes'}catch{}
+  function rememberPause(value){deliberatelyPaused=value;try{sessionStorage.setItem('jagruthi-audio-paused',value?'yes':'no')}catch{}}
+  const opening=document.querySelector('#loader');
+  const soundStart=document.createElement('button');soundStart.type='button';soundStart.className='intro-audio-start';soundStart.textContent='♫ ENTER WITH SOUND';
+  opening?.append(soundStart);
+  function tryStart(){if(deliberatelyPaused||!audio.paused)return;audio.muted=false;const playing=audio.play();playing?.catch(()=>{});}
+  soundStart.addEventListener('click',()=>{rememberPause(false);tryStart()});
+  function firstGesture(event){if(event.target.closest?.('#music-toggle,#music-dock-play,.reader-sound,.intro-audio-start'))return;tryStart()}
+  document.addEventListener('pointerdown',firstGesture,{capture:true,passive:true});
+  document.addEventListener('keydown',firstGesture,{capture:true});
+  audio.addEventListener('playing',()=>{soundStart.remove();document.removeEventListener('pointerdown',firstGesture,true);document.removeEventListener('keydown',firstGesture,true)});
+  tryStart();
   audio.loop=true;
   audio.preload='auto';
   audio.volume=0.85;
@@ -1349,7 +991,8 @@ syncHud();burstBtn.disabled=true;
   }
   function toggle(){
    // Start within the click handler so that normal browser autoplay rules are respected.
-   if(!audio.paused){audio.pause();sync();return;}
+   if(!audio.paused){rememberPause(true);audio.pause();sync();return;}
+   rememberPause(false);
    audio.muted=false;
    if(audio.volume===0)audio.volume=0.85;
    clearNotice();
@@ -1389,5 +1032,8 @@ syncHud();burstBtn.disabled=true;
 
 
 
+<script src="assets/scroll-story.js?v=edit09"></script>
+<script src="assets/spider-interactions.js?v=game10"></script>
+<script src="assets/continuous-projects.js?v=edit09"></script>
 </body>
 </html>
